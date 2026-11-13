@@ -1,0 +1,39 @@
+{
+  "publicationDates": {
+    "318820": "2018-01-11",
+    "319085": "2018-01-18",
+    "319381": "2018-01-25",
+    "319642": "2018-02-01",
+    "319904": "2018-02-08",
+    "320159": "2018-02-15",
+    "320419": "2018-02-22",
+    "324856": "2018-07-05",
+    "325087": "2018-07-12",
+    "325294": "2018-07-19",
+    "325764": "2018-08-02",
+    "326010": "2018-08-09",
+    "326241": "2018-08-16",
+    "326722": "2018-08-30",
+    "326958": "2018-09-06",
+    "327733": "2018-09-27",
+    "320622": "2018-03-01",
+    "320878": "2018-03-08",
+    "328008": "2018-10-04"
+  },
+  "exactIdentityAliases": {
+    "Allj — Минимал": "Элджей — Минимал",
+    "Allj — Розовое вино (feat. Feduk)": "Элджей & Feduk — Розовое вино"
+  },
+  "identityReferences": [
+    "https://music.apple.com/us/song/1772299301",
+    "https://music.apple.com/us/song/1524550942",
+    "https://music.apple.com/cz/playlist/allj-z%C3%A1sadn%C3%AD-hity/pl.c0ef090b9aea4debb373b6ceefc3f478"
+  ],
+  "limitations": [
+    "One publisher of platform tables; platform originals not independently retrieved.",
+    "Only national Apple Music weeks; Yandex/VK observations retain separate dates.",
+    "Repeated appearances 7–31 days apart do not prove continuous fourteen-day popularity.",
+    "Cyrillic title eligibility is a partial language filter, not a completed language audit.",
+    "Other title/credit variants, including generic feat stripping, are not merged."
+  ]
+}

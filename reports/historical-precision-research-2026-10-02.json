@@ -1,0 +1,252 @@
+{
+  "checkedOn": "2026-10-02",
+  "annualOnlySpans": [
+    {
+      "month": "1972-01",
+      "dates": 31
+    }
+  ],
+  "precisionUpgrade": true,
+  "sources": [
+    {
+      "url": "https://ridero.ru/books/khit-parady_v_sssr_1/freeText/",
+      "finding": "June 1977 poll published 11 June ranks albums, not individual songs; first listed song poll is September, published October. February 1982 last listed song poll before closure.",
+      "limitation": "Transcription; no original newspaper scan checked."
+    },
+    {
+      "url": "https://boris5001.narod.ru/",
+      "finding": "January 1972 radio playlist dates exist.",
+      "limitation": "Restored playlist is not a measured mass-popularity chart."
+    },
+    {
+      "url": "https://history.retroportal.ru/vstrecha_s_pesnej_0998.html",
+      "finding": "Radio-program transcript distinguishes 1977 Latvian Par pedejo lapu and 1978 Russian Listya zholtye. Combined annual-chart artist credit excluded.",
+      "limitation": "Specific recording exclusion; does not reject all recordings by these artists."
+    },
+    {
+      "url": "https://publ.lib.ru/ARCHIVES/K/%27%27Krugozor%27%27_%28jurnal%29/%CA%F0%F3%E3%EE%E7%EE%F0%2C%201982%2C%20%B912%28225%29.pdf",
+      "sha256": "a7458868b213e413e77b7d8bd17a9da8ac46362fe552fd6b218ec7db51e3a3af",
+      "verifiedPdfPages": [
+        18,
+        20
+      ],
+      "issue": "12 (225), December 1982",
+      "track": "Alla Pugacheva — Million roz, sound page 12",
+      "printSignatureDate": "1982-10-29",
+      "finding": "Original scan confirms song publication in December-numbered issue.",
+      "limitation": "Neither issue month nor print signature establishes public release day or month/week of peak popularity."
+    },
+    {
+      "url": "https://www.aprilclub.net/books/bk19.htm",
+      "publication": "Вечерняя Пермь",
+      "articles": [
+        {
+          "author": "Н. Гашев",
+          "publicationDate": "1977-07-16",
+          "eventDate": "1977-07-15",
+          "finding": "Ticket-sale crowd for Pugacheva concerts; demand for artist, no song measurements."
+        },
+        {
+          "author": "Л. Лаврова",
+          "title": "Арлекино снимает маску",
+          "publicationDate": "1977-07-26",
+          "songs": [
+            "Ясные, светлые глаза",
+            "Почему так получилось",
+            "Сонет Шекспира",
+            "Приезжай",
+            "Найди друга",
+            "Арлекино",
+            "Женщина, которая поёт"
+          ],
+          "finding": "Contemporary review names repertoire and describes reception."
+        }
+      ],
+      "sourceType": "Press transcription in B. Poyurovsky anthology, not original newspaper scan",
+      "limitation": "Publication date is not concert date; local review is not national monthly popularity ranking. Added only to July annual fallback for Woman."
+    },
+    {
+      "url": "https://biography.wikireading.ru/123302",
+      "author": "Фёдор Раззаков",
+      "chapterYear": 1983,
+      "finding": "Attributes annual 1982 places to Smena Stars-82, published January 1983: Forgive Earth 1, Old Clock 5, Million Scarlet Roses 6, Return and Trouble joint 7. Conflicts with Wikipedia MK attribution.",
+      "action": "Five labels and links explicitly qualified as Razzakov attribution; original issue not checked. Annual results not backdated to December."
+    },
+    {
+      "url": "https://ru.wikipedia.org/wiki/Звуковая_дорожка_МК",
+      "finding": "1982 table attributes same places to MK with 2–4 unknown.",
+      "limitation": "Conflicting retrospective attribution; not original newspaper evidence."
+    },
+    {
+      "url": "https://proza.ru/2024/01/16/1027",
+      "finding": "Retrospective first-person account recalls annual Smena Stars-81 and Stars-82.",
+      "limitation": "Does not prove absence of all monthly 1982 polls."
+    },
+    {
+      "url": "https://pravda.in.ua/nostalgie/yanvar-1972/",
+      "finding": "January 1972 retrospective lists Pesnya-71, explicitly best songs of 1971.",
+      "limitation": "January broadcast is not January popularity peak."
+    },
+    {
+      "url": "https://books.yandex.ru/books/YGclnYjv/read-online",
+      "finding": "Sychev describes listener-letter Song of the Month in S Dobrym Utrom, radio Do-Re-Mi-Fa-Sol, and regional press polls.",
+      "limitation": "Available excerpt does not provide winners for the four target months."
+    },
+    {
+      "url": "https://www.kursivom.ru/владимир-кузьмин-и-группа-динамик-1/",
+      "finding": "Essay describes December 1982 Kirov recording and later circulation.",
+      "limitation": "Later circulation cannot establish December 1982 popularity."
+    },
+    {
+      "url": "https://nzdr.ru/data/media/biblio/j/krugozor/1977/Кругозор%201977-06%20(159)%20июнь.pdf",
+      "sha256": "4619d35747a943ef9d8ad04be84ad8739222f22bd9fc7fd7a507b1461e4a86cf",
+      "verifiedPdfPages": [
+        12,
+        18
+      ],
+      "issue": "6 (159), June 1977",
+      "finding": "Printed page 10, Marina Natalich: letters mention singing songs from Rozygrysh and requests to publish the film songs. Editors explicitly publish them in this issue; sound page 11 is listed in imprint.",
+      "limitation": "Letters concern film songs collectively, are undated and have no counts or ranks for an individual recording. Publication month is not popularity-peak month."
+    },
+    {
+      "url": "https://www.sssrviapesni.info/dobmoldisk.html",
+      "finding": "Oleg Pesennikov discography: 1977 Г62-06179-80, Krugozor 6 (11), Proshchalny vals; Vyacheslav Kiselev and Dobry molodtsy vocal group.",
+      "limitation": "Secondary identification of recording; does not provide listening measurements. Linked image reproduces reader-letter page, not record label."
+    },
+    {
+      "url": "https://www.nzdr.ru/data/media/biblio/j/krugozor/1977/Кругозор%201977-07%20(160)%20июль.pdf",
+      "sha256": "529e5c4640ee450d34c2e360da9423e54b115960d735c50481b027cece72c52d",
+      "finding": "Rezanova recalls two audience-requested repetitions of Tyulpany at Moscow concerts.",
+      "limitation": "Concert dates absent; July issue date cannot stand for July concert or popularity peak. Not imported as dated hit."
+    },
+    {
+      "url": "https://publ.lib.ru/ARCHIVES/K/%27%27Krugozor%27%27_%28jurnal%29/%ca%f0%f3%e3%ee%e7%ee%f0,%201972,%20%b901(094).pdf",
+      "sha256": "67d8bd87767d9ab69d0810202fbe6f7f3bb76897b6f28c0033efb358c655214e",
+      "finding": "January 1972 original: premieres Moy poezd ukhodit and Gorlitsa, sound page 9.",
+      "limitation": "Song premieres alone do not establish mass popularity. Excluded Georgian recording not restored."
+    },
+    {
+      "url": "https://www.liveinternet.ru/users/3126649/rubric/7011454/page14.html",
+      "publication": "Б. Славина, Зеркало души, Советская Эстония, 13.07.1977",
+      "finding": "Transcribed contemporary review describes audience recognition and applause for Arlekino, and applause at Priezzhay premiere.",
+      "limitation": "Original newspaper not verified. Publication date is not concert date; qualitative local reception, not national chart or measured peak."
+    },
+    {
+      "url": "https://forumpugacheva.ru/viewtopic.php?id=4662",
+      "finding": "Secondary tour chronology places Tallinn appearances and these two songs on 9–10 July 1977.",
+      "limitation": "Fan archive, exact concert day not independently verified; only month used, no week assigned."
+    },
+    {
+      "url": "https://rus.err.ee/131058/kalakauskas-poroj-mne-kazhetsja-chto-pugacheva-byla-vsegda",
+      "finding": "Broadcaster retrospective corroborates Tallinn 1977 concerts and Slavina article title.",
+      "limitation": "Historical context, not an independent song popularity measurement."
+    },
+    {
+      "url": "https://glagol38.ru/text/23-08-2025/001",
+      "finding": "Bratsk concerts dated 12 December 1982, includes reproduction of contemporary announcement.",
+      "limitation": "Announcement alone does not prove success of a particular song. Described Radio album belongs to 1983. Not imported."
+    },
+    {
+      "url": "https://vladimirkuzmin.org/discography/",
+      "finding": "Official artist catalogue dates the Kirov performance to 30 December 1982 and lists Po-prezhnemu vdvoyom, Mama ya popal v bedu, Myachik. CD editions dated May 1994, July 1998 and May 2003 are later releases, not 1982 popularity observations.",
+      "action": "Three concert candidates for December 1982 only; Month means performance month, never a chart peak. No rank, listener platform, weekly duration or national popularity inferred."
+    },
+    {
+      "url": "https://vladimirkuzmin.org/articles/rasskaz-rustema-valiahmetova/",
+      "author": "Rustem Valiakhmetov",
+      "finding": "Retrospective eyewitness account identifies two 30 December 1982 concerts and the repertoire. Tape-copy demand is described from early January 1983.",
+      "limitation": "One later witness hosted by the artist; neither an independent audience measurement nor evidence of a December peak. Spread after the concert is not backdated."
+    },
+    {
+      "url": "https://www.kursivom.ru/владимир-кузьмин-и-группа-динамик-1/",
+      "finding": "Sergey Kuriy, May 2017: song-specific histories of Kapushon, Mama and Myachik. Myachik became widely known through the Kirov live recording; studio recording and release are later.",
+      "limitation": "Retrospective cultural history, no measured calendar month or continuous fourteen days. No modern view counter imported."
+    },
+    {
+      "url": "https://pugacheva-disc.ru/displayimage.php?album=178&pos=42",
+      "imageUrl": "https://pugacheva-disc.ru/albums/more%20press/sovetskaya_estonia_13_07_77.jpg",
+      "sha256": "7f2fbe904d109a1b24fa4a8f11f9951f95551bd65ccbe31bc6b6b2d58aa2be22",
+      "verified": "Full available clipping visually read; masthead Sovetskaya Estoniya and page 3 visible. Arlekino recognition/applause and Priezzhay premiere/applause agree with transcription.",
+      "limitation": "Issue date 13 July 1977 comes from catalogue caption; no dated issue header survives in this clipping. Full issue and exact concert day unverified. Local reception, no national month/week peak.",
+      "action": "Primary text strengthened in both July candidates; preserve Month and 2 candidates."
+    },
+    {
+      "url": "https://www.ruscircus.ru/forum/index.php?showtopic=25019",
+      "finding": "37 scans of Sovetskaya estrada i tsirk January 1972 downloaded. Contents and printed pages 12–14, 18, 20–23 visually read. Page 21 reviews Aida Vedishcheva without a concert date; page 23 Bryansk programme refers to an earlier jubilee, no January song ranking.",
+      "limitation": "Issue month does not date reviewed events. OCR on small scans was unreliable and not used as confirmation. January remains Year-only.",
+      "checkedImageHashes": {
+        "02": "a0f2cf821dd544c7d5f001088e7d79fd5fc96b23287e18f33e43cb4decb724c7",
+        "12": "56a49839e88db483aba91039005ef24bac0330fced7a08995ad4e2bc7a9c519a",
+        "21": "f0e8e5c40b138abef0dc9f1a36c6ffe87312ccf1b6c63f148e3e75d52ec621a1",
+        "23": "99d2dcafab76fe0ebe0649eb6c3c661f0e2c030c546505445bae49af913f0acb"
+      }
+    },
+    {
+      "urls": [
+        "https://www.sssrviapesni.info/moskvichi.html",
+        "https://www.sssrviapesni.info/moskvichi_afisha.html",
+        "https://ru.wikipedia.org/wiki/Москвичи_(ВИА)"
+      ],
+      "finding": "Conflicting histories: first tours January 1972 vs summer 1972; radio described merely as early 1972. Available posters depict later Pugacheva duet, one explicitly 23 November 1974.",
+      "limitation": "No January 1972 song performance or popularity confirmation; do not infer January from early year, artist transition or later poster."
+    },
+    {
+      "urls": [
+        "https://boris5001.narod.ru/",
+        "https://tunnel.ru/post-peredacha-zapishite-na-vashi-magnitofony-chast-4-vedushhijj-viktor"
+      ],
+      "finding": "January 1972 numbered radio programme lists exist, but chart specials are explicitly marked on other dates. Playlist numbering is not popularity rank.",
+      "limitation": "Fan-restored schedules and individual broadcasts do not measure January mass demand. Dates disagree for later February episode. No precision upgrade."
+    }
+  ],
+  "revision": "BETA74",
+  "resolvedDates": 0,
+  "unresolvedDates": 123,
+  "excludedWrongYearResults": [
+    {
+      "url": "https://biography.wikireading.ru/123390",
+      "reason": "June–July chapter concerns 1990, not 1977"
+    },
+    {
+      "url": "https://biography.wikireading.ru/75850",
+      "reason": "December chapter concerns 1986, not 1982"
+    }
+  ],
+  "nextPrimarySourceTargets": [
+    "Original Smena January 1983 Stars-82 issue: confirm publisher and voting window",
+    "Original Evening Perm 16 and 26 July 1977: compare transcription",
+    "S Dobrym Utrom January 1972 Song of the Month announcements and listener letters",
+    "Regional Soviet Youth / Selskaya Molodezh / Klub i khudozhestvennaya samodeyatelnost polls: exact windows before importing"
+  ],
+  "precisionUpgradeMeaning": "June (30 dates): publication month. July (31 dates): local concert-reception month, secondary transcription and tour chronology. 62 dates remain annual. No measured national month/week peak established for any of the 123 targeted dates.",
+  "publicationMonthUpgrade": {
+    "month": "1977-06",
+    "dates": 30,
+    "track": "Прощальный вальс",
+    "artist": "Вячеслав Киселёв и вокальная группа «Добры молодцы»",
+    "metric": "publication month only",
+    "rank": null,
+    "candidateCount": 1,
+    "independentListenerPlatforms": 0
+  },
+  "concertMonthUpgrade": {
+    "month": "1977-07",
+    "dates": 31,
+    "tracks": [
+      "Алла Пугачёва — Арлекино",
+      "Алла Пугачёва — Приезжай"
+    ],
+    "metric": "month of local concert reception, not national popularity peak",
+    "candidates": 2,
+    "originalNewspaperVerified": false,
+    "rank": null,
+    "independentListenerPlatforms": 0
+  },
+  "beta75": {
+    "annualOnlyDates": 31,
+    "nationalMonthWeekPeaksUnresolvedDates": 123,
+    "decemberPerformanceMonthDates": 31,
+    "julyClippingTextVerified": true,
+    "julyFullIssueDateVerified": false
+  }
+}

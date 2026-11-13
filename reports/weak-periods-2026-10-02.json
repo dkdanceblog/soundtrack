@@ -1,0 +1,4926 @@
+{
+  "through": "2026-10-02",
+  "caveat": "Automated classification; weekly proximity does not prove a daily peak or continuous fourteen-day popularity.",
+  "yearSpans": [
+    {
+      "start": "1972-01-01",
+      "end": "1972-01-31",
+      "days": 31
+    }
+  ],
+  "currentYearMonthOnlyDates": [
+    "2026-01-01",
+    "2026-01-02",
+    "2026-01-03",
+    "2026-01-04",
+    "2026-01-05",
+    "2026-01-06",
+    "2026-03-02",
+    "2026-03-30",
+    "2026-08-10",
+    "2026-08-11",
+    "2026-08-12",
+    "2026-08-13",
+    "2026-08-14",
+    "2026-08-15",
+    "2026-08-16",
+    "2026-08-17",
+    "2026-08-18",
+    "2026-08-19",
+    "2026-08-20",
+    "2026-08-21",
+    "2026-08-22",
+    "2026-08-23",
+    "2026-08-24"
+  ],
+  "months": [
+    {
+      "month": "1970-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1970-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 28,
+      "popularityReview": 28
+    },
+    {
+      "month": "1970-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1970-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1970-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1970-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1970-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 14
+    },
+    {
+      "month": "1970-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1970-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "1970-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1970-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1970-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1971-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1971-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 28,
+      "popularityReview": 28
+    },
+    {
+      "month": "1971-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1971-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1971-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1971-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1971-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1971-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1971-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "1971-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1971-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1971-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "1972-01",
+      "dates": 31,
+      "yearOnly": 31,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 26
+    },
+    {
+      "month": "1972-02",
+      "dates": 29,
+      "yearOnly": 0,
+      "monthOnly": 29,
+      "fewerThanThree": 29,
+      "popularityReview": 29
+    },
+    {
+      "month": "1972-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1972-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1972-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1972-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1972-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1972-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1972-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "1972-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1972-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "1972-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 5,
+      "popularityReview": 26
+    },
+    {
+      "month": "1973-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1973-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 28,
+      "popularityReview": 28
+    },
+    {
+      "month": "1973-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1973-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1973-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1973-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "1973-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1973-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1973-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "1973-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1973-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1973-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "1974-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1974-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 28,
+      "popularityReview": 28
+    },
+    {
+      "month": "1974-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1974-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1974-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1974-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1974-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1974-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1974-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1974-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1974-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1974-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "1975-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1975-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 28,
+      "popularityReview": 28
+    },
+    {
+      "month": "1975-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1975-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1975-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1975-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1975-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1975-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1975-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "1975-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1975-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "1975-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "1976-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "1976-02",
+      "dates": 29,
+      "yearOnly": 0,
+      "monthOnly": 29,
+      "fewerThanThree": 29,
+      "popularityReview": 29
+    },
+    {
+      "month": "1976-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1976-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1976-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1976-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1976-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "1976-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1976-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1976-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1976-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1976-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "1977-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1977-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 28,
+      "popularityReview": 28
+    },
+    {
+      "month": "1977-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1977-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "1977-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1977-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "1977-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1977-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1977-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1977-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1977-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1977-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1978-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1978-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1978-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1978-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1978-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1978-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1978-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1978-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1978-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1978-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1978-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1978-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1979-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1979-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1979-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1979-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1979-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1979-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1979-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1979-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1979-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1979-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1979-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1979-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1980-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1980-02",
+      "dates": 29,
+      "yearOnly": 0,
+      "monthOnly": 29,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1980-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1980-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1980-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1980-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1980-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1980-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1980-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1980-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1980-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1980-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1981-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1981-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1981-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1981-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1981-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1981-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1981-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1981-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1981-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1981-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1981-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1981-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1982-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1982-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1982-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1982-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "1982-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1982-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1982-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1982-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1982-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1982-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1982-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1982-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1983-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "1983-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 28,
+      "popularityReview": 28
+    },
+    {
+      "month": "1983-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1983-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1983-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1983-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1983-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1983-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1983-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1983-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1983-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1983-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "1984-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1984-02",
+      "dates": 29,
+      "yearOnly": 0,
+      "monthOnly": 29,
+      "fewerThanThree": 29,
+      "popularityReview": 29
+    },
+    {
+      "month": "1984-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1984-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1984-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1984-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1984-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1984-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1984-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1984-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1984-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1984-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "1985-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1985-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 28,
+      "popularityReview": 28
+    },
+    {
+      "month": "1985-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1985-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1985-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1985-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1985-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1985-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1985-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1985-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1985-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1985-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 10
+    },
+    {
+      "month": "1986-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1986-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1986-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1986-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1986-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1986-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1986-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1986-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 12,
+      "popularityReview": 12
+    },
+    {
+      "month": "1986-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1986-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1986-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 12,
+      "popularityReview": 12
+    },
+    {
+      "month": "1986-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1987-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 8
+    },
+    {
+      "month": "1987-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 10,
+      "popularityReview": 10
+    },
+    {
+      "month": "1987-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1987-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 14,
+      "popularityReview": 14
+    },
+    {
+      "month": "1987-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1987-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1987-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1987-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1987-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1987-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1987-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1987-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1988-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 8
+    },
+    {
+      "month": "1988-02",
+      "dates": 29,
+      "yearOnly": 0,
+      "monthOnly": 29,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1988-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1988-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1988-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1988-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1988-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1988-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1988-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1988-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1988-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1988-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1989-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 8
+    },
+    {
+      "month": "1989-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1989-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1989-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1989-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1989-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1989-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1989-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1989-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1989-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1989-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1989-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1990-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 8
+    },
+    {
+      "month": "1990-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1990-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1990-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1990-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1990-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1990-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1990-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1990-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1990-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1990-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1990-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1991-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 8
+    },
+    {
+      "month": "1991-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1991-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1991-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1991-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1991-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1991-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1991-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1991-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1991-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1991-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1991-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1992-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1992-02",
+      "dates": 29,
+      "yearOnly": 0,
+      "monthOnly": 29,
+      "fewerThanThree": 29,
+      "popularityReview": 0
+    },
+    {
+      "month": "1992-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1992-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "1992-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1992-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1992-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "1992-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1992-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "1992-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 14
+    },
+    {
+      "month": "1992-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "1992-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1993-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "1993-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 28,
+      "popularityReview": 28
+    },
+    {
+      "month": "1993-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1993-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1993-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1993-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "1993-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1993-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1993-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "1993-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1993-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1993-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "1994-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "1994-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 28,
+      "popularityReview": 28
+    },
+    {
+      "month": "1994-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "1994-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1994-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1994-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "1994-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1994-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1994-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1994-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1994-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1994-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1995-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 19,
+      "popularityReview": 31
+    },
+    {
+      "month": "1995-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 28,
+      "popularityReview": 28
+    },
+    {
+      "month": "1995-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1995-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1995-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 22,
+      "fewerThanThree": 12,
+      "popularityReview": 12
+    },
+    {
+      "month": "1995-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1995-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1995-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1995-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1995-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1995-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1995-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1996-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "1996-02",
+      "dates": 29,
+      "yearOnly": 0,
+      "monthOnly": 22,
+      "fewerThanThree": 0,
+      "popularityReview": 8
+    },
+    {
+      "month": "1996-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1996-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1996-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1996-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1996-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1996-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1996-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1996-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1996-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1996-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1997-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "1997-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 28,
+      "popularityReview": 28
+    },
+    {
+      "month": "1997-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1997-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1997-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1997-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "1997-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1997-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1997-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "1997-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1997-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1997-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1998-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 23,
+      "popularityReview": 31
+    },
+    {
+      "month": "1998-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 28,
+      "popularityReview": 0
+    },
+    {
+      "month": "1998-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1998-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1998-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1998-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "1998-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1998-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1998-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "1998-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 7,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "1998-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "1998-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1999-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1999-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 28,
+      "popularityReview": 28
+    },
+    {
+      "month": "1999-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1999-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1999-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 14
+    },
+    {
+      "month": "1999-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1999-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 24,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1999-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "1999-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1999-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "1999-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "1999-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "2000-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "2000-02",
+      "dates": 29,
+      "yearOnly": 0,
+      "monthOnly": 29,
+      "fewerThanThree": 29,
+      "popularityReview": 29
+    },
+    {
+      "month": "2000-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "2000-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "2000-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "2000-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "2000-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "2000-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "2000-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "2000-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "2000-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "2000-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "2001-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "2001-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 28,
+      "popularityReview": 28
+    },
+    {
+      "month": "2001-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "2001-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "2001-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "2001-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "2001-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "2001-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "2001-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "2001-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "2001-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "2001-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "2002-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "2002-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 28,
+      "popularityReview": 0
+    },
+    {
+      "month": "2002-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 8
+    },
+    {
+      "month": "2002-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "2002-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "2002-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "2002-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "2002-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "2002-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "2002-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "2002-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "2002-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "2003-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "2003-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 28,
+      "fewerThanThree": 28,
+      "popularityReview": 28
+    },
+    {
+      "month": "2003-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "2003-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "2003-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "2003-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "2003-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "2003-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 24,
+      "fewerThanThree": 31,
+      "popularityReview": 31
+    },
+    {
+      "month": "2003-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 30
+    },
+    {
+      "month": "2003-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 31,
+      "popularityReview": 0
+    },
+    {
+      "month": "2003-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "2003-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 31,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "2004-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 4,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2004-02",
+      "dates": 29,
+      "yearOnly": 0,
+      "monthOnly": 1,
+      "fewerThanThree": 0,
+      "popularityReview": 29
+    },
+    {
+      "month": "2004-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2004-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 30,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "2004-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 1,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2004-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 4,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2004-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 4,
+      "fewerThanThree": 7,
+      "popularityReview": 31
+    },
+    {
+      "month": "2004-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2004-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2004-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2004-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2004-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2005-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2005-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 28
+    },
+    {
+      "month": "2005-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2005-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2005-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2005-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2005-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2005-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2005-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2005-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2005-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2005-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2006-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2006-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 28
+    },
+    {
+      "month": "2006-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2006-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2006-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2006-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2006-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2006-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2006-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2006-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2006-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2006-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2007-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2007-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 28
+    },
+    {
+      "month": "2007-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2007-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2007-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2007-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2007-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2007-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2007-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2007-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2007-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2007-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2008-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2008-02",
+      "dates": 29,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 29
+    },
+    {
+      "month": "2008-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2008-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2008-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2008-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2008-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2008-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2008-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2008-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2008-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2008-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2009-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2009-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 28
+    },
+    {
+      "month": "2009-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2009-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2009-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2009-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2009-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2009-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2009-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2009-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2009-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2009-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2010-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 5,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2010-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 28
+    },
+    {
+      "month": "2010-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2010-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2010-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2010-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2010-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2010-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 7,
+      "popularityReview": 31
+    },
+    {
+      "month": "2010-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 21
+    },
+    {
+      "month": "2010-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 17
+    },
+    {
+      "month": "2010-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 11
+    },
+    {
+      "month": "2010-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 24
+    },
+    {
+      "month": "2011-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2011-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 28
+    },
+    {
+      "month": "2011-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 28
+    },
+    {
+      "month": "2011-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 24
+    },
+    {
+      "month": "2011-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2011-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 16
+    },
+    {
+      "month": "2011-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 6
+    },
+    {
+      "month": "2011-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2011-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2011-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 24
+    },
+    {
+      "month": "2011-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 9
+    },
+    {
+      "month": "2011-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 17
+    },
+    {
+      "month": "2012-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 13,
+      "popularityReview": 30
+    },
+    {
+      "month": "2012-02",
+      "dates": 29,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 18
+    },
+    {
+      "month": "2012-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 19
+    },
+    {
+      "month": "2012-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 23
+    },
+    {
+      "month": "2012-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 25
+    },
+    {
+      "month": "2012-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2012-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 3,
+      "popularityReview": 20
+    },
+    {
+      "month": "2012-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 8,
+      "popularityReview": 17
+    },
+    {
+      "month": "2012-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 18
+    },
+    {
+      "month": "2012-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 25
+    },
+    {
+      "month": "2012-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2012-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2013-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2013-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 28
+    },
+    {
+      "month": "2013-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2013-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2013-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 7,
+      "popularityReview": 31
+    },
+    {
+      "month": "2013-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2013-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2013-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2013-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2013-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2013-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2013-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2014-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 1,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2014-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 28
+    },
+    {
+      "month": "2014-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2014-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2014-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2014-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2014-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2014-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2014-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2014-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2014-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2014-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2015-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 6,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2015-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 28
+    },
+    {
+      "month": "2015-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2015-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2015-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2015-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2015-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2015-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2015-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2015-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2015-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2015-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2016-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2016-02",
+      "dates": 29,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 29
+    },
+    {
+      "month": "2016-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2016-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2016-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2016-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2016-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2016-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2016-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2016-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2016-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 30
+    },
+    {
+      "month": "2016-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 31
+    },
+    {
+      "month": "2017-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 5
+    },
+    {
+      "month": "2017-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 2
+    },
+    {
+      "month": "2017-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 5
+    },
+    {
+      "month": "2017-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 10
+    },
+    {
+      "month": "2017-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 10
+    },
+    {
+      "month": "2017-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 2
+    },
+    {
+      "month": "2017-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 9
+    },
+    {
+      "month": "2017-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 0,
+      "popularityReview": 12
+    },
+    {
+      "month": "2018-07",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 16,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "2018-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 10,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "2018-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 15,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "2019-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 24,
+      "popularityReview": 0
+    },
+    {
+      "month": "2019-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 15,
+      "popularityReview": 0
+    },
+    {
+      "month": "2019-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 22,
+      "popularityReview": 0
+    },
+    {
+      "month": "2019-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "2019-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 18,
+      "popularityReview": 0
+    },
+    {
+      "month": "2019-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 18,
+      "popularityReview": 0
+    },
+    {
+      "month": "2020-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 17,
+      "popularityReview": 0
+    },
+    {
+      "month": "2020-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 6,
+      "popularityReview": 0
+    },
+    {
+      "month": "2020-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 17,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "2020-06",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 12,
+      "popularityReview": 0
+    },
+    {
+      "month": "2020-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 22,
+      "popularityReview": 0
+    },
+    {
+      "month": "2020-09",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 30,
+      "popularityReview": 0
+    },
+    {
+      "month": "2020-10",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 8,
+      "popularityReview": 0
+    },
+    {
+      "month": "2020-11",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 4,
+      "popularityReview": 0
+    },
+    {
+      "month": "2020-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 17,
+      "popularityReview": 0
+    },
+    {
+      "month": "2021-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 7,
+      "popularityReview": 0
+    },
+    {
+      "month": "2021-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 1,
+      "popularityReview": 0
+    },
+    {
+      "month": "2021-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 6,
+      "popularityReview": 0
+    },
+    {
+      "month": "2022-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 13,
+      "popularityReview": 0
+    },
+    {
+      "month": "2022-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 11,
+      "popularityReview": 0
+    },
+    {
+      "month": "2023-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 7,
+      "popularityReview": 0
+    },
+    {
+      "month": "2023-02",
+      "dates": 28,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 14,
+      "popularityReview": 0
+    },
+    {
+      "month": "2023-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 7,
+      "popularityReview": 0
+    },
+    {
+      "month": "2023-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 26,
+      "popularityReview": 0
+    },
+    {
+      "month": "2023-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 1,
+      "popularityReview": 0
+    },
+    {
+      "month": "2023-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 7,
+      "popularityReview": 0
+    },
+    {
+      "month": "2024-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 16,
+      "popularityReview": 0
+    },
+    {
+      "month": "2024-02",
+      "dates": 29,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 26,
+      "popularityReview": 0
+    },
+    {
+      "month": "2025-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 6,
+      "popularityReview": 0
+    },
+    {
+      "month": "2025-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 14,
+      "popularityReview": 0
+    },
+    {
+      "month": "2025-04",
+      "dates": 30,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 2,
+      "popularityReview": 0
+    },
+    {
+      "month": "2025-05",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 0,
+      "fewerThanThree": 12,
+      "popularityReview": 0
+    },
+    {
+      "month": "2025-12",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 3,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "2026-01",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 6,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "2026-03",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 2,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    },
+    {
+      "month": "2026-08",
+      "dates": 31,
+      "yearOnly": 0,
+      "monthOnly": 15,
+      "fewerThanThree": 0,
+      "popularityReview": 0
+    }
+  ]
+}
