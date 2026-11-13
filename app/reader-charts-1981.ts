@@ -58,7 +58,8 @@ export function readerChartHit1981(date: string, today: string): BirthdayHit | n
   if (!chart) return null;
   const candidates = chart.tracks.filter((entry) => isEligibleRussianLanguageTrack(entry.title, entry.artist));
   if (candidates.length < 3) return null;
-  const index = Math.floor((Number(date.slice(8, 10)) - 1) / 7) % candidates.length;
+  // Accuracy over variety: the month's #1 among eligible songs.
+  const index = candidates.reduce((top, track, i, all) => (track.rank < all[top].rank ? i : top), 0);
   const selected = candidates[index];
   const month = Number(chart.month.slice(5, 7));
   const period = `${months[month - 1]} 1981`;

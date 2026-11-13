@@ -66,11 +66,12 @@ export function radioWeeklyCandidates(date: string, today: string) {
       }
     }
   }
-  // Songs present in both hit-parades first, then «Золотой граммофон», then by best rank.
+  // Accuracy over variety: «Золотой граммофон» first (Russian-language national chart),
+  // then the best position; a song in both hit-parades wins a tie.
   const candidates = [...byKey.values()].sort((left, right) =>
-    right.charts.size - left.charts.size
-    || Number(right.charts.has("gramophone")) - Number(left.charts.has("gramophone"))
-    || left.best - right.best).slice(0, 3);
+    Number(right.charts.has("gramophone")) - Number(left.charts.has("gramophone"))
+    || left.best - right.best
+    || right.charts.size - left.charts.size).slice(0, 3);
   return candidates.length ? { candidates, issues } : null;
 }
 
@@ -78,7 +79,7 @@ export function radioWeeklyHit(date: string, today: string): BirthdayHit | null 
   const found = radioWeeklyCandidates(date, today);
   if (!found) return null;
   const { candidates, issues } = found;
-  const index = Math.floor((time(date) - time(`${date.slice(0, 4)}-01-01`)) / (7 * DAY)) % candidates.length;
+  const index = 0; // the highest-placed song of the nearest issue
   const selected = candidates[index];
   const primary = selected.sources[0];
   const primaryIssue = issues.find((issue) => primary.url.endsWith(issue.date) && primary.id.startsWith(issue.chart))!;

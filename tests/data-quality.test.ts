@@ -129,7 +129,9 @@ test("every complete year keeps a varied catalogue, with stronger historical ann
       const key = `${hit.artist} — ${hit.title}`;
       counts.set(key, (counts.get(key) ?? 0) + 1);
     }
-    assert.ok(counts.size >= 4, `${year}: only ${counts.size} unique songs`);
+    // BETA90: the main song is the #1 of the ranked chart (accuracy over variety). In 1980–1981 the
+    // MK reader poll was led by «Поворот» most of the year, so three main songs is the real picture.
+    assert.ok(counts.size >= (year === 1980 || year === 1981 ? 3 : 4), `${year}: only ${counts.size} unique songs`);
     if (enrichedYears.has(year)) {
       const dominantDays = Math.max(...counts.values());
       assert.ok(counts.size >= 10, `${year}: only ${counts.size} unique songs after enrichment`);
@@ -219,12 +221,13 @@ test("1981 reader charts distinguish poll month from later publication and recor
   const december = getBirthdayHit("1981-12-15")!;
   assert.equal(december.chartDate, "1982-01-31");
   assert.equal(december.evidenceMonth, "1981-12");
-  assert.equal(december.artist, "Алла Пугачёва");
-  assert.equal(december.title, "Песня на бис");
-  assert.equal(december.chartRank, 3);
+  // BETA90: the month's #1 is the main song, not a weekly rotation through the poll.
+  assert.equal(december.artist, "Яак Йоала");
+  assert.equal(december.title, "Я тебя рисую");
+  assert.equal(december.chartRank, 1);
   const may = getBirthdayHit("1981-05-15")!;
-  assert.equal(may.title, "Снег");
-  assert.equal(may.chartRank, 4);
+  assert.equal(may.title, "Маэстро");
+  assert.equal(may.chartRank, 1);
   assert.notEqual(getBirthdayHit("1981-12-15", "1981-12-31")!.sourceId, december.sourceId);
 });
 
@@ -616,4 +619,14 @@ test("new «Кругозор» issues add alternatives for thin months without c
   const july90 = getBirthdayHit("1990-07-15", "2026-11-12")!;
   assert.ok(july90.alternatives.length >= 2);
   assert.ok(july90.alternatives.some((alternative) => alternative.artist === "Игорь Тальков"));
+});
+
+// BETA90: ranked charts give their #1 as the main song.
+test("the main song is the top position of the nearest ranked chart", () => {
+  const sept99 = getBirthdayHit("1999-09-29", "2026-11-12")!;
+  assert.equal(sept99.artist, "Демо");
+  assert.equal(sept99.title, "Солнышко");
+  assert.equal(sept99.chartRank, 1);
+  assert.ok(sept99.alternatives.some((alternative) => alternative.title === "Ю"));
+  assert.equal(getBirthdayHit("1980-05-10")!.chartRank, 1);
 });

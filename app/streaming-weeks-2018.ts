@@ -17,7 +17,8 @@ export function verifiedStreamingWeek2018(date: string, today: string, monthFall
     && (!monthFallback || track.corroboration.date.startsWith(month))
     && isEligibleRussianLanguageTrack(track.title, track.artist)).slice(0, 3);
   if (candidates.length < 3) return null;
-  const index = Number(date.slice(-2)) % candidates.length;
+  // Accuracy over variety: the first (best-placed) verified candidate of the week.
+  const index = 0;
   const selected = candidates[index];
   const second = selected.corroboration;
   const otherName = second.platform === "vk" ? "VK / ВКонтакте" : "Яндекс Музыка";

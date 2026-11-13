@@ -157,7 +157,8 @@ export function gramophoneHit2009(date: string, today: string): BirthdayHit | nu
   const pool = near.length ? near : observed.filter((entry) => entry.date.slice(0, 7) === date.slice(0, 7));
   if (!pool.length) return null;
   const snapshot = [...pool].sort((a, b) => Math.abs(time(a.date) - time(date)) - Math.abs(time(b.date) - time(date)))[0];
-  const index = Math.floor((time(date) - time("2009-07-01")) / (7 * 86400000)) % snapshot.tracks.length;
+  // Accuracy over variety: the highest-placed eligible entry of the issue.
+  const index = snapshot.tracks.reduce((top, track, i, all) => (track.rank < all[top].rank ? i : top), 0);
   const selected = snapshot.tracks[index];
   const precision = near.length ? "Неделя" : "Месяц";
   const source = {

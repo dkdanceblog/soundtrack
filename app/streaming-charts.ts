@@ -325,8 +325,8 @@ export function streamingHit(date: string, today: string): BirthdayHit | null {
       && other.tracks.some((candidate) => identity(candidate) === identity(track)));
   }).sort((a, b) => (a.apple + (a.yandex ?? a.vk ?? 100)) - (b.apple + (b.yandex ?? b.vk ?? 100))).slice(0, 3);
   if (candidates.length < 3) return null;
-  const weekOffset = Math.floor((time(date) - time(`${year}-01-01`)) / (7 * dayMs));
-  const index = weekOffset % candidates.length;
+  // Accuracy over variety: the best-ranked candidate (list is sorted by combined rank).
+  const index = 0;
   const selected = candidates[index];
   const history = observed.filter((snapshot) => Math.abs(time(snapshot.date) - time(closest.date)) <= 31 * dayMs
     && snapshot.tracks.some((candidate) => identity(candidate) === identity(selected)));

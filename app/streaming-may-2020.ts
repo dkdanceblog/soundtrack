@@ -18,7 +18,8 @@ export function streamingMay2020(date: string, today: string): BirthdayHit | nul
     repeat: repeat.appleRows.find(row => same(row,artist,title)),
   })).filter(track => track.apple && track.yandex && track.repeat && isEligibleRussianLanguageTrack(track.title,track.artist));
   if (candidates.length < 3) return null;
-  const index = Number(date.slice(-2)) % 3;
+  // Accuracy over variety: the best Apple Music Russia position of the week.
+  const index = candidates.reduce((top, track, i, all) => (track.apple![0] < all[top].apple![0] ? i : top), 0);
   const selected = candidates[index];
   const sources: HitSource[] = [
     { id: `apple-${week.end}-may2020-${index}`, label: `Apple Music Россия: #${selected.apple![0]} · ${week.start} — ${week.end} · таблица InterMedia в перепубликации SunLink`, url:week.url, kind:"датированный стриминговый чарт", rank:selected.apple![0] },
