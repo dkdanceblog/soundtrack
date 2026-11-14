@@ -44,6 +44,16 @@ export function radioWeeklyCandidates(date: string, today: string) {
     const vote = nearestIssue("chartova", date, today);
     if (vote) issues = [vote];
   }
+  // Fresh dates after the newest archived issue: the latest issue of the SAME month
+  // (earlier than the birthday) gives month precision, never a week it cannot prove.
+  let monthOnly = false;
+  if (!issues.length && date >= RECENT_RADIO_FROM) {
+    const sameMonth = RADIO_ISSUES_1995_2003
+      .filter((issue) => (issue.chart === "gramophone" || issue.chart === "chartova") && issue.tracks.length
+        && issue.date <= date && issue.date <= today && issue.date.slice(0, 7) === date.slice(0, 7))
+      .sort((a, b) => Number(b.chart === "gramophone") - Number(a.chart === "gramophone") || b.date.localeCompare(a.date));
+    if (sameMonth.length) { issues = [sameMonth[0]]; monthOnly = true; }
+  }
   if (!issues.length) return null;
   const byKey = new Map<string, Candidate>();
   for (const issue of issues) {
@@ -72,13 +82,13 @@ export function radioWeeklyCandidates(date: string, today: string) {
     Number(right.charts.has("gramophone")) - Number(left.charts.has("gramophone"))
     || left.best - right.best
     || right.charts.size - left.charts.size).slice(0, 3);
-  return candidates.length ? { candidates, issues } : null;
+  return candidates.length ? { candidates, issues, monthOnly } : null;
 }
 
 export function radioWeeklyHit(date: string, today: string): BirthdayHit | null {
   const found = radioWeeklyCandidates(date, today);
   if (!found) return null;
-  const { candidates, issues } = found;
+  const { candidates, issues, monthOnly } = found;
   const index = 0; // the highest-placed song of the nearest issue
   const selected = candidates[index];
   const primary = selected.sources[0];
@@ -88,9 +98,12 @@ export function radioWeeklyHit(date: string, today: string): BirthdayHit | null 
   const [year, month] = date.split("-").map(Number);
   return {
     artist: selected.artist, title: selected.title, year, month,
-    chartDate: primaryIssue.date, distanceDays, precision: "Неделя",
-    period: `${primaryIssue.chart === "chartova" ? "недельное голосование слушателей" : "недельный радиохит-парад"} · ${displayDate(primaryIssue.date)}`,
-    proximity: distanceDays === 0
+    chartDate: primaryIssue.date, distanceDays, precision: monthOnly ? "Месяц" : "Неделя",
+    ...(monthOnly ? { evidenceMonth: date.slice(0, 7), evidenceYear: year } : {}),
+    period: `${monthOnly ? "последний вышедший выпуск этого месяца" : primaryIssue.chart === "chartova" ? "недельное голосование слушателей" : "недельный радиохит-парад"} · ${displayDate(primaryIssue.date)}`,
+    proximity: monthOnly
+      ? `Выпуск за неделю твоего рождения ещё не вышел или не попал в архив. Это последний выпуск того же месяца, ${distanceDays} дн. до даты.`
+      : distanceDays === 0
       ? "Выпуск хит-парада вышел в день рождения. Это близость к выпуску, а не доказательство пика в каждый день недели."
       : `Выпуск хит-парада вышел в пределах ${distanceDays} дн. от даты рождения. Это близость к выпуску, а не доказательство пика в каждый день недели.`,
     method: `Выбор из ${candidates.length} русскоязычных записей ближайших выпусков радиохит-парадов (не дальше 6 дней от даты), каждая не меньше двух недель в чарте.${both ? " Эта запись одновременно стояла в хит-парадах двух радиостанций." : ""} Срок в чарте сам по себе не доказывает непрерывные 14 дней. Источник подтверждает радиохит-парад, массовая популярность вне аудитории ${both ? "этих радиостанций" : primaryIssue.chart === "gramophone" ? "«Русского радио»" : primaryIssue.chart === "chartova" ? "«Нашего радио»" : "«Максимума»"} ещё не установлена. Архив Чартотеки не заменяет сверку оригинального эфира.`,
