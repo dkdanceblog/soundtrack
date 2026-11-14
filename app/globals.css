@@ -277,7 +277,7 @@ footer a { text-decoration: none; }
   --display: "Nozhik", "Arial Narrow", Impact, sans-serif;
   color-scheme: light;
 }
-body { background: var(--cream) url("/brand/tex-cream.webp") center / 1600px auto; }
+body { background: var(--cream); }
 main { background-image: none; }
 h1, h2, .song-copy h2, .hero h1, .life-head h2, .how h2 { text-transform: uppercase; letter-spacing: .01em !important; font-weight: 700 !important; }
 
@@ -319,7 +319,7 @@ h1, h2, .song-copy h2, .hero h1, .life-head h2, .how h2 { text-transform: upperc
 .dk-says p::before { content: ""; position: absolute; left: -10px; top: 50%; border: 8px solid transparent; border-right-color: var(--cream); border-left: 0; transform: translateY(-50%); }
 
 /* Record: cream sleeve, black vinyl, rose label with the ring logo */
-.lp-sleeve { background: var(--cream) url("/brand/tex-cream.webp") center / 600px auto; color: var(--graphite); }
+.lp-sleeve { background: var(--cream); color: var(--graphite); }
 .lp-date { font-family: var(--display); font-weight: 700; letter-spacing: 0; }
 .lp-date b:last-child { -webkit-text-stroke-color: var(--graphite); }
 .lp-ring { background: radial-gradient(circle, #393939 0 10%, #d26471 10.5% 34%, transparent 34.5% 44%, #393939 44.5% 46%, transparent 46.5% 58%, #393939 58.5% 59.5%, transparent 60%); }
