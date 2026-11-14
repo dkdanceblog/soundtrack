@@ -97,7 +97,7 @@ export function LifeSoundtrack({ birth, initialEntries }: { birth: string; initi
       <div className="life-head">
                 <div>
           <h2 id="life-title">Саундтрек<br />твоей жизни</h2>
-          <p>{entries.length} {songsWord(entries.length)} — по одной на каждый твой день рождения, с {entries[0].date.slice(0, 4)} года до сегодня.</p>
+          <p>Песни, которые были на вершинах чартов в твои дни рождения.</p>
         </div>
       </div>
 

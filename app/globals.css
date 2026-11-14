@@ -346,3 +346,4 @@ footer { background: var(--graphite); color: var(--cream); }
   .song-list li { flex-direction: column; align-items: flex-start; gap: 8px; padding: 12px 0; }
   .song-list .service-links a { min-width: 40px; height: 32px; }
 }
+.form-hint { margin: 10px 0 0; font-size: 14px; line-height: 1.4; color: color-mix(in srgb, var(--cream) 80%, transparent); }

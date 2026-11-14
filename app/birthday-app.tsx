@@ -188,6 +188,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
             <input id="birthdate" name="birthdate" type="date" min={FIRST_SUPPORTED_DATE} max={today} value={date} onChange={(event) => setDate(event.target.value)} required />
             <button type="submit" disabled={loading}>{loading ? "Ищем песню…" : "Узнать песню"}</button>
           </div>
+          <p className="form-hint">Можно ввести не только день рождения: выпускной, свадьбу, первое свидание.</p>
           {error && <p className="form-error" role="alert">{error}</p>}
         </form>
 
@@ -244,7 +245,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
 
               {hit.alternatives.length > 0 && (
                 <div className="song-list">
-                  <p>Ещё звучало в это время</p>
+                  <p>Что ещё шумело в эти дни</p>
                   <ul>
                     {hit.alternatives.map((alternative) => (
                       <li key={`${alternative.artist}-${alternative.title}`}><span className="song-name"><b>«{alternative.title}»</b> {alternative.artist}</span><ServiceLinks artist={alternative.artist} title={alternative.title} /></li>
