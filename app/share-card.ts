@@ -18,14 +18,14 @@ const BODY = "'Golos Text', Arial, Helvetica, sans-serif";
 const MONO = "'JetBrains Mono', Menlo, Consolas, monospace";
 
 // Brand images drawn on the card (same-origin files from /brand). Loaded once.
-const BRAND: Record<string, HTMLImageElement | null> = { tex: null, logo: null, ring: null };
+const BRAND: Record<string, HTMLImageElement | null> = { logo: null, ring: null };
 function loadImage(src: string) {
   return new Promise<HTMLImageElement | null>((resolve) => { const img = new Image(); img.onload = () => resolve(img); img.onerror = () => resolve(null); img.src = src; });
 }
 async function ensureBrandImages() {
-  if (typeof document === "undefined" || BRAND.tex) return;
-  const [tex, logo, ring] = await Promise.all(["brand/tex-graphite.webp", "brand/logo-cream.webp", "brand/ring-cream.webp"].map(loadImage));
-  Object.assign(BRAND, { tex, logo, ring });
+  if (typeof document === "undefined" || BRAND.logo) return;
+  const [logo, ring] = await Promise.all(["brand/logo-cream.webp", "brand/ring-cream.webp"].map(loadImage));
+  Object.assign(BRAND, { logo, ring });
 }
 
 // Canvas does not wait for web fonts; make sure the faces are ready before drawing.
@@ -113,13 +113,6 @@ function longDate(ddmmyyyy: string) {
 type Palette = typeof CARD;
 function frame(ctx: CanvasRenderingContext2D, era: Palette) {
   ctx.fillStyle = era.bg; ctx.fillRect(0, 0, W, H);
-  if (BRAND.tex) {
-    const t = BRAND.tex, k = Math.max(W / t.width, H / t.height) * 1.05;
-    ctx.drawImage(t, (W - t.width * k) / 2, (H - t.height * k) / 2, t.width * k, t.height * k);
-  } else {
-    ctx.fillStyle = "rgba(255,255,255,.045)";
-    for (let y = 0; y < H; y += 14) for (let x = (y / 14) % 2 ? 7 : 0; x < W; x += 14) { ctx.beginPath(); ctx.arc(x, y, 1.8, 0, Math.PI * 2); ctx.fill(); }
-  }
   ctx.strokeStyle = era.ink; ctx.lineWidth = 6; ctx.strokeRect(48, 48, W - 96, H - 96);
 }
 

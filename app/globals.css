@@ -282,13 +282,13 @@ main { background-image: none; }
 h1, h2, .song-copy h2, .hero h1, .life-head h2, .how h2 { text-transform: uppercase; letter-spacing: .01em !important; font-weight: 700 !important; }
 
 /* Top bar: graphite with the portrait logo */
-.topbar { background: var(--graphite) url("/brand/tex-graphite.webp") center / 1200px auto; color: var(--cream); border-bottom: 0; backdrop-filter: none; }
+.topbar { background: var(--graphite); color: var(--cream); border-bottom: 0; backdrop-filter: none; }
 .brand { gap: 10px; font: 700 26px/1 var(--display); letter-spacing: .02em; }
 .brand-logo { width: 40px; height: 40px; object-fit: contain; }
 .topnav a:hover { border-color: var(--rose); }
 
 /* Hero: rose poster with torn bottom edge */
-.hero { position: relative; max-width: none; margin: 0; padding-left: max(var(--gutter), calc((100vw - 1200px) / 2 + var(--gutter))); padding-right: max(var(--gutter), calc((100vw - 1200px) / 2 + var(--gutter))); padding-bottom: clamp(56px, 7vw, 96px); background: var(--rose) url("/brand/tex-rose.webp") center / 1600px auto; color: var(--cream);
+.hero { position: relative; max-width: none; margin: 0; padding-left: max(var(--gutter), calc((100vw - 1200px) / 2 + var(--gutter))); padding-right: max(var(--gutter), calc((100vw - 1200px) / 2 + var(--gutter))); padding-bottom: clamp(56px, 7vw, 96px); background: var(--rose); color: var(--cream);
   clip-path: polygon(0 0, 100% 0, 100% calc(100% - 18px), 96% 100%, 91% calc(100% - 14px), 85% calc(100% - 4px), 79% calc(100% - 20px), 72% calc(100% - 6px), 66% calc(100% - 16px), 58% 100%, 51% calc(100% - 12px), 44% calc(100% - 2px), 37% calc(100% - 18px), 30% calc(100% - 6px), 22% calc(100% - 15px), 15% 100%, 8% calc(100% - 13px), 0 calc(100% - 4px)); }
 .hero .eyebrow, .hero .lede, .hero .decades > p { color: color-mix(in srgb, var(--cream) 85%, transparent); }
 .hero h1 { position: relative; z-index: 1; max-width: 12ch; font-size: clamp(3rem, 9vw, 7.4rem); line-height: .9; }
@@ -306,7 +306,7 @@ h1, h2, .song-copy h2, .hero h1, .life-head h2, .how h2 { text-transform: upperc
 /* Result card: graphite record-shop counter */
 .result-wrap { padding-top: clamp(28px, 4vw, 48px); }
 .result-card { --era-bg: #393939; --era-ink: #fcdfcc; --era-muted: #c9b2a6; --era-accent: #d26471; --era-on-accent: #fcdfcc;
-  background: var(--graphite) url("/brand/tex-graphite.webp") center / 1400px auto; border: 0; box-shadow: 10px 10px 0 var(--rose); }
+  background: var(--graphite); border: 0; box-shadow: 10px 10px 0 var(--rose); }
 .song-copy h2 { font-size: clamp(2.6rem, 6vw, 5rem); line-height: .92; }
 .hit-badge b { font: 700 18px/1 var(--display); letter-spacing: .04em; padding: 6px 10px 4px; }
 .btn-service { font: 700 20px/1 var(--display); letter-spacing: .03em; text-transform: uppercase; }
@@ -334,7 +334,7 @@ h1, h2, .song-copy h2, .hero h1, .life-head h2, .how h2 { text-transform: upperc
 .life-play a:hover, .life-play a:focus-visible { background: var(--rose); color: var(--cream); border-color: var(--rose); }
 .how { border-top: 0; }
 .lvl { font-family: var(--display) !important; font-weight: 700; letter-spacing: .03em; }
-footer { background: var(--graphite) url("/brand/tex-graphite.webp") center / 1200px auto; color: var(--cream); }
+footer { background: var(--graphite); color: var(--cream); }
 :focus-visible { outline-color: var(--graphite); }
 @media (max-width: 760px) {
   .hero-logo { display: none; }
