@@ -340,3 +340,9 @@ footer { background: var(--graphite); color: var(--cream); }
   .hero-logo { display: none; }
   .hero h1 { font-size: clamp(2.8rem, 15vw, 4.6rem); }
 }
+
+/* Mobile pass: on narrow phones the song gets the full width, service links sit under it. */
+@media (max-width: 420px) {
+  .song-list li { flex-direction: column; align-items: flex-start; gap: 8px; padding: 12px 0; }
+  .song-list .service-links a { min-width: 40px; height: 32px; }
+}

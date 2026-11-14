@@ -195,7 +195,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
       </header>
 
       <section className="hero" id="top">
-        <p className="eyebrow">Музыкальная машина времени · 1970 — {today.slice(0, 4)}</p>
+        <p className="eyebrow">Музыкальная машина времени · <span className="nowrap">1970 — {today.slice(0, 4)}</span></p>
         <img className="hero-logo" src="brand/logo-cream.webp" alt="" aria-hidden="true" />
         <h1>Под какую <mark>песню</mark> ты&nbsp;родился?</h1>
         <p className="lede">Выбери дату — найдём песню из хит-парадов и музыкальных архивов того времени и покажем, насколько точно удалось попасть в твой день.</p>
