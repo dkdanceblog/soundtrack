@@ -114,7 +114,7 @@ test("legacy chart aliases do not split one recording into multiple artists", ()
   const wideRiverArtists = new Set<string>();
   for (let active = new Date(Date.UTC(2004, 0, 1, 12)); active.getUTCFullYear() === 2004; active.setUTCDate(active.getUTCDate() + 1)) {
     const hit = getBirthdayHit(active.toISOString().slice(0, 10))!;
-    if (canonical(hit.title) === "широка река") wideRiverArtists.add(hit.artist);
+    for (const entry of [hit, ...hit.alternatives]) if (canonical(entry.title) === "широка река") wideRiverArtists.add(entry.artist);
   }
   assert.deepEqual([...wideRiverArtists], ["Надежда Кадышева и Антон Зацепин"]);
 });
@@ -456,7 +456,8 @@ test("2018 listener enrichment stays inside observed weeks and preserves complet
   assert.equal(verifiedStreamingWeek2018("2018-09-07", "2026-10-01"), null);
   assert.equal(getBirthdayHit("2018-09-07")!.precision, "Месяц");
   assert.equal(getBirthdayHit("2018-01-01")!.mode, "стриминговый чарт");
-  assert.equal(getBirthdayHit("2018-07-02")!.mode, "мультичарт", "complete existing pool stays unchanged");
+  // BETA91: a dated weekly streaming chart outranks the weekly Shazam pool.
+  assert.equal(getBirthdayHit("2018-07-02")!.mode, "стриминговый чарт", "streaming first");
 });
 
 
@@ -566,14 +567,26 @@ test("listen links open the exact Yandex Music track when the chart archive name
   assert.match(listenLinks("Неизвестный артист", "Песня")[0].url, /music\.yandex\.ru\/search\?text=/);
 });
 
-test("October 2026 uses the latest dated radio issues instead of a year-level fallback", () => {
-  for (const date of ["2026-10-05", "2026-10-19", "2026-10-26"]) {
-    const hit = getBirthdayHit(date, "2026-10-26")!;
+test("October–November 2026 use weekly streaming charts, radio only without a streaming week", () => {
+  for (const date of ["2026-10-12", "2026-10-19", "2026-10-26", "2026-11-02", "2026-11-09", "2026-11-14"]) {
+    const hit = getBirthdayHit(date, "2026-11-14")!;
+    assert.equal(hit.mode, "стриминговый чарт", date);
     assert.equal(hit.precision, "Неделя", date);
     assert.ok(hit.distanceDays <= 6, date);
-    assert.match(hit.sourceId, /^gramophone-weekly-2026-10-/, date);
   }
+  // No streaming table within six days (the week-41 issue has no Apple Music table): month level.
+  assert.equal(getBirthdayHit("2026-10-05", "2026-11-14")!.precision, "Месяц");
   assert.equal(getBirthdayHit("2026-08-15", "2026-10-26")!.mode, "стриминговый чарт");
+});
+
+test("from 2011 the main song follows listener signals before radio; it is the week's leader, not a rotation", () => {
+  // 2016-10-03: Баста «Выпускной (Медлячок)» leads the pool (Shazam #33, #1 on two radio charts).
+  const week = ["2016-10-03", "2016-10-04", "2016-10-05", "2016-10-06"].map((date) => getBirthdayHit(date, "2026-11-14")!);
+  assert.ok(week.every((hit) => hit.title === "Выпускной (Медлячок)"));
+  // 2012-10-06: Нюша «Воспоминание» — #2 in 2М / Lenta.ru digital sales, the best sales rank of the pool.
+  const sales = getBirthdayHit("2012-10-06", "2026-11-14")!;
+  assert.equal(sales.title, "Воспоминание");
+  assert.equal(sales.chartMetric, "ПОЗИЦИЯ В ЦИФРОВЫХ ПРОДАЖАХ");
 });
 
 // BETA82 data pass.

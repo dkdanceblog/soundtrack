@@ -194,8 +194,8 @@ function enrichWithDigitalSales(dataset: readonly PilotWeek[], issues: readonly 
   });
 }
 
-const ENRICHED_LEGACY_MULTICHART = enrichWithDigitalSales(LEGACY_MULTICHART, DIGITAL_SALES_ISSUES_2010_2012);
-const CULTURALLY_CALIBRATED_MODERN_MULTICHART = calibrateModernCharts(MODERN_MULTICHART);
+export const ENRICHED_LEGACY_MULTICHART = enrichWithDigitalSales(LEGACY_MULTICHART, DIGITAL_SALES_ISSUES_2010_2012);
+export const CULTURALLY_CALIBRATED_MODERN_MULTICHART = calibrateModernCharts(MODERN_MULTICHART);
 
 function displayDate(value: string) {
   const [year, month, day] = value.split("-").map(Number);
@@ -221,6 +221,16 @@ function proximityText(distanceDays: number, chartBeforeBirthday: boolean) {
   return chartBeforeBirthday
     ? `Выпуск чарта вышел за ${distanceDays} ${daysWord(distanceDays)} до даты рождения`
     : `Выпуск чарта вышел через ${distanceDays} ${daysWord(distanceDays)} после даты рождения`;
+}
+
+// A ranked chart gives its #1; only unranked lists (a broadcast's running order) rotate.
+function topRankedIndex(candidates: readonly { rank?: number | null }[]): number | null {
+  let best: number | null = null;
+  candidates.forEach((candidate, index) => {
+    if (typeof candidate.rank !== "number") return;
+    if (best === null || candidate.rank < (candidates[best].rank as number)) best = index;
+  });
+  return best;
 }
 
 function stableIndex(date: string, length: number, anchorDate: string) {
@@ -253,6 +263,32 @@ function normalizeMultichartIdentity(candidate: PilotCandidate, year: number): P
   return candidate;
 }
 
+// Accuracy over variety: the main song is the leader of the week, never a rotation.
+// From 2011 listener signals outrank radio airplay: weekly Shazam position, then weekly
+// digital sales (2М / Lenta.ru), then the best weekly radio position. Before 2011 the
+// combined weekly score (radio hit-parades) decides. Annual summaries never decide.
+const LISTENER_ERA_FROM = 2011;
+const ANNUAL_LABEL = /по итогам|за \d{4} год|трек года|один из главных/i;
+function weeklyRank(candidate: PilotCandidate, kinds: readonly string[]) {
+  const ranks = candidate.sources
+    .filter((source) => kinds.includes(source.kind) && typeof source.rank === "number" && !ANNUAL_LABEL.test(source.label))
+    .map((source) => source.rank as number);
+  return ranks.length ? Math.min(...ranks) : Number.POSITIVE_INFINITY;
+}
+function leadingCandidateIndex(candidates: readonly PilotCandidate[], year: number) {
+  if (year < LISTENER_ERA_FROM || candidates.length < 2) return 0;
+  const tiers = [["Shazam"], ["цифровые продажи"], ["радио"]] as const;
+  for (const kinds of tiers) {
+    let best = -1; let bestRank = Number.POSITIVE_INFINITY;
+    candidates.forEach((candidate, index) => {
+      const rank = weeklyRank(candidate, kinds);
+      if (rank < bestRank) { best = index; bestRank = rank; }
+    });
+    if (best >= 0) return best;
+  }
+  return 0;
+}
+
 function multichartHit(date: string, birthdayValue: number, dataset: readonly PilotWeek[], annualFallback = false, candidateLimit = 3): BirthdayHit | null {
   const requestedYear = date.slice(0, 4);
   const eligibleWeeks = dataset.filter((week) => week.chartDate.startsWith(`${requestedYear}-`));
@@ -278,7 +314,7 @@ function multichartHit(date: string, birthdayValue: number, dataset: readonly Pi
     .slice(0, candidateLimit);
   if ((!annualFallback && distanceDays > WEEK_DISTANCE_DAYS) || eligibleCandidates.length === 0) return null;
 
-  const selectedIndex = stableIndex(date, eligibleCandidates.length, closest.chartDate);
+  const selectedIndex = leadingCandidateIndex(eligibleCandidates, Number(requestedYear));
   const selected = eligibleCandidates[selectedIndex];
   const primary = selected.sources.find((source) => source.kind === "цифровые продажи")
     ?? selected.sources.find((source) => source.kind === "Shazam")
@@ -437,7 +473,7 @@ function historicalHit(date: string, birthdayValue: number): BirthdayHit | null 
 
   if (!monthChart && (closest.chartMonth ?? closest.chartDate.slice(0, 7)) !== requestedMonth) return null;
   const selectionAnchor = monthChart ? `${monthChart.chartMonth}-15` : closest.chartDate;
-  const selectedIndex = stableIndex(date, closest.candidates.length, selectionAnchor);
+  const selectedIndex = topRankedIndex(closest.candidates) ?? stableIndex(date, closest.candidates.length, selectionAnchor);
   const selected = closest.candidates[selectedIndex];
   const [year, month] = date.split("-").map(Number);
   const sourceId = `ZD-MK-${closest.chartDate}-${selected.rank}`;
@@ -758,6 +794,9 @@ function resolveBirthdayHit(date: string, today = todayUtc()): BirthdayHit | nul
     if (result) return result;
   }
   if (requestedYear >= 2018 && requestedYear <= 2025) {
+    // Streaming first: a dated weekly streaming chart outranks a weekly Shazam position.
+    const weeklyStreaming = verifiedStreamingWeek2018(date, today);
+    if (weeklyStreaming) return weeklyStreaming;
     const result = multichartHit(date, birthdayValue, CULTURALLY_CALIBRATED_MODERN_MULTICHART, false, 5);
     if (!result || result.alternatives.length < 2) {
       const verified = verifiedStreamingWeek2018(date, today) ?? verifiedStreamingWeek2018(date, today, true) ?? streamingMay2020(date, today);

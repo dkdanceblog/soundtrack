@@ -1310,5 +1310,475 @@ export const EXPANDED_2026: readonly StreamingSnapshot[] = [
         "yandex": 20
       }
     ]
+  },
+  {
+    "date": "2026-10-12",
+    "url": "https://www.intermedia.ru/news/407436",
+    "tracks": [
+      {
+        "artist": "By Индия, Xcho, Mот",
+        "title": "Шадэ",
+        "apple": 1,
+        "yandex": 6,
+        "vk": 16
+      },
+      {
+        "artist": "Villian, madk1d",
+        "title": "Династия",
+        "apple": 2,
+        "yandex": 1
+      },
+      {
+        "artist": "Enzro",
+        "title": "Ты не бойся ночи",
+        "apple": 3,
+        "yandex": 7,
+        "vk": 3
+      },
+      {
+        "artist": "Imael Angel",
+        "title": "Bad Times",
+        "apple": 4,
+        "yandex": 18
+      },
+      {
+        "artist": "Voskresenskii",
+        "title": "Франсе",
+        "apple": 5,
+        "yandex": 4
+      },
+      {
+        "artist": "Toxi$, Дора",
+        "title": "Знак",
+        "apple": 6,
+        "yandex": 2,
+        "vk": 5
+      },
+      {
+        "artist": "Bearwolf",
+        "title": "Феникс",
+        "apple": 8,
+        "yandex": 13,
+        "vk": 14
+      },
+      {
+        "artist": "Zivert",
+        "title": "Gaz",
+        "apple": 9,
+        "yandex": 11,
+        "vk": 13
+      },
+      {
+        "artist": "Imael Angel",
+        "title": "Bad Times (Extended Version)",
+        "apple": 12,
+        "yandex": 18
+      },
+      {
+        "artist": "Баста, Моя Мишель",
+        "title": "Если я буду танцевать",
+        "apple": 13,
+        "yandex": 12,
+        "vk": 18
+      },
+      {
+        "artist": "Урал Гайсин, Снялцепи",
+        "title": "Ты в моих мыслях навсегда",
+        "apple": 16,
+        "yandex": 3,
+        "vk": 7
+      },
+      {
+        "artist": "Mia Boyka",
+        "title": "Экспонат",
+        "apple": 17,
+        "yandex": 8,
+        "vk": 20
+      },
+      {
+        "artist": "Sayan",
+        "title": "Мальборо",
+        "apple": 19,
+        "yandex": 19,
+        "vk": 17
+      },
+      {
+        "artist": "Kai Angel",
+        "title": "Andy warhol",
+        "apple": 20,
+        "yandex": 5
+      }
+    ]
+  },
+  {
+    "date": "2026-10-19",
+    "url": "https://www.intermedia.ru/news/407599",
+    "tracks": [
+      {
+        "artist": "Villian, madk1d",
+        "title": "Династия",
+        "apple": 1,
+        "yandex": 1
+      },
+      {
+        "artist": "Татьяна Буланова",
+        "title": "Ледяное сердце",
+        "apple": 2,
+        "vk": 7
+      },
+      {
+        "artist": "By Индия, Xcho, Mот",
+        "title": "Шадэ",
+        "apple": 3,
+        "yandex": 5,
+        "vk": 14
+      },
+      {
+        "artist": "Imael Angel",
+        "title": "Bad Times",
+        "apple": 4,
+        "yandex": 18
+      },
+      {
+        "artist": "Enzro",
+        "title": "Ты не бойся ночи",
+        "apple": 5,
+        "yandex": 8,
+        "vk": 3
+      },
+      {
+        "artist": "Toxi$, Дора",
+        "title": "Знак",
+        "apple": 6,
+        "yandex": 2,
+        "vk": 2
+      },
+      {
+        "artist": "Bearwolf",
+        "title": "Феникс",
+        "apple": 7,
+        "yandex": 14,
+        "vk": 10
+      },
+      {
+        "artist": "Zivert",
+        "title": "Gaz",
+        "apple": 9,
+        "yandex": 13,
+        "vk": 9
+      },
+      {
+        "artist": "Voskresenskii",
+        "title": "Франсе",
+        "apple": 10,
+        "yandex": 10
+      },
+      {
+        "artist": "Koss, Плутто",
+        "title": "Земляк",
+        "apple": 11,
+        "yandex": 3,
+        "vk": 1
+      },
+      {
+        "artist": "Kai Angel",
+        "title": "Andy Warhol",
+        "apple": 15,
+        "yandex": 4
+      },
+      {
+        "artist": "madk1d",
+        "title": "так по***",
+        "apple": 16,
+        "yandex": 16
+      },
+      {
+        "artist": "Баста, Моя Мишель",
+        "title": "Если я буду танцевать",
+        "apple": 17,
+        "yandex": 15,
+        "vk": 17
+      },
+      {
+        "artist": "Imael Angel",
+        "title": "Bad Times (Extended Version)",
+        "apple": 19,
+        "yandex": 18
+      }
+    ]
+  },
+  {
+    "date": "2026-10-26",
+    "url": "https://www.intermedia.ru/news/407760",
+    "tracks": [
+      {
+        "artist": "Villian, madk1d",
+        "title": "Династия",
+        "apple": 2,
+        "yandex": 1
+      },
+      {
+        "artist": "By Индия, Xcho, Mот",
+        "title": "Шадэ",
+        "apple": 3,
+        "yandex": 7,
+        "vk": 17
+      },
+      {
+        "artist": "Татьяна Буланова",
+        "title": "Ледяное сердце",
+        "apple": 4,
+        "yandex": 6,
+        "vk": 10
+      },
+      {
+        "artist": "Imael Angel",
+        "title": "Bad Times",
+        "apple": 5,
+        "yandex": 18
+      },
+      {
+        "artist": "Enzro",
+        "title": "Ты не бойся ночи",
+        "apple": 6,
+        "yandex": 11,
+        "vk": 5
+      },
+      {
+        "artist": "Koss, Плутто",
+        "title": "Земляк",
+        "apple": 7,
+        "yandex": 2,
+        "vk": 1
+      },
+      {
+        "artist": "Bearwolf",
+        "title": "Феникс",
+        "apple": 8,
+        "yandex": 14,
+        "vk": 13
+      },
+      {
+        "artist": "Toxi$, Дора",
+        "title": "Знак",
+        "apple": 9,
+        "yandex": 3,
+        "vk": 3
+      },
+      {
+        "artist": "Zivert",
+        "title": "Gaz",
+        "apple": 11,
+        "yandex": 15,
+        "vk": 12
+      },
+      {
+        "artist": "madk1d",
+        "title": "так по***",
+        "apple": 14,
+        "yandex": 12
+      },
+      {
+        "artist": "Imael Angel",
+        "title": "Bad Times (Extended Version)",
+        "apple": 15,
+        "yandex": 18
+      },
+      {
+        "artist": "Voskresenskii",
+        "title": "Франсе",
+        "apple": 16,
+        "yandex": 16
+      },
+      {
+        "artist": "Баста, Моя Мишель",
+        "title": "Если я буду танцевать",
+        "apple": 19,
+        "yandex": 17,
+        "vk": 20
+      }
+    ]
+  },
+  {
+    "date": "2026-11-02",
+    "url": "https://www.intermedia.ru/news/407929",
+    "tracks": [
+      {
+        "artist": "Маяк Х",
+        "title": "Украсть тебя",
+        "apple": 1,
+        "vk": 5
+      },
+      {
+        "artist": "Villian, madk1d",
+        "title": "Династия",
+        "apple": 2,
+        "yandex": 1,
+        "vk": 2
+      },
+      {
+        "artist": "By Индия, Xcho, Mот",
+        "title": "Шадэ",
+        "apple": 3,
+        "yandex": 6
+      },
+      {
+        "artist": "Enzro",
+        "title": "Ты не бойся ночи",
+        "apple": 4,
+        "yandex": 10,
+        "vk": 6
+      },
+      {
+        "artist": "Татьяна Буланова",
+        "title": "Ледяное сердце",
+        "apple": 5,
+        "yandex": 4,
+        "vk": 3
+      },
+      {
+        "artist": "Koss, Плутто",
+        "title": "Земляк",
+        "apple": 6,
+        "yandex": 2,
+        "vk": 1
+      },
+      {
+        "artist": "Imael Angel",
+        "title": "Bad Times",
+        "apple": 7,
+        "yandex": 17
+      },
+      {
+        "artist": "Bearwolf",
+        "title": "Феникс",
+        "apple": 8,
+        "yandex": 13,
+        "vk": 13
+      },
+      {
+        "artist": "Toxi$, Дора",
+        "title": "Знак",
+        "apple": 9,
+        "yandex": 3,
+        "vk": 4
+      },
+      {
+        "artist": "Zivert",
+        "title": "Gaz",
+        "apple": 11,
+        "yandex": 14,
+        "vk": 16
+      },
+      {
+        "artist": "madk1d",
+        "title": "так по***",
+        "apple": 14,
+        "yandex": 15
+      },
+      {
+        "artist": "Imael Angel",
+        "title": "Bad Times (Extended Version)",
+        "apple": 16,
+        "yandex": 17
+      },
+      {
+        "artist": "Баста, Моя Мишель",
+        "title": "Если я буду танцевать",
+        "apple": 19,
+        "yandex": 19
+      }
+    ]
+  },
+  {
+    "date": "2026-11-09",
+    "url": "https://www.intermedia.ru/news/408058",
+    "tracks": [
+      {
+        "artist": "Маяк Х",
+        "title": "Украсть тебя",
+        "apple": 1,
+        "vk": 3
+      },
+      {
+        "artist": "Villian, madk1d",
+        "title": "Династия",
+        "apple": 2,
+        "yandex": 1,
+        "vk": 4
+      },
+      {
+        "artist": "By Индия, Xcho, Mот",
+        "title": "Шадэ",
+        "apple": 3,
+        "yandex": 7
+      },
+      {
+        "artist": "Koss, Плутто",
+        "title": "Земляк",
+        "apple": 4,
+        "yandex": 2,
+        "vk": 1
+      },
+      {
+        "artist": "Enzro",
+        "title": "Ты не бойся ночи",
+        "apple": 5,
+        "yandex": 9,
+        "vk": 8
+      },
+      {
+        "artist": "Bearwolf",
+        "title": "Феникс",
+        "apple": 7,
+        "yandex": 13,
+        "vk": 19
+      },
+      {
+        "artist": "Toxi$, Дора",
+        "title": "Знак",
+        "apple": 8,
+        "yandex": 3,
+        "vk": 6
+      },
+      {
+        "artist": "Татьяна Буланова",
+        "title": "Ледяное сердце",
+        "apple": 9,
+        "yandex": 4,
+        "vk": 5
+      },
+      {
+        "artist": "Zivert",
+        "title": "Gaz",
+        "apple": 11,
+        "yandex": 16
+      },
+      {
+        "artist": "madk1d",
+        "title": "так по***",
+        "apple": 13,
+        "yandex": 15
+      },
+      {
+        "artist": "Imael Angel",
+        "title": "Bad Times",
+        "apple": 15,
+        "yandex": 14
+      },
+      {
+        "artist": "Artik & Asti",
+        "title": "Лампочки",
+        "apple": 19,
+        "yandex": 17,
+        "vk": 11
+      },
+      {
+        "artist": "Баста, Моя Мишель",
+        "title": "Если я буду танцевать",
+        "apple": 20,
+        "yandex": 18
+      }
+    ]
   }
 ];
