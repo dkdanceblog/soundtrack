@@ -23,7 +23,7 @@ import { HISTORICAL_1977_1979 } from "./historical-1977-1979";
 import { HISTORICAL_BROADCASTS_1970_2003 } from "./historical-broadcasts-1986-1987";
 import { HISTORICAL_MONTHLY_CHARTS_1985_1991, HISTORICAL_MONTHLY_CHART_COUNT } from "./historical-monthly-charts-1985-1991";
 import { DIGITAL_SALES_ISSUES_2010_2012, DIGITAL_SALES_ISSUE_COUNT, type DigitalSalesIssue } from "./digital-sales-2010-2012";
-import { ITUNES_RU_2014 } from "./itunes-russia-2014";
+import { ITUNES_RU_2014, ITUNES_RU_LENTA } from "./itunes-russia-2014";
 import { calibrateModernCharts, CULTURAL_AUDIT_YEAR_COUNT, CULTURAL_SOURCE_SERIES_COUNT } from "./cultural-sources-2018-2020";
 import { HISTORICAL_ANNUAL_POOLS } from "./historical-annual-pools";
 import { krugozorAnchors } from "./krugozor-issues";
@@ -172,6 +172,7 @@ function sameRecording(left: { artist: string; title: string }, right: { artist:
 }
 
 function enrichWithDigitalSales(dataset: readonly PilotWeek[], issues: readonly DigitalSalesIssue[]): readonly PilotWeek[] {
+  const spellings = dataset.flatMap((week) => week.candidates.map(({ artist, title }) => ({ artist, title })));
   return dataset.map((week) => {
     const calendar = isoWeek(week.chartDate);
     const matchingIssues = issues.filter((issue) => issue.year === calendar.year && issue.weeks.includes(calendar.week));
@@ -186,7 +187,9 @@ function enrichWithDigitalSales(dataset: readonly PilotWeek[], issues: readonly 
       for (const salesCandidate of issue.candidates) {
         const existing = candidates.find((candidate) => sameRecording(candidate, salesCandidate));
         if (!existing) {
-          candidates.push({ ...salesCandidate, sources: [...salesCandidate.sources] });
+          // Show the store-only week under the spelling the radio charts use elsewhere.
+          const known = spellings.find((entry) => sameRecording(entry, salesCandidate));
+          candidates.push({ ...salesCandidate, ...(known ? { artist: known.artist, title: known.title } : {}), sources: [...salesCandidate.sources] });
           continue;
         }
 
@@ -206,7 +209,7 @@ function enrichWithDigitalSales(dataset: readonly PilotWeek[], issues: readonly 
   });
 }
 
-export const ENRICHED_LEGACY_MULTICHART = enrichWithDigitalSales(LEGACY_MULTICHART, [...DIGITAL_SALES_ISSUES_2010_2012, ...ITUNES_RU_2014]);
+export const ENRICHED_LEGACY_MULTICHART = enrichWithDigitalSales(LEGACY_MULTICHART, [...DIGITAL_SALES_ISSUES_2010_2012, ...ITUNES_RU_LENTA, ...ITUNES_RU_2014]);
 export const CULTURALLY_CALIBRATED_MODERN_MULTICHART = calibrateModernCharts(MODERN_MULTICHART);
 
 function displayDate(value: string) {
@@ -360,7 +363,7 @@ function multichartHit(date: string, birthdayValue: number, dataset: readonly Pi
       ? primary.url
       : primary.url.replace(/archive\/[^/]+$/, `archive/${closest.chartDate.slice(0, 4)}.htm`),
     archiveLabel: primary.kind === "цифровые продажи"
-      ? primary.url.includes("web.archive.org") ? "Открыть снимок чарта iTunes Россия" : "Открыть полный цифровой чарт 2М / Lenta.ru"
+      ? primary.url.includes("web.archive.org") ? "Открыть снимок чарта iTunes Россия" : primary.label.startsWith("iTunes") ? "Открыть выпуск чарта iTunes на Lenta.ru" : "Открыть полный цифровой чарт 2М / Lenta.ru"
       : `Все обновления чарта за ${closest.chartDate.slice(0, 4)} год`,
     mode: annualFallback ? "архив года" : "мультичарт",
     chartRank: primary.rank ?? selected.shazamRank ?? null,
@@ -442,7 +445,7 @@ function multichartAnnualHit(date: string, dataset: readonly PilotWeek[], candid
       ? primary.url
       : primary.url.replace(/archive\/[^/]+$/, `archive/${year}.htm`),
     archiveLabel: primary.kind === "цифровые продажи"
-      ? primary.url.includes("web.archive.org") ? "Открыть снимок чарта iTunes Россия" : "Открыть полный цифровой чарт 2М / Lenta.ru"
+      ? primary.url.includes("web.archive.org") ? "Открыть снимок чарта iTunes Россия" : primary.label.startsWith("iTunes") ? "Открыть выпуск чарта iTunes на Lenta.ru" : "Открыть полный цифровой чарт 2М / Lenta.ru"
       : `Все обновления чарта за ${year} год`,
     mode: "архив года",
     chartRank: primary.rank ?? selected.shazamRank ?? null,

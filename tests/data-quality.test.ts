@@ -653,3 +653,10 @@ test("2014 dates use the iTunes Russia snapshot of their week before radio", () 
   // A song seen in a single snapshot only is not used (one-off release spike).
   for (const date of ["2014-09-15", "2014-09-17", "2014-09-19"]) assert.notEqual(getBirthdayHit(date, "2026-11-14")!.title, "Не надо больнее", date);
 });
+
+test("2013 dates use the Lenta.ru weekly iTunes Russia chart before radio", () => {
+  const hit = getBirthdayHit("2013-04-25", "2026-11-14")!;
+  assert.match(hit.title, /О Боже,? [Кк]акой [Мм]ужчина/);
+  assert.equal(hit.chartMetric, "ПОЗИЦИЯ В ЦИФРОВЫХ ПРОДАЖАХ");
+  assert.ok(hit.sources.some((source) => /lenta\.ru\/news\/2013\/04\/29\/itunes/.test(source.url)));
+});
