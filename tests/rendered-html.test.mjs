@@ -334,11 +334,12 @@ test("2025/2026 API and shared HTML expose streaming evidence without invented w
   assert.match(html, /music\.yandex\.ru\/search/);
   assert.match(html, /og:title" content="«/);
   assert.doesNotMatch(html, /og:image/);
-  assert.match(html, /СЛУШАТЕЛЬСКИЕ ЧАРТЫ 2026/);
+  // The corner stamp was removed in the text pass; the evidence label carries the snapshot date.
+  assert.match(html, /снимок 08\.09\.2026/);
   const december = await worker.fetch(new Request("http://localhost/?date=2025-12-31"), env, ctx);
   const decemberHtml = await december.text();
-  assert.match(decemberHtml, /СЛУШАТЕЛЬСКИЕ ЧАРТЫ 2025/);
-  assert.doesNotMatch(decemberHtml, /СЛУШАТЕЛЬСКИЕ ЧАРТЫ 2026/);
+  assert.match(decemberHtml, /снимок \d\d\.12\.2025/);
+  assert.doesNotMatch(decemberHtml, /снимок \d\d\.\d\d\.2026/);
 });
 
 test("new historical API keeps publication year, poll month and radio limits visible", async () => {

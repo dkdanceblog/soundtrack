@@ -25,5 +25,5 @@ async function start() {
 }
 
 start().catch(() => {
-  document.getElementById("root")!.innerHTML = "<p style=\"padding:40px;font:700 18px Arial,sans-serif\">Не удалось загрузить данные. Обнови страницу.</p>";
+  document.getElementById("root")!.innerHTML = "<p style=\"padding:40px;font:700 18px Arial,sans-serif\">Чёт не то. Обнови страницу.</p>";
 });

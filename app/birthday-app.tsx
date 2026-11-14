@@ -43,24 +43,6 @@ function detailLabel(hit: BirthdayHit) {
   return hit.precision;
 }
 
-function archiveStamp(hit: BirthdayHit) {
-  switch (hit.mode) {
-    case "стриминговый чарт": return `СЛУШАТЕЛЬСКИЕ ЧАРТЫ ${hit.year}`;
-    case "мультичарт": return "МУЛЬТИЧАРТ 2004—2025";
-    case "недельный чарт": return "НЕДЕЛЬНЫЙ ХИТ-ПАРАД";
-    case "исторический чарт": return "АРХИВ ЗД / МК";
-    case "архив года": return "АРХИВ ГОДА";
-    case "архивный эфир": return "ТВ-АРХИВ";
-    case "датированный релиз": return "КУЛЬТУРНЫЙ РЕЛИЗ";
-    case "месячный релиз": return "МЕСЯЧНАЯ ПУБЛИКАЦИЯ";
-    case "месячный чарт": return "МЕСЯЧНЫЙ ХИТ-ПАРАД";
-    case "телепремьера": return "ТЕЛЕПРЕМЬЕРА";
-    case "датированный фестиваль": return "ДАТИРОВАННЫЙ ФЕСТИВАЛЬ";
-    case "датированный концерт": return "КОНЦЕРТНЫЙ АРХИВ";
-    default: return "РАДИОАРХИВ";
-  }
-}
-
 export default function BirthdayApp({ initialHit, initialDate, initialToday, weekCount, monthlyCount, initialLife, maxDate }: { initialHit: BirthdayHit | null; initialDate: string; initialToday: string; weekCount: number; monthlyCount: number; initialLife: LifeEntry[]; maxDate?: string }) {
   const [date, setDate] = useState(initialDate);
   const [submittedDate, setSubmittedDate] = useState(initialDate);
@@ -121,7 +103,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
       try { window.history.replaceState({}, "", `?date=${selectedDate}`); } catch { /* sandboxed preview */ }
       requestAnimationFrame(() => document.getElementById("result")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "start" }));
     } catch {
-      if (activeRequest.current === controller) setError("Не удалось загрузить песню. Проверь соединение и попробуй ещё раз — предыдущий результат сохранён.");
+      if (activeRequest.current === controller) setError("Не удалось загрузить песню. Проверь интернет и попробуй ещё раз, предыдущий результат сохранён.");
     } finally {
       window.clearTimeout(timeout);
       if (activeRequest.current === controller) { setLoading(false); activeRequest.current = null; }
@@ -195,10 +177,10 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
       </header>
 
       <section className="hero" id="top">
-        <p className="eyebrow">Музыкальная машина времени · <span className="nowrap">1970 — {today.slice(0, 4)}</span></p>
+        <p className="eyebrow">Саундтрек твоего дня рождения · <span className="nowrap">1970 — {today.slice(0, 4)}</span></p>
         <img className="hero-logo" src="brand/logo-cream.webp" alt="" aria-hidden="true" />
         <h1>Под какую <mark>песню</mark> ты&nbsp;родился?</h1>
-        <p className="lede">Выбери дату — найдём песню из хит-парадов и музыкальных архивов того времени и покажем, насколько точно удалось попасть в твой день.</p>
+        <p className="lede">Выбери дату и мы найдём песню, которая была на пике популярности и чартов в твой день рождения.</p>
 
         <form className="date-form" onSubmit={handleSubmit}>
           <label htmlFor="birthdate">Дата рождения</label>
@@ -222,7 +204,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
       <section className="result-wrap" id="result" aria-live="polite" aria-busy={loading}>
         {hit ? (
           <article className="result-card is-entering" key={submittedDate}>
-            <div className="result-meta"><p>Твой саундтрек дня рождения</p><span>{formatDate(submittedDate)}</span></div>
+            <div className="result-meta"><p>Саундтрек твоего дня рождения</p><span>{formatDate(submittedDate)}</span></div>
             <div className="carrier-stage">
               <RecordObject title={hit.title} artist={hit.artist} year={hit.year} date={formatDate(submittedDate)} />
             </div>
@@ -241,7 +223,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
                 </div>
                 <div className="actions-row">
                   <button className="btn-quiet" type="button" onClick={copyResult}>{copied ? "Ссылка скопирована ✓" : "Поделиться"}</button>
-                  <button className="btn-quiet btn-story" type="button" onClick={makeCard} disabled={cardBusy}>{cardBusy ? "Рисуем…" : "Карточка для сторис"}</button>
+                  <button className="btn-quiet btn-story" type="button" onClick={makeCard} disabled={cardBusy}>{cardBusy ? "Делаем карточку…" : "Карточка для сторис"}</button>
                 </div>
               </div>
               {copyFallback && <div className="copy-fallback"><p>Не удалось скопировать автоматически. Выдели текст:</p><textarea aria-label="Результат для копирования" rows={4} readOnly value={copyFallback} onFocus={(event) => event.target.select()} /></div>}
@@ -290,8 +272,8 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
                     <div className="chart-note"><span>{hit.chartRank ? `#${hit.chartRank}` : "✓"}</span><p>{hit.chartMetric}<br /><b>{hit.period}</b></p></div>
                     <div className={`precision precision-${hit.precision.toLowerCase()}`}><span>{detailLabel(hit)}</span><p>{hit.proximity}</p></div>
                   </div>
-                  {popularity && <div className={`confidence confidence-${popularity.level}`}><p className="confidence-caption">ЧТО ИЗВЕСТНО О ПОПУЛЯРНОСТИ</p><strong>{popularity.level === "review" && !era ? "Подтверждено архивом" : popularity.label}</strong><p>{popularity.detail}</p></div>}
-                  <p>{hit.method}{/[.!?]$/.test(hit.method) ? "" : "."}{hit.mode === "мультичарт" ? " Радиостанции учитываются вместе как одна среда; недельный и годовой Shazam также не дублируют друг друга." : ""}</p>
+                  {popularity && <div className={`confidence confidence-${popularity.level}`}><p className="confidence-caption">ЧТО ИЗВЕСТНО О ПОПУЛЯРНОСТИ</p><strong>{popularity.level === "review" && !era ? "Подтверждено архивом" : popularity.label}</strong>{popularity.detail && <p>{popularity.detail}</p>}</div>}
+                  <p>{hit.method}{/[.!?]$/.test(hit.method) ? "" : "."}</p>
                   <p className="sources-caption">Источники ({hit.sources.length + 1})</p>
                   <div className="source-list">
                     {hit.sources.map((source) => (
@@ -306,7 +288,6 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
                 </div>
               </details>
             </div>
-            <p className="demo-stamp">{archiveStamp(hit)}</p>
           </article>
         ) : (
           <article className="empty-card">
@@ -323,13 +304,13 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
         <dl className="how-levels">
           <div><dt><span className="lvl lvl-week">Неделя</span></dt><dd>Песня стояла в хит-параде, вышедшем в пределах недели от твоей даты.</dd></div>
           <div><dt><span className="lvl lvl-month">Месяц</span></dt><dd>Источник того же месяца: чарт месяца, журнал, эфир или концерт.</dd></div>
-          <div><dt><span className="lvl lvl-year">Год</span></dt><dd>Точнее найти не удалось — песня из проверенного архива года.</dd></div>
+          <div><dt><span className="lvl lvl-year">Год</span></dt><dd>Точнее найти не удалось, просто песня из проверенного архива года.</dd></div>
         </dl>
-        <p className="how-note">Под каждой песней есть источники: можно открыть выпуск чарта или журнала и проверить самому. Радио, продажи, прослушивания и голосования читателей говорят о разном, и мы это не смешиваем.</p>
+        <p className="how-note">Под каждой песней есть источники: можно открыть выпуск чарта или журнала и проверить самому.</p>
         <p className="how-facts"><b>{weekCount.toLocaleString("ru-RU")}</b> недель чартов · <b>{monthlyCount}</b> месячных хит-парадов 1985–1991 · архив с 1970 года</p>
       </section>
 
-      <footer><p>Идея и редакция — ДК ДАНС</p><a href="#top">Ввести другую дату ↑</a></footer>
+      <footer><p>Сервис придумал ДК ДАНС</p><a href="#top">Ввести другую дату ↑</a></footer>
     </main>
   );
 }

@@ -4,7 +4,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Саундтрек твоего рождения",
-  description: "Найди песню для своей даты рождения — с источниками, точностью времени и объяснением выбора.",
+  description: "Узнай, какая песня была популярна в твой день рождения.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

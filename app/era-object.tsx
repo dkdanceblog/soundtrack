@@ -8,7 +8,7 @@ export function RecordObject({ title, artist, year, date }: Props) {
     <div className="carrier" aria-hidden="true">
       <div className="lp-disc"><div className="lp-label"><img src="brand/ring-cream.webp" alt="" /></div></div>
       <div className="lp-sleeve">
-        <p className="lp-top"><span>ДК ДАНС</span><span>саундтрек рождения</span></p>
+        <p className="lp-top"><span>ДК ДАНС</span><span>саундтрек дня рождения</span></p>
         <p className="lp-date"><b>{day}.{month}</b><b>{year}</b></p>
         <div className="lp-ring" />
         <p className="lp-title">{title}</p>
