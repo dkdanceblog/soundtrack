@@ -643,3 +643,13 @@ test("the main song is the top position of the nearest ranked chart", () => {
   assert.ok(sept99.alternatives.some((alternative) => alternative.title === "Ю"));
   assert.equal(getBirthdayHit("1980-05-10")!.chartRank, 1);
 });
+
+// BETA92: iTunes Russia 2014 weekly snapshots (Wayback Machine) as digital sales evidence.
+test("2014 dates use the iTunes Russia snapshot of their week before radio", () => {
+  const hit = getBirthdayHit("2014-07-20", "2026-11-14")!;
+  assert.equal(hit.title, "Улыбайся");
+  assert.equal(hit.chartMetric, "ПОЗИЦИЯ В ЦИФРОВЫХ ПРОДАЖАХ");
+  assert.match(hit.sourceUrl, /web\.archive\.org\/web\/20140716/);
+  // A song seen in a single snapshot only is not used (one-off release spike).
+  for (const date of ["2014-09-15", "2014-09-17", "2014-09-19"]) assert.notEqual(getBirthdayHit(date, "2026-11-14")!.title, "Не надо больнее", date);
+});
