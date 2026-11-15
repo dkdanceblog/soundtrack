@@ -123,7 +123,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
 
   function shareText() {
     if (!hit) return "";
-    return `Моя песня дня рождения (${formatDate(submittedDate)}): «${hit.title}» — ${hit.artist}. А какая у тебя?`;
+    return `В день моего рождения, ${formatDate(submittedDate)}, ${leadVerb(hit)} «${hit.title}» — ${hit.artist}. А какая у тебя?`;
   }
 
   async function copyResult() {
