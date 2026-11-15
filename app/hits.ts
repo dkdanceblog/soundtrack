@@ -819,7 +819,14 @@ function resolveBirthdayHit(date: string, today = todayUtc()): BirthdayHit | nul
     const result = multichartHit(date, birthdayValue, CULTURALLY_CALIBRATED_MODERN_MULTICHART, false, 5);
     if (!result || result.alternatives.length < 2) {
       const verified = verifiedStreamingWeek2018(date, today) ?? verifiedStreamingWeek2018(date, today, true) ?? streamingMay2020(date, today);
-      if (verified) return verified;
+      // Accuracy: a month-level streaming observation does not replace a dated weekly Shazam
+      // chart; it only adds its songs as alternatives.
+      if (verified && (!result || verified.precision === "Неделя")) return verified;
+      if (verified && result) {
+        const taken = new Set([result, ...result.alternatives].map((entry) => canonical(entry.title)));
+        const extra = [verified, ...verified.alternatives].filter((entry) => !taken.has(canonical(entry.title))).map(({ artist, title }) => ({ artist, title }));
+        return { ...result, alternatives: [...result.alternatives, ...extra].slice(0, 4) };
+      }
     }
     if (result) return result;
   }

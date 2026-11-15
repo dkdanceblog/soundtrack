@@ -381,10 +381,10 @@ test("production exposes month-only gap evidence and coherent May 2020 weeks", a
     const response = await worker.fetch(new Request(`http://localhost/api/hit?date=${date}`), env, ctx);
     assert.equal(response.status, 200);
     const { hit } = await response.json();
-    assert.equal(hit.alternatives.length, 2);
-    assert.equal(hit.mode, "стриминговый чарт");
-    assert.equal(hit.precision, ["2020-05-04", "2020-05-17"].includes(date) ? "Неделя" : "Месяц");
-    if (hit.precision === "Месяц") assert.equal(hit.evidenceMonth, date.slice(0,7));
+    // BETA96: a dated weekly Shazam chart outranks a month-level streaming observation.
+    assert.equal(hit.precision, "Неделя", date);
+    assert.equal(hit.mode, ["2020-05-04", "2020-05-17"].includes(date) ? "стриминговый чарт" : "мультичарт", date);
+    assert.ok(hit.alternatives.length >= 1, date);
     assert.doesNotMatch(JSON.stringify(hit.sources), /151804030491438/);
   }
 });

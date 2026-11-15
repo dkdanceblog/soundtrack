@@ -422,10 +422,12 @@ test("May 2020 keeps coherent source intervals and excludes the contradictory ne
   for (let day=1; day<=31; day++) {
     const date=`2020-05-${String(day).padStart(2,"0")}`;
     const hit=getBirthdayHit(date)!;
+    // BETA96: outside the streaming weeks a dated weekly Shazam chart wins over the May
+    // month observation; the streaming songs stay as alternatives.
+    if (!(day>=4 && day<=17)) { assert.equal(hit.precision,"Неделя", date); assert.equal(hit.mode,"мультичарт", date); continue; }
     assert.equal(hit.alternatives.length, 2, date);
     assert.equal(publicPlatforms(hit.sources).size, 2);
-    if(day>=4 && day<=17) assert.equal(hit.precision,"Неделя");
-    else { assert.equal(hit.precision,"Месяц"); assert.equal(hit.evidenceMonth,"2020-05"); }
+    assert.equal(hit.precision,"Неделя");
     assert.ok(hit.sources.every(source=>!source.url.includes("151804030491438")));
     assert.match(hit.method,/Перепубликация не считается независимым измерением/);
     const repeat=hit.sources.find(source=>source.id.startsWith("repeat-snapshot-"))!;
