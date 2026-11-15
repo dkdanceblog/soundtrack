@@ -371,3 +371,8 @@ footer { background: var(--graphite); color: var(--cream); }
 .how-sources b { font: 700 14px/1.3 var(--mono); }
 .how-levels { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
 @media (max-width: 640px) { .how-sources li { grid-template-columns: 1fr; gap: 4px; } .how-levels { grid-template-columns: 1fr !important; } }
+/* Tighter seam between «Саундтрек жизни» and «Как мы выбираем песню». */
+.result-wrap { padding-bottom: clamp(16px, 2vw, 24px); }
+.how { padding-top: clamp(28px, 4vw, 48px); }
+.life-note { margin: 16px 0 0; }
+.life-actions .share-button { font-size: 17px; padding: 10px 16px 8px; letter-spacing: .02em; }
