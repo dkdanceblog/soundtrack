@@ -20,7 +20,7 @@ async function start() {
   }
   createRoot(document.getElementById("root")!).render(
     <BirthdayApp initialHit={hit} initialDate={date} initialToday={meta.snapshot} maxDate={meta.snapshot}
-      weekCount={meta.weekCount} monthlyCount={meta.monthlyCount} initialLife={life} />,
+      weekCount={meta.weekCount} monthlyCount={meta.monthlyCount} songCount={meta.songCount} initialLife={life} />,
   );
 }
 

@@ -12,6 +12,8 @@ mkdirSync(out, { recursive: true });
 const DAY = 86400000;
 const years = new Map<number, { sources: string[]; sourceIndex: Map<string, number>; strings: string[]; stringIndex: Map<string, number>; days: Record<string, unknown> }>();
 const life: Record<string, [string, string, string, string]> = {};
+const songs = new Set<string>();
+const songKey = (entry: { artist: string; title: string }) => `${entry.artist}|${entry.title}`.toLocaleLowerCase("ru-RU").replace(/ё/g, "е").replace(/[^a-zа-я0-9|]+/g, "");
 const intern = (list: string[], index: Map<string, number>, value: string) => {
   let i = index.get(value);
   if (i === undefined) { i = list.length; list.push(value); index.set(value, i); }
@@ -33,6 +35,7 @@ for (let t = Date.parse(`${FIRST_SUPPORTED_DATE}T12:00:00Z`); t <= Date.parse(`$
     s: sources.map((source) => intern(bucket.sources, bucket.sourceIndex, JSON.stringify(source))),
   };
   life[date] = [hit.title, hit.artist, hit.precision, hit.color];
+  for (const entry of [hit, ...hit.alternatives, ...(hit.yearContext ?? [])]) songs.add(songKey(entry));
 }
 
 let bytes = 0;
@@ -43,5 +46,5 @@ for (const [year, bucket] of years) {
 }
 const lifeBody = JSON.stringify(life);
 writeFileSync(`${out}life.json`, lifeBody);
-writeFileSync(`${out}meta.json`, JSON.stringify({ snapshot, weekCount: MULTICHART_WEEK_COUNT, monthlyCount: HISTORICAL_MONTHLY_CHART_COUNT }));
+writeFileSync(`${out}meta.json`, JSON.stringify({ snapshot, weekCount: MULTICHART_WEEK_COUNT, monthlyCount: HISTORICAL_MONTHLY_CHART_COUNT, songCount: songs.size }));
 console.log(`snapshot ${snapshot}: ${years.size} year files, ${(bytes / 1e6).toFixed(1)} MB, life ${(lifeBody.length / 1e6).toFixed(1)} MB`);

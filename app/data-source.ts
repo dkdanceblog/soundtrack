@@ -7,7 +7,7 @@ const env = (import.meta as unknown as { env?: Record<string, string | undefined
 export const STATIC_MODE = env.VITE_STATIC === "1";
 
 type YearFile = { sources: HitSource[]; strings: string[]; days: Record<string, Omit<BirthdayHit, "sources" | "method" | "proximity"> & { m: number; p: number; s: number[] }> };
-export type StaticMeta = { snapshot: string; weekCount: number; monthlyCount: number };
+export type StaticMeta = { snapshot: string; weekCount: number; monthlyCount: number; songCount?: number };
 
 const cache = new Map<string, Promise<unknown>>();
 function json<T>(path: string, signal?: AbortSignal): Promise<T> {

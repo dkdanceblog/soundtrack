@@ -50,7 +50,7 @@ function detailLabel(hit: BirthdayHit) {
   return hit.precision;
 }
 
-export default function BirthdayApp({ initialHit, initialDate, initialToday, weekCount, monthlyCount, initialLife, maxDate }: { initialHit: BirthdayHit | null; initialDate: string; initialToday: string; weekCount: number; monthlyCount: number; initialLife: LifeEntry[]; maxDate?: string }) {
+export default function BirthdayApp({ initialHit, initialDate, initialToday, weekCount, monthlyCount, initialLife, maxDate, songCount }: { initialHit: BirthdayHit | null; initialDate: string; initialToday: string; weekCount: number; monthlyCount: number; initialLife: LifeEntry[]; maxDate?: string; songCount?: number }) {
   const [date, setDate] = useState(initialDate);
   const [submittedDate, setSubmittedDate] = useState(initialDate);
   const [hit, setHit] = useState(initialHit);
@@ -197,6 +197,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
             <button type="submit" disabled={loading}>{loading ? "Ищем песню…" : "Узнать песню"}</button>
           </div>
           <p className="form-hint">Можно ввести не только день рождения: выпускной, свадьбу, первое свидание.</p>
+          {loading && <div className="dk-says dk-loading" role="status"><img src="brand/sticker-dark.webp" alt="" aria-hidden="true" /><p>Копаюсь в архивах хит-парадов…</p></div>}
           {error && <p className="form-error" role="alert">{error}</p>}
         </form>
 
@@ -233,6 +234,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
                   <button className="btn-quiet btn-story" type="button" onClick={makeCard} disabled={cardBusy}>{cardBusy ? "Делаем карточку…" : "Карточка для сторис"}</button>
                 </div>
               </div>
+              <a className="dk-says dk-tg" href={TELEGRAM_URL} target="_blank" rel="noreferrer"><img src="brand/sticker-rose.webp" alt="" aria-hidden="true" /><p>Больше музыкальных историй — у меня в Telegram ↗</p></a>
               {copyFallback && <div className="copy-fallback"><p>Не удалось скопировать автоматически. Выдели текст:</p><textarea aria-label="Результат для копирования" rows={4} readOnly value={copyFallback} onFocus={(event) => event.target.select()} /></div>}
 
               {cardUrl && (
@@ -309,16 +311,26 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
 
       <section className="how" id="how">
         <h2>Как мы выбираем песню</h2>
+        <p className="how-lead">Ты вводишь дату — мы находим хит-парад, который вышел ближе всего к этому дню, и берём песню, стоявшую в нём выше всех из русскоязычных. Никаких нейросетей и личных вкусов: под каждой песней есть ссылка на выпуск чарта, его можно открыть и проверить.</p>
+        <h3 className="how-sub">Откуда берём чарты</h3>
+        <ul className="how-sources">
+          <li><b>1970–1977, 1982–1985</b>хит-парадов тогда не публиковали — берём песню из журнала «Кругозор», телеэфира или концерта того месяца</li>
+          <li><b>1977–1991</b>хит-парады читателей «Звуковой дорожки» «Московского комсомольца», раз в месяц</li>
+          <li><b>1992–1994</b>опросы читателей, чарты продаж, релизы и эфиры месяца</li>
+          <li><b>1995–2010</b>еженедельные радиочарты: «Хит-парад двух столиц» «Радио Максимум», «Золотой граммофон» «Русского радио», «Чартова дюжина» «Нашего радио»</li>
+          <li><b>2010–2014</b>продажи: цифровой чарт 2М и iTunes Россия</li>
+          <li><b>2015 — сегодня</b>Shazam и стриминг: Apple Music, Яндекс Музыка, VK Музыка</li>
+        </ul>
+        <h3 className="how-sub">Насколько точно</h3>
         <dl className="how-levels">
-          <div><dt><span className="lvl lvl-week">Неделя</span></dt><dd>Песня стояла в хит-параде, вышедшем в пределах недели от твоей даты.</dd></div>
-          <div><dt><span className="lvl lvl-month">Месяц</span></dt><dd>Источник того же месяца: чарт месяца, журнал, эфир или концерт.</dd></div>
-          <div><dt><span className="lvl lvl-year">Год</span></dt><dd>Точнее найти не удалось, просто песня из проверенного архива года.</dd></div>
+          <div><dt><span className="lvl lvl-week">Неделя</span></dt><dd>Чарт вышел в пределах недели от твоей даты. Так у большинства дат с 1995 года.</dd></div>
+          <div><dt><span className="lvl lvl-month">Месяц</span></dt><dd>Нашёлся только источник того же месяца: месячный хит-парад, журнал, эфир или концерт.</dd></div>
         </dl>
-        <p className="how-note">Под каждой песней есть источники: можно открыть выпуск чарта или журнала и проверить самому.</p>
-        <p className="how-facts"><b>{weekCount.toLocaleString("ru-RU")}</b> недель чартов · <b>{monthlyCount}</b> месячных хит-парадов 1985–1991 · архив с 1970 года</p>
+        <p className="how-note">Точность и все источники для твоей даты — в блоке «Почему эта песня и насколько это точно» под результатом.</p>
+        {songCount ? <p className="how-facts"><b>{songCount.toLocaleString("ru-RU")}</b> песен в базе · хиты с 1970 года до сегодня</p> : null}
       </section>
 
-      <footer><p>Сервис придумал ДК ДАНС · <a href={TELEGRAM_URL} target="_blank" rel="noreferrer">Telegram-канал ↗</a></p><a href="#top">Ввести другую дату ↑</a></footer>
+      <footer><p className="footer-sign"><img src="brand/sticker-rose.webp" alt="" aria-hidden="true" /><span>Сервис придумал ДК ДАНС · <a className="nowrap" href={TELEGRAM_URL} target="_blank" rel="noreferrer">Telegram-канал ↗</a></span></p><a href="#top">Ввести другую дату ↑</a></footer>
     </main>
   );
 }
