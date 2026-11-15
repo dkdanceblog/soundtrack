@@ -181,7 +181,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
         <nav className="topnav" aria-label="Разделы">
           <a href="#result">Песня</a>
           <a href="#life">Саундтрек жизни</a>
-          <a href="#how">Как это работает</a>
+          <a href="#how">Как мы выбираем песню</a>
         </nav>
         <a className="tg-link" href={TELEGRAM_URL} target="_blank" rel="noreferrer">Telegram ↗</a>
       </header>
