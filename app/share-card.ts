@@ -10,6 +10,8 @@ export type ShareCardData = {
   badge: string;
   site: string;
   verb?: string; // "самой популярной песней была" | "звучала песня"
+  lead?: [string, string];
+  question?: string;
 };
 
 const W = 1080;
@@ -151,10 +153,11 @@ export function drawShareCard(canvas: HTMLCanvasElement, d: ShareCardData) {
 
   ctx.fillStyle = era.ink;
   // Two short display lines, the date in mono, the verb in plain text: caps stay short.
+  const lead = d.lead ?? ["В день", "моего рождения"];
   let leadSize = 96;
-  do { ctx.font = `800 ${leadSize}px ${DISPLAY}`; leadSize -= 2; } while (ctx.measureText("моего рождения").width > W - 192 && leadSize > 40);
-  ctx.fillText("В день", 92, 330);
-  ctx.fillText("моего рождения", 92, 330 + leadSize * 1.05);
+  do { ctx.font = `800 ${leadSize}px ${DISPLAY}`; leadSize -= 2; } while (ctx.measureText(lead[1]).width > W - 192 && leadSize > 40);
+  ctx.fillText(lead[0], 92, 330);
+  ctx.fillText(lead[1], 92, 330 + leadSize * 1.05);
   ctx.fillStyle = era.muted; ctx.font = `700 30px ${MONO}`;
   ctx.fillText(longDate(d.date).toLocaleUpperCase("ru-RU"), 96, 330 + leadSize * 1.05 + 62);
   ctx.fillStyle = era.ink; ctx.font = `600 40px ${BODY}`;
@@ -172,7 +175,7 @@ export function drawShareCard(canvas: HTMLCanvasElement, d: ShareCardData) {
   ctx.font = `600 ${artist.size}px ${BODY}`;
   y += 14;
   for (const line of artist.lines) { ctx.fillText(line, 96, y); y += artist.size * 1.15; }
-  footer(ctx, era, "А под какую родился ты?", d.site);
+  footer(ctx, era, d.question ?? "А под какую родился ты?", d.site);
 }
 
 export type LifeCardData = {

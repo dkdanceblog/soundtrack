@@ -3,6 +3,7 @@
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { CardModal } from "./card-modal";
 import { CompareSection } from "./compare-section";
+import { SCENARIOS, scenarioById, type ScenarioId } from "./scenarios";
 import { confidentText } from "./confident-text";
 import type { BirthdayHit } from "./hits";
 import { FIRST_SUPPORTED_DATE, isSupportedDate, todayUtc } from "./date-policy";
@@ -27,9 +28,9 @@ function formatDate(value: string) {
 
 // One plain-language badge per result; the detailed evidence labels stay in "Почему эта песня".
 function badgeFor(hit: BirthdayHit) {
-  if (hit.precision === "Неделя") return { text: "В чарте недели твоего рождения", short: "ЧАРТ НЕДЕЛИ РОЖДЕНИЯ" };
-  if (hit.precision === "Месяц") return { text: "Из месяца твоего рождения", short: "МЕСЯЦ РОЖДЕНИЯ" };
-  return { text: "Из года твоего рождения", short: "ГОД РОЖДЕНИЯ" };
+  if (hit.precision === "Неделя") return { text: "В чарте этой недели", short: "ЧАРТ НЕДЕЛИ" };
+  if (hit.precision === "Месяц") return { text: "Из этого месяца", short: "МЕСЯЦ" };
+  return { text: "Из этого года", short: "ГОД" };
 }
 
 // Keeps the closing quote on the same line as the last word.
@@ -46,6 +47,9 @@ export function leadVerb(hit: BirthdayHit) {
 
 export default function BirthdayApp({ initialHit, initialDate, initialToday, weekCount, monthlyCount, initialLife, maxDate, songCount, pendingDate }: { initialHit: BirthdayHit | null; initialDate: string; initialToday: string; weekCount: number; monthlyCount: number; initialLife: LifeEntry[]; maxDate?: string; songCount?: number; pendingDate?: string }) {
   const [date, setDate] = useState(initialDate);
+  const [scenarioId, setScenarioId] = useState<ScenarioId>("birthday");
+  const scenario = scenarioById(scenarioId);
+  useEffect(() => { setScenarioId(scenarioById(new URLSearchParams(window.location.search).get("s")).id); }, []);
   const [submittedDate, setSubmittedDate] = useState(initialDate);
   const [hit, setHit] = useState(initialHit);
   const [loading, setLoading] = useState(false);
@@ -104,7 +108,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
       setCopyFallback("");
       setCardUrl("");
       cardBlob.current = null;
-      try { window.history.replaceState({}, "", `?date=${selectedDate}`); } catch { /* sandboxed preview */ }
+      try { window.history.replaceState({}, "", `?date=${selectedDate}${scenarioRef.current !== "birthday" ? `&s=${scenarioRef.current}` : ""}`); } catch { /* sandboxed preview */ }
       if (scroll) requestAnimationFrame(() => document.getElementById("result")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "start" }));
     } catch {
       if (activeRequest.current === controller) setError("Не удалось загрузить песню. Проверь интернет и попробуй ещё раз, предыдущий результат сохранён.");
@@ -114,13 +118,23 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
     }
   }
 
+  const scenarioRef = useRef<ScenarioId>("birthday");
+  useEffect(() => { scenarioRef.current = scenarioId; }, [scenarioId]);
+
+  function chooseScenario(id: ScenarioId) {
+    setScenarioId(id);
+    scenarioRef.current = id;
+    setCardUrl(""); cardBlob.current = null;
+    try { if (submittedDate) window.history.replaceState({}, "", `?date=${submittedDate}${id !== "birthday" ? `&s=${id}` : ""}`); } catch { /* sandboxed preview */ }
+  }
+
   function shareUrl() {
-    return `${window.location.origin}${window.location.pathname}?date=${submittedDate}`;
+    return `${window.location.origin}${window.location.pathname}?date=${submittedDate}${scenarioId !== "birthday" ? `&s=${scenarioId}` : ""}`;
   }
 
   function shareText() {
     if (!hit) return "";
-    return `В день моего рождения, ${formatDate(submittedDate)}, ${leadVerb(hit)} «${hit.title}» — ${hit.artist}. А какая у тебя?`;
+    return `${scenario.shareIntro}, ${formatDate(submittedDate)}, ${leadVerb(hit)} «${hit.title}» — ${hit.artist}. ${scenario.shareQuestion}`;
   }
 
   async function copyResult() {
@@ -144,7 +158,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
       await ensureCardFonts();
       drawShareCard(canvas, {
         date: formatDate(submittedDate), title: hit.title, artist: hit.artist, year: hit.year, month: hit.month,
-        badge: badgeFor(hit).short, site: siteAddress(), verb: leadVerb(hit),
+        badge: badgeFor(hit).short, site: siteAddress(), verb: leadVerb(hit), lead: scenario.cardLines, question: scenario.cardQuestion,
       });
       const blob = await canvasToBlob(canvas);
       if (!blob) return;
@@ -186,7 +200,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
         <a className="brand" href="#top" aria-label="На главную"><img className="brand-logo" src="brand/logo-cream.webp" alt="" width="40" height="40" /> ДК ДАНС</a>
         <nav className="topnav" aria-label="Разделы">
           <a href="#result">Песня</a>
-          <a href="#life">Саундтрек жизни</a>
+          {scenarioId === "birthday" && <a href="#life">Саундтрек жизни</a>}
           <a href="#compare">Сравни с другом</a>
           <a href="#how">Как мы выбираем песню</a>
         </nav>
@@ -194,18 +208,22 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
       </header>
 
       <section className="hero" id="top">
-        <p className="eyebrow"><span className="nowrap">Саундтрек твоего дня рождения</span><span className="eyebrow-sep"> · </span><span className="nowrap">1970 — {today.slice(0, 4)}</span></p>
+        <p className="eyebrow"><span className="nowrap">{scenario.eyebrow}</span><span className="eyebrow-sep"> · </span><span className="nowrap">1970 — {today.slice(0, 4)}</span></p>
         <img className="hero-logo" src="brand/logo-cream.webp" alt="" aria-hidden="true" />
-        <h1>Под какую <mark>песню</mark> ты&nbsp;родился?</h1>
-        <p className="lede">Выбери дату и мы найдём песню, которая была на пике популярности и чартов в твой день рождения.</p>
+        <h1>{scenario.h1[0]}<mark>{scenario.h1[1]}</mark>{scenario.h1[2]}</h1>
+        <p className="lede">{scenario.lede}</p>
 
         <form className="date-form" onSubmit={handleSubmit}>
-          <label htmlFor="birthdate">Дата рождения</label>
+          <div className="scenarios" role="radiogroup" aria-label="Повод">
+            {SCENARIOS.map((item) => (
+              <button key={item.id} type="button" role="radio" aria-checked={item.id === scenarioId} className={`scenario${item.id === scenarioId ? " is-active" : ""}`} onClick={() => chooseScenario(item.id)}>{item.chip}</button>
+            ))}
+          </div>
+          <label htmlFor="birthdate">{scenario.label}</label>
           <div className="input-row">
             <input id="birthdate" name="birthdate" type="date" min={FIRST_SUPPORTED_DATE} max={today} value={date} onChange={(event) => setDate(event.target.value)} required />
             <button type="submit" disabled={loading}>{loading ? "Ищем песню…" : "Узнать песню"}</button>
           </div>
-          <p className="form-hint">Можно ввести не только день рождения: выпускной, свадьбу, первое свидание.</p>
           {loading && <div className="dk-says dk-loading" role="status"><img src="brand/sticker-dark.webp" alt="" aria-hidden="true" /><p>Копаюсь в архивах хит-парадов…</p></div>}
           {error && <p className="form-error" role="alert">{error}</p>}
         </form>
@@ -223,9 +241,9 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
       <section className="result-wrap" id="result" aria-live="polite" aria-busy={loading}>
         {hit ? (
           <article className="result-card is-entering" key={submittedDate} ref={playWhenVisible}>
-            <h2 className="result-lead">В твой день рождения {leadVerb(hit)}</h2>
+            <h2 className="result-lead">{scenario.resultLead} {leadVerb(hit)}</h2>
             <div className="carrier-stage">
-              <RecordObject title={hit.title} artist={hit.artist} year={hit.year} date={formatDate(submittedDate)} />
+              <RecordObject title={hit.title} artist={hit.artist} year={hit.year} date={formatDate(submittedDate)} sleeve={scenario.sleeve} />
             </div>
             <div className="song-copy">
               <h2>{titleParts(hit.title)}</h2>
@@ -268,7 +286,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
 
               {hit.yearContext && hit.yearContext.length > 0 && (
                 <div className="song-list year-context">
-                  <p>Хиты года твоего рождения</p>
+                  <p>Хиты этого года</p>
                   <ul>
                     {hit.yearContext.map((song) => (
                       <li key={`${song.artist}-${song.title}`}><span className="song-name"><b>«{song.title}»</b> {song.artist}</span><ServiceLinks artist={song.artist} title={song.title} /></li>
@@ -310,7 +328,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
             <a href="#top">Ввести другую дату ↑</a>
           </article>
         )}
-        {hit && submittedDate && <LifeSoundtrack birth={submittedDate} initialEntries={submittedDate === initialDate ? initialLife : []} />}
+        {hit && submittedDate && scenarioId === "birthday" && <LifeSoundtrack birth={submittedDate} initialEntries={submittedDate === initialDate ? initialLife : []} />}
       </section>
 
       <CompareSection myDate={submittedDate} today={today} />
