@@ -49,7 +49,7 @@ function detailLabel(hit: BirthdayHit) {
   return hit.precision;
 }
 
-export default function BirthdayApp({ initialHit, initialDate, initialToday, weekCount, monthlyCount, initialLife, maxDate, songCount }: { initialHit: BirthdayHit | null; initialDate: string; initialToday: string; weekCount: number; monthlyCount: number; initialLife: LifeEntry[]; maxDate?: string; songCount?: number }) {
+export default function BirthdayApp({ initialHit, initialDate, initialToday, weekCount, monthlyCount, initialLife, maxDate, songCount, pendingDate }: { initialHit: BirthdayHit | null; initialDate: string; initialToday: string; weekCount: number; monthlyCount: number; initialLife: LifeEntry[]; maxDate?: string; songCount?: number; pendingDate?: string }) {
   const [date, setDate] = useState(initialDate);
   const [submittedDate, setSubmittedDate] = useState(initialDate);
   const [hit, setHit] = useState(initialHit);
@@ -89,7 +89,10 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
     void loadDate(sample);
   }
 
-  async function loadDate(selectedDate: string) {
+  // Static build: the page shows at once and the shared date loads right after.
+  useEffect(() => { if (pendingDate) void loadDate(pendingDate, false); }, [pendingDate]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  async function loadDate(selectedDate: string, scroll = true) {
     if (!isSupportedDate(selectedDate, today)) return;
     activeRequest.current?.abort();
     const controller = new AbortController();
@@ -107,7 +110,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
       setCardUrl("");
       cardBlob.current = null;
       try { window.history.replaceState({}, "", `?date=${selectedDate}`); } catch { /* sandboxed preview */ }
-      requestAnimationFrame(() => document.getElementById("result")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "start" }));
+      if (scroll) requestAnimationFrame(() => document.getElementById("result")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth", block: "start" }));
     } catch {
       if (activeRequest.current === controller) setError("Не удалось загрузить песню. Проверь интернет и попробуй ещё раз, предыдущий результат сохранён.");
     } finally {
@@ -299,6 +302,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
             </div>
           </article>
         ) : (
+          loading ? <article className="empty-card loading-card"><p>Ищем песню…</p></article> :
           <article className="empty-card">
             <p>Проверь дату</p>
             <small>Сервис принимает даты с 1 января 1970 года по {formatDate(today)}.</small>
@@ -310,21 +314,16 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
 
       <section className="how" id="how">
         <h2>Как мы выбираем песню</h2>
-        <p className="how-lead">Ты вводишь дату — мы находим хит-парад, который вышел ближе всего к этому дню, и берём песню, стоявшую в нём выше всех из русскоязычных. Под каждой песней есть источник, его можно открыть и проверить.</p>
+        <p className="how-lead">Ты вводишь дату — мы находим хит-парад, который вышел ближе всего к этому дню, и берём песню, стоявшую в нём выше всех из русскоязычных. Под каждой песней есть источник.</p>
         <h3 className="how-sub">Откуда берём чарты</h3>
         <ul className="how-sources">
-          <li><b>1970–1977, 1982–1985</b>хит-парадов тогда не публиковали — берём песню из журнала «Кругозор», телеэфира или концерта того месяца</li>
-          <li><b>1977–1991</b>хит-парады читателей «Звуковой дорожки» «Московского комсомольца», раз в месяц</li>
+          <li><b>1970–1977, 1982–1985</b>берём песню из журналов, телеэфиров или концертов</li>
+          <li><b>1977–1991</b>хит-парады «Московского комсомольца»</li>
           <li><b>1992–1994</b>опросы читателей, чарты продаж, релизы и эфиры месяца</li>
           <li><b>1995–2010</b>еженедельные радиочарты: «Хит-парад двух столиц» «Радио Максимум», «Золотой граммофон» «Русского радио», «Чартова дюжина» «Нашего радио»</li>
           <li><b>2010–2014</b>продажи: цифровой чарт 2М и iTunes Россия</li>
-          <li><b>2015 — сегодня</b>Shazam и стриминг: Apple Music, Яндекс Музыка, VK Музыка</li>
+          <li><b>2015 — сегодня</b>Shazam и стриминги: Apple Music, Яндекс Музыка, VK Музыка</li>
         </ul>
-        <h3 className="how-sub">Насколько точно</h3>
-        <dl className="how-levels">
-          <div><dt><span className="lvl lvl-week">Неделя</span></dt><dd>Чарт вышел в пределах недели от твоей даты. Так у большинства дат с 1995 года.</dd></div>
-          <div><dt><span className="lvl lvl-month">Месяц</span></dt><dd>Нашёлся только источник того же месяца: месячный хит-парад, журнал, эфир или концерт.</dd></div>
-        </dl>
         <p className="how-note">Точность и все источники для твоей даты — в блоке «Почему эта песня и насколько это точно» под результатом.</p>
         {songCount ? <p className="how-facts"><b>{songCount.toLocaleString("ru-RU")}</b> песен в базе · хиты с 1970 года до сегодня</p> : null}
       </section>

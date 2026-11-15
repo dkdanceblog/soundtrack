@@ -44,7 +44,17 @@ for (const [year, bucket] of years) {
   bytes += body.length;
   writeFileSync(`${out}${year}.json`, body);
 }
-const lifeBody = JSON.stringify(life);
+// Compact life index: one int per day from FIRST_SUPPORTED_DATE = song * 256 + colour * 4 + precision.
+const lifeSongs: [string, string][] = []; const lifeSongIndex = new Map<string, number>();
+const lifeColors: string[] = []; const precisions = ["Неделя", "Месяц", "Год"];
+const lifeDays = Object.keys(life).sort().map((date) => {
+  const [title, artist, precision, color] = life[date];
+  const key = `${title}\u0000${artist}`;
+  let song = lifeSongIndex.get(key); if (song === undefined) { song = lifeSongs.length; lifeSongs.push([title, artist]); lifeSongIndex.set(key, song); }
+  let colour = lifeColors.indexOf(color); if (colour < 0) { colour = lifeColors.length; lifeColors.push(color); }
+  return song * 256 + colour * 4 + Math.max(0, precisions.indexOf(precision));
+});
+const lifeBody = JSON.stringify({ from: Object.keys(life).sort()[0], songs: lifeSongs, colors: lifeColors, days: lifeDays });
 writeFileSync(`${out}life.json`, lifeBody);
 writeFileSync(`${out}meta.json`, JSON.stringify({ snapshot, weekCount: MULTICHART_WEEK_COUNT, monthlyCount: HISTORICAL_MONTHLY_CHART_COUNT, songCount: songs.size }));
 console.log(`snapshot ${snapshot}: ${years.size} year files, ${(bytes / 1e6).toFixed(1)} MB, life ${(lifeBody.length / 1e6).toFixed(1)} MB`);

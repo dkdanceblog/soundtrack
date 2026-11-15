@@ -49,9 +49,13 @@ export async function fetchLife(birth: string, signal?: AbortSignal): Promise<Li
     if (!response.ok) throw new Error("life");
     return (await response.json()).entries;
   }
-  const [meta, life] = await Promise.all([loadMeta(), json<Record<string, [string, string, BirthdayHit["precision"], string]>>("life.json", signal)]);
+  const [meta, life] = await Promise.all([loadMeta(), json<{ from: string; songs: [string, string][]; colors: string[]; days: number[] }>("life.json", signal)]);
+  const start = Date.parse(`${life.from}T12:00:00Z`);
+  const precisions: BirthdayHit["precision"][] = ["Неделя", "Месяц", "Год"];
   return buildLife(birth, meta.snapshot, (date) => {
-    const row = life[date];
-    return row ? { title: row[0], artist: row[1], precision: row[2], color: row[3] } : null;
+    const value = life.days[Math.round((Date.parse(`${date}T12:00:00Z`) - start) / 86400000)];
+    if (value === undefined) return null;
+    const [title, artist] = life.songs[Math.floor(value / 256)];
+    return { title, artist, precision: precisions[value % 4], color: life.colors[Math.floor((value % 256) / 4)] };
   });
 }
