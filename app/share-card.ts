@@ -238,6 +238,67 @@ function ageWord(n: number) {
   return "лет";
 }
 
+export type CompareCardData = {
+  people: { name: string; date: string; title: string; artist: string }[]; // exactly two, DD.MM.YYYY dates
+  verdict: string;
+  site: string;
+};
+
+// Comparison story: two songs stacked, a record with «VS» between them, one verdict line.
+export function drawCompareCard(canvas: HTMLCanvasElement, data: CompareCardData) {
+  canvas.width = W; canvas.height = H;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+  const era = CARD;
+  frame(ctx, era);
+  header(ctx, era, "");
+
+  ctx.fillStyle = era.ink;
+  let leadSize = 96;
+  do { ctx.font = `800 ${leadSize}px ${DISPLAY}`; leadSize -= 2; } while (ctx.measureText("Под какие песни").width > W - 192 && leadSize > 40);
+  ctx.fillText("Под какие песни", 92, 330);
+  ctx.fillText("мы родились", 92, 330 + leadSize * 1.05);
+
+  const block = (person: CompareCardData["people"][number], top: number) => {
+    ctx.fillStyle = era.accent; ctx.font = `700 30px ${MONO}`;
+    ctx.fillText(`${person.name.toLocaleUpperCase("ru-RU")} · ${longDate(person.date).toLocaleUpperCase("ru-RU")}`, 96, top, W - 192);
+    ctx.fillStyle = era.ink;
+    const title = fit(ctx, `«${person.title}»`, DISPLAY, 800, 128, 56, W - 192, 2);
+    ctx.font = `800 ${title.size}px ${DISPLAY}`;
+    let y = top + 24 + title.size * 0.9;
+    for (const line of title.lines) { ctx.fillText(line, 92, y); y += title.size * 1.02; }
+    ctx.fillStyle = era.muted;
+    const artist = fit(ctx, person.artist, BODY, 600, 44, 30, W - 192, 1);
+    ctx.font = `600 ${artist.size}px ${BODY}`;
+    y += artist.size * 0.35;
+    ctx.fillText(artist.lines[0], 96, y);
+    return y + artist.size * 0.4;
+  };
+
+  const endA = block(data.people[0], 600);
+
+  // «VS» record between the two songs.
+  const cy = endA + 130, r = 100;
+  ctx.fillStyle = "rgba(252,223,204,.35)"; ctx.fillRect(96, cy - 1, W / 2 - r - 130, 3); ctx.fillRect(W / 2 + r + 34, cy - 1, W / 2 - r - 130, 3);
+  ctx.save(); ctx.shadowColor = "rgba(0,0,0,.5)"; ctx.shadowBlur = 30; ctx.shadowOffsetY = 12;
+  ctx.fillStyle = "#0d0c10"; ctx.beginPath(); ctx.arc(W / 2, cy, r, 0, Math.PI * 2); ctx.fill(); ctx.restore();
+  for (let rr = r - 8; rr > r * 0.62; rr -= 7) { ctx.strokeStyle = "rgba(255,255,255,.07)"; ctx.lineWidth = 2; ctx.beginPath(); ctx.arc(W / 2, cy, rr, 0, Math.PI * 2); ctx.stroke(); }
+  ctx.fillStyle = era.accent; ctx.beginPath(); ctx.arc(W / 2, cy, r * 0.56, 0, Math.PI * 2); ctx.fill();
+  ctx.fillStyle = era.ink; ctx.textAlign = "center"; ctx.textBaseline = "middle"; ctx.font = `800 56px ${DISPLAY}`;
+  ctx.fillText("VS", W / 2, cy + 3);
+  ctx.textAlign = "left"; ctx.textBaseline = "alphabetic";
+
+  const endB = block(data.people[1], cy + r + 90);
+
+  ctx.fillStyle = era.ink;
+  const verdict = fit(ctx, data.verdict, BODY, 600, 44, 30, W - 192, 2);
+  ctx.font = `600 ${verdict.size}px ${BODY}`;
+  let vy = Math.min(Math.max(endB + 110, H - 360), H - 230 - verdict.lines.length * verdict.size * 1.2 + verdict.size);
+  for (const line of verdict.lines) { ctx.fillText(line, 96, vy); vy += verdict.size * 1.2; }
+
+  footer(ctx, era, "А под какую родился ты?", data.site);
+}
+
 export function canvasToBlob(canvas: HTMLCanvasElement): Promise<Blob | null> {
   return new Promise((resolve) => canvas.toBlob((blob) => resolve(blob), "image/png"));
 }
