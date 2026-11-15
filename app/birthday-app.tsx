@@ -276,7 +276,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
               )}
 
               <details className="why-note">
-                <summary>Почему эта песня и насколько это точно</summary>
+                <summary>Почему эта песня</summary>
                 <div className="why-body">
                   <div className={`hit-badge hit-badge-${hit.precision.toLowerCase()}`}><b>{badgeFor(hit).text}</b><span>{hit.period}</span></div>
                   <div className="result-details">
@@ -323,7 +323,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
           <li><b>2010–2014</b>продажи: цифровой чарт 2М и iTunes Россия</li>
           <li><b>2015 — сегодня</b>Shazam и стриминги: Apple Music, Яндекс Музыка, VK Музыка</li>
         </ul>
-        <p className="how-note">Точность и все источники для твоей даты — в блоке «Почему эта песня и насколько это точно» под результатом.</p>
+        <p className="how-note">Все источники для твоей даты — в блоке «Почему эта песня» под результатом.</p>
         {songCount ? <p className="how-facts"><b>{songCount.toLocaleString("ru-RU")}</b> песен в базе · хиты с 1970 года до сегодня</p> : null}
       </section>
 

@@ -404,3 +404,4 @@ footer { background: var(--graphite); color: var(--cream); }
 .card-modal-hint { margin: 0; font-size: 13px; line-height: 1.4; text-align: center; color: rgba(252, 223, 204, .7); }
 .card-modal-close { position: absolute; top: 8px; right: 10px; width: 36px; height: 36px; border: 0; background: none; color: var(--cream); font: 400 30px/1 var(--body); cursor: pointer; }
 @keyframes fade-in { from { opacity: 0; } }
+button.card-modal-link { border-width: 0 0 2px; background: none; cursor: pointer; }

@@ -35,13 +35,11 @@ export function CardModal({ url, alt, fileName, canShare, onShare, onClose, titl
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={url} alt={alt} />
         <div className="card-modal-actions">
-          {canShare
-            ? <button className="btn-cta" type="button" onClick={onShare}>Сохранить или отправить</button>
-            : <a className="btn-cta" href={url} download={fileName}>Скачать картинку</a>}
-          {canShare && <a className="card-modal-link" href={url} download={fileName}>Скачать PNG</a>}
+          <a className="btn-cta" href={url} download={fileName}>Скачать картинку</a>
+          {canShare && <button className="card-modal-link" type="button" onClick={onShare}>Отправить</button>}
           {extra}
         </div>
-        <p className="card-modal-hint">{canShare ? "В меню выбери «Сохранить изображение» — и выкладывай в сторис." : "Картинка 1080×1920 — как раз для сторис."}</p>
+        <p className="card-modal-hint">{canShare ? "На телефоне можно и так: зажми картинку → «Сохранить в Фото»." : "Картинка 1080×1920 — как раз для сторис."}</p>
       </div>
     </div>,
     document.body,
