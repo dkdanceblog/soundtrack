@@ -2,6 +2,7 @@
 
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { CardModal } from "./card-modal";
+import { confidentText } from "./confident-text";
 import type { BirthdayHit } from "./hits";
 import { FIRST_SUPPORTED_DATE, isSupportedDate, todayUtc } from "./date-policy";
 import { assessPopularity, noChartEra } from "./evidence-policy";
@@ -280,10 +281,10 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
                   <div className={`hit-badge hit-badge-${hit.precision.toLowerCase()}`}><b>{badgeFor(hit).text}</b><span>{hit.period}</span></div>
                   <div className="result-details">
                     <div className="chart-note"><span>{hit.chartRank ? `#${hit.chartRank}` : "✓"}</span><p>{hit.chartMetric}<br /><b>{hit.period}</b></p></div>
-                    <div className={`precision precision-${hit.precision.toLowerCase()}`}><span>{detailLabel(hit)}</span><p>{hit.proximity}</p></div>
+                    <div className={`precision precision-${hit.precision.toLowerCase()}`}><span>{detailLabel(hit)}</span><p>{confidentText(hit.proximity)}</p></div>
                   </div>
-                  {popularity && <div className={`confidence confidence-${popularity.level}`}><p className="confidence-caption">ЧТО ИЗВЕСТНО О ПОПУЛЯРНОСТИ</p><strong>{popularity.level === "review" && !era ? "Подтверждено архивом" : popularity.label}</strong>{popularity.detail && <p>{popularity.detail}</p>}</div>}
-                  <p>{hit.method}{/[.!?]$/.test(hit.method) ? "" : "."}</p>
+                  {popularity && <div className={`confidence confidence-${popularity.level}`}><p className="confidence-caption">ЧЕМ ПОДТВЕРЖДЕНО</p><strong>{popularity.label}</strong>{popularity.detail && <p>{popularity.detail}</p>}</div>}
+                  {confidentText(hit.method) && <p>{confidentText(hit.method)}</p>}
                   <p className="sources-caption">Источники ({hit.sources.length + 1})</p>
                   <div className="source-list">
                     {hit.sources.map((source) => (

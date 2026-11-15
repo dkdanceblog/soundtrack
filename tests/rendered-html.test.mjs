@@ -28,7 +28,7 @@ test("renders the date picker and evidence with real product metadata", async ()
   );
   const html = await response.text();
   assert.match(html, /name="birthdate"/);
-  assert.match(html, /Что известно о популярности|ЧТО ИЗВЕСТНО О ПОПУЛЯРНОСТИ/);
+  assert.match(html, /Чем подтверждено|ЧЕМ ПОДТВЕРЖДЕНО/);
   assert.doesNotMatch(html, /Сомневаюсь в треке/);
   assert.doesNotMatch(html, /codex-preview/);
 });

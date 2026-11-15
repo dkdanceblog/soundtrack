@@ -54,10 +54,10 @@ export function noChartEra(date: string | undefined) {
 export function assessPopularity(sources: readonly PilotSource[]) {
   const count = publicPlatforms(sources).size;
   const hasDatedChart = sources.some((source) => source.kind === "Shazam" || source.kind === "цифровые продажи" || source.kind === "радио" || source.kind === "датированный стриминговый чарт");
-  if (count >= 2) return { label: "Датированный чарт и несколько площадок", detail: `${hasDatedChart ? "Позиция привязана к выпуску чарта; " : ""}популярность независимо подтверждают разные слушательские площадки. Годовые итоги не считаются доказательством пика в выбранный день.`, level: "supported" };
-  if (count === 1) return { label: hasDatedChart ? "Датированный чарт и одна площадка" : "Есть слушательское подтверждение", detail: `${hasDatedChart ? "Позиция привязана к выпуску чарта; " : ""}масштаб популярности подтверждает одна слушательская площадка или опрос. Дополнительный независимый источник повысит уверенность.`, level: "partial" };
-  if (sources.some((source) => sourcePlatform(source) === "culture")) return { label: "Есть культурный резонанс", detail: "Сохранилось описание общественного отклика.", level: "partial" };
-  return { label: "Популярность требует перепроверки", detail: "Источник подтверждает чарт, эфир, релиз или награду. Этого недостаточно, чтобы уверенно назвать песню массовым хитом.", level: "review" };
+  if (count >= 2) return { label: hasDatedChart ? "Чарт и несколько площадок" : "Несколько слушательских площадок", detail: `${hasDatedChart ? "Позиция привязана к выпуску чарта, а " : ""}популярность песни видна сразу на нескольких площадках.`, level: "supported" };
+  if (count === 1) return { label: hasDatedChart ? "Чарт и слушатели" : "Слушатели", detail: hasDatedChart ? "Позиция привязана к выпуску чарта и подтверждена слушательской площадкой или опросом." : "Популярность подтверждает слушательская площадка или опрос.", level: "partial" };
+  if (sources.some((source) => sourcePlatform(source) === "culture")) return { label: "Культурный след", detail: "Сохранились свидетельства того, как песню принимала публика.", level: "partial" };
+  return { label: "Архив хит-парадов и эфиров", detail: "Песня найдена в выпуске хит-парада, эфира или релиза этого времени.", level: "review" };
 }
 
 // Explicit recording identities: Cyrillic titles alone do not prove the language.
