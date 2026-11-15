@@ -1,6 +1,7 @@
 "use client";
 
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
+import { CardModal } from "./card-modal";
 import type { BirthdayHit } from "./hits";
 import { FIRST_SUPPORTED_DATE, isSupportedDate, todayUtc } from "./date-policy";
 import { assessPopularity, noChartEra } from "./evidence-policy";
@@ -162,6 +163,8 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
     } finally { setCardBusy(false); }
   }
 
+  const closeCard = useCallback(() => setCardUrl(""), []);
+
   async function shareCard() {
     if (!cardBlob.current) return;
     const file = new File([cardBlob.current], `saundtrek-${submittedDate}.png`, { type: "image/png" });
@@ -240,17 +243,12 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
               {copyFallback && <div className="copy-fallback"><p>Не удалось скопировать автоматически. Выдели текст:</p><textarea aria-label="Результат для копирования" rows={4} readOnly value={copyFallback} onFocus={(event) => event.target.select()} /></div>}
 
               {cardUrl && (
-                <div className="story-card">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={cardUrl} alt={`Карточка: «${hit.title}» — ${hit.artist}, ${formatDate(submittedDate)}`} width={270} height={480} />
-                  <div>
-                    <p>Карточка готова. Сохрани её и выложи в сторис или отправь друзьям.</p>
-                    {canShareFiles && <button className="btn-quiet" type="button" onClick={shareCard}>Отправить</button>}
-                    <a className="btn-quiet" href={cardUrl} download={`saundtrek-${submittedDate}.png`}>Скачать PNG</a>
-                    <a className="btn-quiet" href={`https://t.me/share/url?url=${encodeURIComponent(shareUrl())}&text=${encodeURIComponent(shareText())}`} target="_blank" rel="noreferrer">Telegram</a>
-                    <a className="btn-quiet" href={`https://vk.com/share.php?url=${encodeURIComponent(shareUrl())}&title=${encodeURIComponent(shareText())}`} target="_blank" rel="noreferrer">ВКонтакте</a>
-                  </div>
-                </div>
+                <CardModal url={cardUrl} alt={`Карточка: «${hit.title}» — ${hit.artist}, ${formatDate(submittedDate)}`} fileName={`saundtrek-${submittedDate}.png`}
+                  canShare={canShareFiles} onShare={shareCard} onClose={closeCard}
+                  extra={<>
+                    <a className="card-modal-link" href={`https://t.me/share/url?url=${encodeURIComponent(shareUrl())}&text=${encodeURIComponent(shareText())}`} target="_blank" rel="noreferrer">Telegram</a>
+                    <a className="card-modal-link" href={`https://vk.com/share.php?url=${encodeURIComponent(shareUrl())}&title=${encodeURIComponent(shareText())}`} target="_blank" rel="noreferrer">ВКонтакте</a>
+                  </>} />
               )}
 
               {hit.alternatives.length > 0 && (

@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { CardModal } from "./card-modal";
 import type { LifeEntry } from "./life-shared";
 import { fetchLife } from "./data-source";
 import { ServiceLinks } from "./service-links";
@@ -57,6 +58,7 @@ export function LifeSoundtrack({ birth, initialEntries }: { birth: string; initi
 
   useEffect(() => () => { if (cardUrl) URL.revokeObjectURL(cardUrl); }, [cardUrl]);
 
+  const closeCard = useCallback(() => setCardUrl(""), []);
   if (loadedFor !== birth || entries.length < 2) return null;
   const shown = expanded ? entries : entries.slice(0, COLLAPSED);
   const shareUrl = () => `${window.location.origin}${window.location.pathname}?date=${birth}#life`;
@@ -125,15 +127,8 @@ export function LifeSoundtrack({ birth, initialEntries }: { birth: string; initi
       {status && <p className="life-status" role="status">{status}</p>}
       {fallback && <textarea aria-label="Плейлист для копирования" rows={8} readOnly value={fallback} onFocus={(event) => event.target.select()} />}
       {cardUrl && (
-        <div className="story-card">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={cardUrl} alt={`Саундтрек жизни с ${display(birth)}`} width={270} height={480} />
-          <div>
-            <p>Карточка готова: главные песни твоей жизни на одной картинке.</p>
-            {canShareFiles && <button className="share-button" type="button" onClick={shareCard}>ОТПРАВИТЬ</button>}
-            <a className="source-link" href={cardUrl} download={`saundtrek-zhizni-${birth}.png`}>СКАЧАТЬ PNG</a>
-          </div>
-        </div>
+        <CardModal url={cardUrl} alt={`Саундтрек жизни с ${display(birth)}`} fileName={`saundtrek-zhizni-${birth}.png`}
+          canShare={canShareFiles} onShare={shareCard} onClose={closeCard} title="Саундтрек жизни готов!" />
       )}
       <p className="life-note">Каждая песня подобрана так же, как основной результат: с той точностью, которую дают источники для этой даты.</p>
     </section>
