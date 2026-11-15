@@ -376,3 +376,18 @@ footer { background: var(--graphite); color: var(--cream); }
 .how { padding-top: clamp(28px, 4vw, 48px); }
 .life-note { margin: 16px 0 0; }
 .life-actions .share-button { font-size: 17px; padding: 10px 16px 8px; letter-spacing: .02em; }
+
+/* Design pass: share CTA, top-aligned record, single-line service buttons, one button system. */
+.result-card { align-items: start; }
+.carrier-stage { padding-top: clamp(8px, 2vw, 28px); }
+.actions-row { align-items: center; gap: 10px 22px; margin-top: 4px; }
+.btn-cta { padding: 13px 22px 11px; border: 2px solid var(--era-accent); background: var(--era-accent); color: var(--era-on-accent); font: 700 20px/1 var(--display); letter-spacing: .03em; text-transform: uppercase; cursor: pointer; box-shadow: 4px 4px 0 rgba(0,0,0,.35); transition: transform .15s, box-shadow .15s; }
+.btn-cta:hover, .btn-cta:focus-visible { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 rgba(0,0,0,.35); }
+.btn-cta:disabled { opacity: .7; cursor: wait; }
+.btn-service { white-space: nowrap; font-size: 17px; padding: 0 8px; }
+.song-list li:last-child { border-bottom: 0; }
+.service-links a { border-color: color-mix(in srgb, var(--era-ink) 50%, transparent); }
+/* Life section: all three buttons share one shape and one typeface. */
+.life-more, .life-actions .source-link, .life-actions .share-button { padding: 12px 18px 10px; border: 2px solid var(--line); font: 700 20px/1 var(--display); letter-spacing: .03em; text-transform: uppercase; }
+.life-actions .share-button { box-shadow: 4px 4px 0 var(--line); }
+@media (max-width: 760px) { .btn-service { font-size: 20px; } }

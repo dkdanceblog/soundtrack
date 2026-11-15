@@ -232,8 +232,8 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
                   ))}
                 </div>
                 <div className="actions-row">
-                  <button className="btn-quiet" type="button" onClick={copyResult}>{copied ? "Ссылка скопирована ✓" : "Поделиться"}</button>
-                  <button className="btn-quiet btn-story" type="button" onClick={makeCard} disabled={cardBusy}>{cardBusy ? "Делаем карточку…" : "Карточка для сторис"}</button>
+                  <button className="btn-cta btn-story" type="button" onClick={makeCard} disabled={cardBusy}>{cardBusy ? "Делаем карточку…" : "Карточка для сторис"}</button>
+                  <button className="btn-quiet" type="button" onClick={copyResult}>{copied ? "Ссылка скопирована ✓" : "Поделиться ссылкой"}</button>
                 </div>
               </div>
               <a className="dk-says dk-tg" href={TELEGRAM_URL} target="_blank" rel="noreferrer"><img src="brand/sticker-rose.webp" alt="" aria-hidden="true" /><p>Больше музыкальных историй — у меня в Telegram ↗</p></a>
