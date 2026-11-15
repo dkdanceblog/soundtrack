@@ -72,7 +72,9 @@ export const MULTICHART_WEEK_COUNT = LEGACY_MULTICHART.length + PILOT_2017.lengt
 export const HISTORICAL_EDITION_COUNT = HISTORICAL_1977_1979.length;
 const CURATED_ANCHORS = [...HISTORICAL_BROADCASTS_1970_2003, ...HISTORICAL_MONTHLY_CHARTS_1985_1991, ...HISTORICAL_MONTHLY_2002];
 const KRUGOZOR_ANCHORS = krugozorAnchors(CURATED_ANCHORS);
-const curatedMonths = new Set(CURATED_ANCHORS.map((anchor) => anchor.chartDate.slice(0, 7)));
+// A curated month counts only if it has a Russian-language song (January 1972 holds only a Georgian one).
+const curatedMonths = new Set(CURATED_ANCHORS.filter((anchor) => anchor.candidates.some((candidate) =>
+  isEligibleRussianLanguageTrack(candidate.title, candidate.artist))).map((anchor) => anchor.chartDate.slice(0, 7)));
 // A «Кругозор» issue becomes the main source only for months with no curated anchor.
 const HISTORICAL_ANCHORS = [...CURATED_ANCHORS, ...KRUGOZOR_ANCHORS.filter((anchor) => !curatedMonths.has(anchor.chartDate.slice(0, 7)))]
   .map((entry) => ({ ...entry, candidates: entry.candidates.filter((candidate) =>

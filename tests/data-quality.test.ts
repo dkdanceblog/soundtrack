@@ -336,7 +336,7 @@ test("early reader polls fill weak months without replacing complete historical 
     assert.equal(publicPlatforms(hit.sources).size, 1, date);
   }
   assert.equal(getBirthdayHit("1979-12-15")!.chartDate, "1980-01-01");
-  assert.equal(getBirthdayHit("1972-01-15")!.precision, "Год");
+  assert.equal(getBirthdayHit("1972-01-15")!.precision, "Месяц", "January 1972: «Кругозор» № 1 (BETA95)");
   assert.equal(getBirthdayHit("1982-12-15")!.precision, "Месяц");
 });
 
