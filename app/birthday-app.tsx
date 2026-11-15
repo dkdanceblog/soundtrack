@@ -36,10 +36,9 @@ function titleParts(title: string) {
   return <>«{words.length ? `${words.join(" ")} ` : ""}<span className="nowrap">{last}»</span></>;
 }
 
-// Chart-based results may say "the most popular"; a release, broadcast or concert only "played".
-const CHART_MODES = new Set(["недельный чарт", "мультичарт", "стриминговый чарт", "месячный чарт", "исторический чарт"]);
+// One lead sentence everywhere (editor's decision).
 export function leadVerb(hit: BirthdayHit) {
-  return CHART_MODES.has(hit.mode) ? "самой популярной песней была" : "звучала песня";
+  void hit; return "самой популярной песней была";
 }
 
 function detailLabel(hit: BirthdayHit) {
@@ -311,7 +310,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
 
       <section className="how" id="how">
         <h2>Как мы выбираем песню</h2>
-        <p className="how-lead">Ты вводишь дату — мы находим хит-парад, который вышел ближе всего к этому дню, и берём песню, стоявшую в нём выше всех из русскоязычных. Никаких нейросетей и личных вкусов: под каждой песней есть ссылка на выпуск чарта, его можно открыть и проверить.</p>
+        <p className="how-lead">Ты вводишь дату — мы находим хит-парад, который вышел ближе всего к этому дню, и берём песню, стоявшую в нём выше всех из русскоязычных. Под каждой песней есть источник, его можно открыть и проверить.</p>
         <h3 className="how-sub">Откуда берём чарты</h3>
         <ul className="how-sources">
           <li><b>1970–1977, 1982–1985</b>хит-парадов тогда не публиковали — берём песню из журнала «Кругозор», телеэфира или концерта того месяца</li>
