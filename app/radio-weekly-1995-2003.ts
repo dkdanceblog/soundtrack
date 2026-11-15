@@ -1,6 +1,8 @@
 import type { BirthdayHit, HitSource } from "./hits";
 import { canonical, isEligibleRussianLanguageTrack } from "./evidence-policy";
-import { RADIO_ISSUES_1995_2003, type RadioIssue } from "./radio-weekly-1995-2003-data";
+import { RADIO_ISSUES_1995_2003 as ARCHIVED, type RadioIssue } from "./radio-weekly-1995-2003-data";
+import { CHARTOVA_GAP_ISSUES } from "./chartova-gaps-1999-2004";
+const RADIO_ISSUES_1995_2003: readonly RadioIssue[] = [...ARCHIVED, ...CHARTOVA_GAP_ISSUES];
 
 // Weekly radio hit-parades for 1995–2003 from the Chartoteka archive:
 //  • «Хит-парад двух столиц» (Радио Максимум), 1995–1999 — only Russian-language entries;
@@ -36,11 +38,14 @@ function nearestIssue(chart: RadioIssue["chart"], date: string, today: string) {
 
 export function radioWeeklyCandidates(date: string, today: string) {
   // 2026: latest «Золотой граммофон» issues fill days with no dated streaming week yet.
-  if (date < "1995-01-01" || (date > "2003-12-31" && date < RECENT_RADIO_FROM)) return null;
-  let issues = (["gramophone", "maximum"] as const).map((chart) => nearestIssue(chart, date, today)).filter((issue): issue is RadioIssue => Boolean(issue));
+  if (date < "1995-01-01" || (date > "2004-12-31" && date < RECENT_RADIO_FROM)) return null;
+  // 2004 weeks come from the «Золотой граммофон» module; here only the listener vote fills gaps.
+  const voteOnly = date > "2003-12-31" && date < RECENT_RADIO_FROM;
+  let issues = voteOnly ? [] : (["gramophone", "maximum"] as const).map((chart) => nearestIssue(chart, date, today)).filter((issue): issue is RadioIssue => Boolean(issue));
   // The latest «Золотой граммофон» issue may not be archived yet: the weekly listener
   // vote «Чартова дюжина» then gives the week. It never competes with «Граммофон».
-  if (!issues.length && date >= RECENT_RADIO_FROM) {
+  // «Чартова дюжина» runs from July 1999; it fills a week only when no other issue is near.
+  if (!issues.length && date >= "1999-06-27") {
     const vote = nearestIssue("chartova", date, today);
     if (vote) issues = [vote];
   }

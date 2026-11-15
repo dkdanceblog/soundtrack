@@ -974,14 +974,14 @@ function preferRadioWeek(hit: BirthdayHit | null, date: string, today: string): 
   if (hit?.precision === "Неделя") return hit;
   // After 2003 month-level streaming evidence already carries listener platforms; the
   // recent radio issues only replace year-level fallbacks.
-  if (hit && date > "2003-12-31" && hit.precision !== "Год") return hit;
+  if (hit && date > "2004-12-31" && hit.precision !== "Год") return hit;
   const radio = radioWeeklyHit(date, today);
   if (!radio) return hit;
   // Before 1999 only «Радио Максимум» is archived and most weeks carry one Russian-language
   // entry. A dated weekly chart place still beats a month known only from a release,
   // a broadcast or a concert; it does not replace a month-level chart of listeners.
   const monthChart = hit?.mode === "месячный чарт" || hit?.mode === "исторический чарт";
-  if (radio.year < 1999 && radio.alternatives.length < 1 && monthChart) return hit;
+  if (monthChart && (radio.year < 1999 ? radio.alternatives.length < 1 : radio.sourceId.startsWith("chartova"))) return hit;
   if (!hit) return radio;
   const kept = { artist: hit.artist, title: hit.title };
   const same = (entry: { artist: string; title: string }) => canonical(entry.title) === canonical(kept.title);
