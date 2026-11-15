@@ -3,7 +3,7 @@
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { CardModal } from "./card-modal";
 import { CompareSection } from "./compare-section";
-import { SCENARIOS, scenarioById, type ScenarioId } from "./scenarios";
+import { scenarioById, type ScenarioId } from "./scenarios";
 import { confidentText } from "./confident-text";
 import type { BirthdayHit } from "./hits";
 import { FIRST_SUPPORTED_DATE, isSupportedDate, todayUtc } from "./date-policy";
@@ -121,12 +121,6 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
   const scenarioRef = useRef<ScenarioId>("birthday");
   useEffect(() => { scenarioRef.current = scenarioId; }, [scenarioId]);
 
-  function chooseScenario(id: ScenarioId) {
-    setScenarioId(id);
-    scenarioRef.current = id;
-    setCardUrl(""); cardBlob.current = null;
-    try { if (submittedDate) window.history.replaceState({}, "", `?date=${submittedDate}${id !== "birthday" ? `&s=${id}` : ""}`); } catch { /* sandboxed preview */ }
-  }
 
   function shareUrl() {
     return `${window.location.origin}${window.location.pathname}?date=${submittedDate}${scenarioId !== "birthday" ? `&s=${scenarioId}` : ""}`;
@@ -214,16 +208,12 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
         <p className="lede">{scenario.lede}</p>
 
         <form className="date-form" onSubmit={handleSubmit}>
-          <div className="scenarios" role="radiogroup" aria-label="Повод">
-            {SCENARIOS.map((item) => (
-              <button key={item.id} type="button" role="radio" aria-checked={item.id === scenarioId} className={`scenario${item.id === scenarioId ? " is-active" : ""}`} onClick={() => chooseScenario(item.id)}>{item.chip}</button>
-            ))}
-          </div>
           <label htmlFor="birthdate">{scenario.label}</label>
           <div className="input-row">
             <input id="birthdate" name="birthdate" type="date" min={FIRST_SUPPORTED_DATE} max={today} value={date} onChange={(event) => setDate(event.target.value)} required />
             <button type="submit" disabled={loading}>{loading ? "Ищем песню…" : "Узнать песню"}</button>
           </div>
+          {scenarioId === "birthday" && <p className="form-hint">Можно ввести не только день рождения: выпускной, свадьбу, первое свидание.</p>}
           {loading && <div className="dk-says dk-loading" role="status"><img src="brand/sticker-dark.webp" alt="" aria-hidden="true" /><p>Копаюсь в архивах хит-парадов…</p></div>}
           {error && <p className="form-error" role="alert">{error}</p>}
         </form>
