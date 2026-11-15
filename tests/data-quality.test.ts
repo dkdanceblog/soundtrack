@@ -392,7 +392,8 @@ test("2004 radio additions keep distant dates monthly and preserve listener-back
   assert.equal(january.chartDate, "2004-01-18");
   assert.equal(january.alternatives.length, 2);
   assert.equal(publicPlatforms(january.sources).size, 0);
-  assert.notEqual(getBirthdayHit("2004-04-10")!.sourceId.startsWith("gramophone-2004-"), true);
+  // BETA95: a dated weekly issue beats a month known only from a release.
+  assert.equal(getBirthdayHit("2004-04-10")!.sourceId.startsWith("gramophone-2004-"), true);
 });
 
 // Actual interval membership is stricter than nearest-publication proximity.
@@ -528,9 +529,12 @@ test("weekly radio hit-parades 1995–2003 drive the main choice near a dated is
   }
   // Curated weekly evidence is kept as it was.
   assert.match(getBirthdayHit("1999-07-04", "2026-10-03")!.title, /Туда/);
-  // Before 1999 a single Russian entry on Радио Максимум does not replace the curated month.
+  // BETA95: before 1999 a single Russian entry on Радио Максимум replaces a month known only
+  // from a release or broadcast; the replaced song stays among the alternatives.
   const lone = getBirthdayHit("1996-01-28", "2026-10-03")!;
-  assert.notEqual(lone.title, "Дворник");
+  assert.equal(lone.title, "Дворник");
+  assert.equal(lone.precision, "Неделя");
+  assert.ok(lone.alternatives.length >= 1);
 });
 
 // BETA81 data pass.

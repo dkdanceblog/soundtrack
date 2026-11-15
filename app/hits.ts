@@ -765,6 +765,8 @@ function resolveBirthdayHit(date: string, today = todayUtc()): BirthdayHit | nul
   const radio2004 = gramophoneHit2004(date, today);
   const preferRadio2004 = (existing: BirthdayHit | null): BirthdayHit | null => {
     if (!radio2004) return existing;
+    // A dated weekly «Золотой граммофон» issue beats a month known only from a release or broadcast.
+    if (existing?.precision === "Месяц" && radio2004.precision === "Неделя" && existing.mode !== "месячный чарт" && existing.mode !== "исторический чарт") return radio2004;
     if (!existing || existing.precision === "Год" || (existing.precision === "Месяц"
       && existing.alternatives.length < 2 && assessPopularity(existing.sources).level === "review")) return radio2004;
     return existing;
@@ -974,8 +976,16 @@ function preferRadioWeek(hit: BirthdayHit | null, date: string, today: string): 
   // recent radio issues only replace year-level fallbacks.
   if (hit && date > "2003-12-31" && hit.precision !== "Год") return hit;
   const radio = radioWeeklyHit(date, today);
-  if (!radio || (radio.year < 1999 && radio.alternatives.length < 1)) return hit;
-  return radio;
+  if (!radio) return hit;
+  // Before 1999 only «Радио Максимум» is archived and most weeks carry one Russian-language
+  // entry. A dated weekly chart place still beats a month known only from a release,
+  // a broadcast or a concert; it does not replace a month-level chart of listeners.
+  const monthChart = hit?.mode === "месячный чарт" || hit?.mode === "исторический чарт";
+  if (radio.year < 1999 && radio.alternatives.length < 1 && monthChart) return hit;
+  if (!hit) return radio;
+  const kept = { artist: hit.artist, title: hit.title };
+  const same = (entry: { artist: string; title: string }) => canonical(entry.title) === canonical(kept.title);
+  return same(radio) || radio.alternatives.some(same) ? radio : { ...radio, alternatives: [...radio.alternatives, kept] };
 }
 
 // «Чартова дюжина» («Наше радио», since July 1999) is a weekly listener vote. The
