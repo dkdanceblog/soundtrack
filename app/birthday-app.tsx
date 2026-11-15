@@ -2,6 +2,7 @@
 
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { CardModal } from "./card-modal";
+import { CompareSection } from "./compare-section";
 import { confidentText } from "./confident-text";
 import type { BirthdayHit } from "./hits";
 import { FIRST_SUPPORTED_DATE, isSupportedDate, todayUtc } from "./date-policy";
@@ -41,14 +42,6 @@ function titleParts(title: string) {
 // One lead sentence everywhere (editor's decision).
 export function leadVerb(hit: BirthdayHit) {
   void hit; return "самой популярной песней была";
-}
-
-function detailLabel(hit: BirthdayHit) {
-  if (hit.precision === "Год") return "Месяц не подтверждён";
-  if (hit.mode === "месячный релиз") return "Месяц публикации";
-  if (hit.chartMetric === "МЕСЯЦ ВЫСТУПЛЕНИЯ") return "Месяц выступления";
-  if (hit.chartMetric === "МЕСЯЦ КОНЦЕРТНОГО ОТКЛИКА") return "Месяц концертного отклика";
-  return hit.precision;
 }
 
 export default function BirthdayApp({ initialHit, initialDate, initialToday, weekCount, monthlyCount, initialLife, maxDate, songCount, pendingDate }: { initialHit: BirthdayHit | null; initialDate: string; initialToday: string; weekCount: number; monthlyCount: number; initialLife: LifeEntry[]; maxDate?: string; songCount?: number; pendingDate?: string }) {
@@ -166,6 +159,15 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
 
   const closeCard = useCallback(() => setCardUrl(""), []);
 
+  // The entrance animation waits until the card is actually on screen (after the scroll).
+  const playWhenVisible = useCallback((node: HTMLElement | null) => {
+    if (!node || typeof IntersectionObserver === "undefined") { node?.classList.add("is-visible"); return; }
+    const observer = new IntersectionObserver((entries) => {
+      if (entries.some((entry) => entry.isIntersecting)) { node.classList.add("is-visible"); observer.disconnect(); }
+    }, { threshold: 0.35 });
+    observer.observe(node);
+  }, []);
+
   async function shareCard() {
     if (!cardBlob.current) return;
     const file = new File([cardBlob.current], `saundtrek-${submittedDate}.png`, { type: "image/png" });
@@ -185,6 +187,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
         <nav className="topnav" aria-label="Разделы">
           <a href="#result">Песня</a>
           <a href="#life">Саундтрек жизни</a>
+          <a href="#compare">Сравни с другом</a>
           <a href="#how">Как мы выбираем песню</a>
         </nav>
         <a className="tg-link" href={TELEGRAM_URL} target="_blank" rel="noreferrer">Telegram ↗</a>
@@ -219,7 +222,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
 
       <section className="result-wrap" id="result" aria-live="polite" aria-busy={loading}>
         {hit ? (
-          <article className="result-card is-entering" key={submittedDate}>
+          <article className="result-card is-entering" key={submittedDate} ref={playWhenVisible}>
             <h2 className="result-lead">В твой день рождения {leadVerb(hit)}</h2>
             <div className="carrier-stage">
               <RecordObject title={hit.title} artist={hit.artist} year={hit.year} date={formatDate(submittedDate)} />
@@ -281,7 +284,6 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
                   <div className={`hit-badge hit-badge-${hit.precision.toLowerCase()}`}><b>{badgeFor(hit).text}</b><span>{hit.period}</span></div>
                   <div className="result-details">
                     <div className="chart-note"><span>{hit.chartRank ? `#${hit.chartRank}` : "✓"}</span><p>{hit.chartMetric}<br /><b>{hit.period}</b></p></div>
-                    <div className={`precision precision-${hit.precision.toLowerCase()}`}><span>{detailLabel(hit)}</span><p>{confidentText(hit.proximity)}</p></div>
                   </div>
                   {popularity && <div className={`confidence confidence-${popularity.level}`}><p className="confidence-caption">ЧЕМ ПОДТВЕРЖДЕНО</p><strong>{popularity.label}</strong>{popularity.detail && <p>{popularity.detail}</p>}</div>}
                   {confidentText(hit.method) && <p>{confidentText(hit.method)}</p>}
@@ -311,6 +313,8 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
         {hit && submittedDate && <LifeSoundtrack birth={submittedDate} initialEntries={submittedDate === initialDate ? initialLife : []} />}
       </section>
 
+      <CompareSection myDate={submittedDate} today={today} />
+
       <section className="how" id="how">
         <h2>Как мы выбираем песню</h2>
         <p className="how-lead">Ты вводишь дату — мы находим хит-парад, который вышел ближе всего к этому дню, и берём песню, стоявшую в нём выше всех из русскоязычных. Под каждой песней есть источник.</p>
@@ -319,7 +323,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
           <li><b>1970–1977, 1982–1985</b>берём песню из журналов, телеэфиров или концертов</li>
           <li><b>1977–1991</b>хит-парады «Московского комсомольца»</li>
           <li><b>1992–1994</b>опросы читателей, чарты продаж, релизы и эфиры месяца</li>
-          <li><b>1995–2010</b>еженедельные радиочарты: «Хит-парад двух столиц» «Радио Максимум», «Золотой граммофон» «Русского радио», «Чартова дюжина» «Нашего радио»</li>
+          <li><b>1995–2010</b>еженедельные радиочарты: «Хит-парад двух столиц» на «Радио Максимум», «Золотой граммофон» на «Русском радио» и «Чартова дюжина» на «Нашем радио»</li>
           <li><b>2010–2014</b>продажи: цифровой чарт 2М и iTunes Россия</li>
           <li><b>2015 — сегодня</b>Shazam и стриминги: Apple Music, Яндекс Музыка, VK Музыка</li>
         </ul>

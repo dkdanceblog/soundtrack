@@ -390,17 +390,6 @@ test("production exposes month-only gap evidence and coherent May 2020 weeks", a
 });
 
 
-test("historical result labels distinguish an unverified month from publication and local reception", async () => {
-  const { default: worker } = await import("../dist/server/index.js");
-  const env = { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } };
-  const ctx = { waitUntil() {}, passThroughOnException() {} };
-  for (const [date, label] of [["1972-01-15", "Месяц публикации"], ["1982-12-15", "Месяц выступления"], ["1977-06-15", "Месяц публикации"], ["1977-07-15", "Месяц концертного отклика"]]) {
-    const response = await worker.fetch(new Request(`http://localhost/?date=${date}`), env, ctx);
-    assert.equal(response.status, 200);
-    assert.ok((await response.text()).includes(label), date);
-  }
-});
-
 test("life soundtrack lists one song per birthday up to today", async () => {
   const { default: worker } = await import("../dist/server/index.js");
   const env = { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } };

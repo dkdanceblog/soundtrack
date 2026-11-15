@@ -136,9 +136,8 @@ function header(ctx: CanvasRenderingContext2D, era: Palette, right: string) {
 
 function footer(ctx: CanvasRenderingContext2D, era: Palette, question: string, site: string) {
   ctx.fillStyle = era.ink; ctx.fillRect(48, H - 180, W - 96, 132);
-  ctx.fillStyle = era.bg; ctx.font = `800 28px ${DISPLAY}`; ctx.fillText(question, 96, H - 116);
-  ctx.font = `600 26px ${BODY}`; ctx.fillText(site, 96, H - 72);
-  ctx.fillStyle = era.accent; ctx.textAlign = "right"; ctx.font = `800 56px ${DISPLAY}`; ctx.fillText("↗", W - 96, H - 88); ctx.textAlign = "left";
+  ctx.fillStyle = era.bg; ctx.font = `800 40px ${DISPLAY}`; ctx.fillText(question, 96, H - 112, W - 260);
+  ctx.font = `600 28px ${BODY}`; ctx.fillText(`→ ${site}`, 96, H - 68);
 }
 
 // Simple story card: brand, one sentence, one date, one record, the song once.
@@ -173,7 +172,7 @@ export function drawShareCard(canvas: HTMLCanvasElement, d: ShareCardData) {
   ctx.font = `600 ${artist.size}px ${BODY}`;
   y += 14;
   for (const line of artist.lines) { ctx.fillText(line, 96, y); y += artist.size * 1.15; }
-  footer(ctx, era, "А КАКАЯ ПЕСНЯ У ТЕБЯ?", d.site);
+  footer(ctx, era, "А под какую родился ты?", d.site);
 }
 
 export type LifeCardData = {
@@ -190,31 +189,50 @@ export function drawLifeCard(canvas: HTMLCanvasElement, data: LifeCardData) {
   if (!ctx) return;
   const era = CARD;
   frame(ctx, era);
-  header(ctx, era, data.birth);
-  ctx.fillStyle = era.ink; ctx.font = `800 96px ${DISPLAY}`;
-  ctx.fillText("САУНДТРЕК", 90, 330); ctx.fillText("МОЕЙ ЖИЗНИ", 90, 438);
-  ctx.fillStyle = era.muted; ctx.font = `600 30px ${BODY}`;
-  ctx.fillText(`${data.total} ${data.totalWord} — по одной на каждый день рождения`, 96, 504);
+  header(ctx, era, "");
 
-  const top = 580, bottom = H - 220;
-  const step = (bottom - top) / Math.max(data.rows.length, 1);
-  ctx.fillStyle = era.ink; ctx.fillRect(176, top - 10, 4, bottom - top);
-  data.rows.forEach((row, i) => {
+  // Same rhythm as the main card: two short display lines, date in mono, a plain sentence.
+  ctx.fillStyle = era.ink;
+  let leadSize = 96;
+  do { ctx.font = `800 ${leadSize}px ${DISPLAY}`; leadSize -= 2; } while (ctx.measureText("моей жизни").width > W - 192 && leadSize > 40);
+  ctx.fillText("Саундтрек", 92, 330);
+  ctx.fillText("моей жизни", 92, 330 + leadSize * 1.05);
+  ctx.fillStyle = era.muted; ctx.font = `700 30px ${MONO}`;
+  ctx.fillText(`С ${longDate(data.birth).toLocaleUpperCase("ru-RU")}`, 96, 330 + leadSize * 1.05 + 62);
+  ctx.fillStyle = era.ink; ctx.font = `600 40px ${BODY}`;
+  ctx.fillText("самые популярные песни в мои дни рождения", 96, 330 + leadSize * 1.05 + 122, W - 192);
+
+  const top = 640, bottom = H - 230;
+  const rows = data.rows;
+  const step = (bottom - top) / Math.max(rows.length, 1);
+  const k = Math.max(.72, Math.min(1, step / 262));
+  const textX = 250, maxW = W - textX - 96;
+  rows.forEach((row, i) => {
     const y = top + i * step;
-    ctx.fillStyle = row.milestone ? era.accent : era.bg; ctx.beginPath(); ctx.arc(178, y + 34, 17, 0, Math.PI * 2); ctx.fill();
-    ctx.strokeStyle = era.ink; ctx.lineWidth = 3; ctx.stroke();
-    ctx.fillStyle = era.ink; ctx.textAlign = "right"; ctx.font = `800 56px ${DISPLAY}`;
-    ctx.fillText(String(row.age), 140, y + 56);
-    ctx.textAlign = "left"; ctx.fillStyle = era.muted; ctx.font = `700 21px ${MONO}`;
-    ctx.fillText(`${row.year}${row.milestone ? ` · ${row.milestone.toLocaleUpperCase("ru-RU")}` : ""}`, 220, y + 18);
+    if (i > 0) { ctx.fillStyle = "rgba(252,223,204,.18)"; ctx.fillRect(96, y - 28 * k, W - 192, 2); }
+    // Age: big outlined number on the left, accent for milestones.
+    ctx.textAlign = "right"; ctx.font = `800 ${Math.round(120 * k)}px ${DISPLAY}`;
+    ctx.fillStyle = row.milestone || i === 0 ? era.accent : era.ink;
+    ctx.fillText(String(row.age), textX - 40, y + 112 * k);
+    ctx.textAlign = "left";
+    ctx.fillStyle = era.muted; ctx.font = `700 ${Math.round(26 * Math.max(k, .85))}px ${MONO}`;
+    const label = i === 0 ? "ДЕНЬ РОЖДЕНИЯ" : row.milestone ? row.milestone.toLocaleUpperCase("ru-RU") : `${row.age} ${ageWord(row.age)}`.toLocaleUpperCase("ru-RU");
+    ctx.fillText(`${row.year} · ${label}`, textX, y + 22);
     ctx.fillStyle = era.ink;
-    const title = fit(ctx, `«${row.title}»`, DISPLAY, 800, 40, 26, W - 316, 1);
-    ctx.font = `800 ${title.size}px ${DISPLAY}`; ctx.fillText(title.lines[0], 220, y + 66);
+    const title = fit(ctx, `«${row.title}»`, DISPLAY, 800, Math.round(76 * k), Math.round(44 * k), maxW, 1);
+    ctx.font = `800 ${title.size}px ${DISPLAY}`; ctx.fillText(title.lines[0], textX - 4, y + 24 * k + title.size * 0.95);
     ctx.fillStyle = era.muted;
-    const artist = fit(ctx, row.artist, BODY, 600, 28, 20, W - 316, 1);
-    ctx.font = `600 ${artist.size}px ${BODY}`; ctx.fillText(artist.lines[0], 220, y + 104);
+    const artist = fit(ctx, row.artist, BODY, 600, Math.round(38 * Math.max(k, .75)), 24, maxW, 1);
+    ctx.font = `600 ${artist.size}px ${BODY}`; ctx.fillText(artist.lines[0], textX, y + 24 * k + title.size * 0.95 + artist.size * 1.4);
   });
-  footer(ctx, era, "А КАКОЙ САУНДТРЕК У ТЕБЯ?", data.site);
+  footer(ctx, era, "А какой саундтрек у тебя?", data.site);
+}
+
+function ageWord(n: number) {
+  const m10 = n % 10, m100 = n % 100;
+  if (m10 === 1 && m100 !== 11) return "год";
+  if (m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14)) return "года";
+  return "лет";
 }
 
 export function canvasToBlob(canvas: HTMLCanvasElement): Promise<Blob | null> {
