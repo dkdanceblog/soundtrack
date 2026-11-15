@@ -11,7 +11,7 @@ import { canvasToBlob, drawShareCard, ensureCardFonts } from "./share-card";
 import { LifeSoundtrack } from "./life-soundtrack";
 import type { LifeEntry } from "./life-shared";
 import { fetchHit } from "./data-source";
-import { DECADES } from "./eras";
+import { DECADES, TELEGRAM_URL, randomDateBetween } from "./eras";
 import { RecordObject } from "./era-object";
 
 const pad = (value: number) => String(value).padStart(2, "0");
@@ -174,6 +174,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
           <a href="#life">Саундтрек жизни</a>
           <a href="#how">Как это работает</a>
         </nav>
+        <a className="tg-link" href={TELEGRAM_URL} target="_blank" rel="noreferrer">Telegram ↗</a>
       </header>
 
       <section className="hero" id="top">
@@ -196,7 +197,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
           <p>Или посмотри пример:</p>
           <div>
             {DECADES.map((decade) => (
-              <button key={decade.label} type="button" className={`decade${submittedDate.slice(0, 3) === decade.sample.slice(0, 3) ? " is-active" : ""}`} aria-pressed={submittedDate.slice(0, 3) === decade.sample.slice(0, 3)} onClick={() => showEra(decade.sample)}>{decade.label}</button>
+              <button key={decade.label} type="button" className={`decade${submittedDate.slice(0, 3) === decade.sample.slice(0, 3) ? " is-active" : ""}`} aria-pressed={submittedDate.slice(0, 3) === decade.sample.slice(0, 3)} onClick={() => showEra(randomDateBetween(decade.from, decade.to, today))}>{decade.label}</button>
             ))}
           </div>
         </div>
@@ -311,7 +312,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
         <p className="how-facts"><b>{weekCount.toLocaleString("ru-RU")}</b> недель чартов · <b>{monthlyCount}</b> месячных хит-парадов 1985–1991 · архив с 1970 года</p>
       </section>
 
-      <footer><p>Сервис придумал ДК ДАНС</p><a href="#top">Ввести другую дату ↑</a></footer>
+      <footer><p>Сервис придумал ДК ДАНС · <a href={TELEGRAM_URL} target="_blank" rel="noreferrer">Telegram-канал ↗</a></p><a href="#top">Ввести другую дату ↑</a></footer>
     </main>
   );
 }
