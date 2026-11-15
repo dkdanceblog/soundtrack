@@ -219,7 +219,6 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
             <div className="song-copy">
               <h2>{titleParts(hit.title)}</h2>
               <h3>{hit.artist}</h3>
-              <p className="quiet-source">{badgeFor(hit).text.toLocaleLowerCase("ru-RU")} · {hit.period}</p>
 
               <div className="actions" aria-label="Слушать и поделиться">
                 <p className="listen-caption"><span aria-hidden="true">▶</span> Слушать</p>
