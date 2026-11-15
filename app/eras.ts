@@ -27,3 +27,11 @@ export function randomDateBetween(from: string, to: string, max: string) {
   const days = Math.max(0, Math.floor((end - start) / 86400000));
   return new Date(start + Math.floor(Math.random() * (days + 1)) * 86400000).toISOString().slice(0, 10);
 }
+
+// The address printed on story cards: the public site, never a local preview host.
+export function siteAddress() {
+  if (typeof window === "undefined") return "dkdanceblog.github.io/soundtrack";
+  const { hostname, host, pathname } = window.location;
+  if (!hostname.includes(".") || /^(localhost|127\.|\[)/.test(hostname)) return "dkdanceblog.github.io/soundtrack";
+  return `${host}${pathname.replace(/\/(index\.html)?$/, "")}`;
+}

@@ -7,6 +7,7 @@ import { assessPopularity, noChartEra } from "./evidence-policy";
 import { copyText } from "./track-feedback";
 import { listenLinks } from "./listen";
 import { ServiceLinks } from "./service-links";
+import { siteAddress } from "./eras";
 import { canvasToBlob, drawShareCard, ensureCardFonts } from "./share-card";
 import { LifeSoundtrack } from "./life-soundtrack";
 import type { LifeEntry } from "./life-shared";
@@ -146,7 +147,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
       await ensureCardFonts();
       drawShareCard(canvas, {
         date: formatDate(submittedDate), title: hit.title, artist: hit.artist, year: hit.year, month: hit.month,
-        badge: badgeFor(hit).short, site: window.location.host || "дк данс", verb: leadVerb(hit),
+        badge: badgeFor(hit).short, site: siteAddress(), verb: leadVerb(hit),
       });
       const blob = await canvasToBlob(canvas);
       if (!blob) return;

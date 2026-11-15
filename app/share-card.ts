@@ -151,14 +151,17 @@ export function drawShareCard(canvas: HTMLCanvasElement, d: ShareCardData) {
   header(ctx, era, "");
 
   ctx.fillStyle = era.ink;
-  // «В мой день рождения — 12 июня 1985 — самой популярной песней была»: the date sits
-  // inside the sentence so "день рождения" reads as the day of birth, not a yearly party.
-  const lead = fit(ctx, `В мой день рождения — ${longDate(d.date)} — ${d.verb ?? "самой популярной песней была"}`, DISPLAY, 800, 84, 44, W - 184, 4);
-  ctx.font = `800 ${lead.size}px ${DISPLAY}`;
-  let ly = 330;
-  for (const line of lead.lines) { ctx.fillText(line, 92, ly); ly += lead.size * 1.08; }
+  // Two short display lines, the date in mono, the verb in plain text: caps stay short.
+  let leadSize = 96;
+  do { ctx.font = `800 ${leadSize}px ${DISPLAY}`; leadSize -= 2; } while (ctx.measureText("моего рождения").width > W - 192 && leadSize > 40);
+  ctx.fillText("В день", 92, 330);
+  ctx.fillText("моего рождения", 92, 330 + leadSize * 1.05);
+  ctx.fillStyle = era.muted; ctx.font = `700 30px ${MONO}`;
+  ctx.fillText(longDate(d.date).toLocaleUpperCase("ru-RU"), 96, 330 + leadSize * 1.05 + 62);
+  ctx.fillStyle = era.ink; ctx.font = `600 40px ${BODY}`;
+  ctx.fillText(d.verb ?? "самой популярной песней была", 96, 330 + leadSize * 1.05 + 122);
 
-  drawRecord(ctx, W / 2, 860, 300, era.accent);
+  drawRecord(ctx, W / 2, 900, 280, era.accent);
 
   ctx.fillStyle = era.ink;
   const title = fit(ctx, `«${d.title}»`, DISPLAY, 800, 124, 60, W - 192, 3);

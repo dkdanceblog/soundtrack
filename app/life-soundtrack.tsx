@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import type { LifeEntry } from "./life-shared";
 import { fetchLife } from "./data-source";
 import { ServiceLinks } from "./service-links";
+import { siteAddress } from "./eras";
 import { canvasToBlob, drawLifeCard, ensureCardFonts } from "./share-card";
 import { copyText } from "./track-feedback";
 
@@ -73,7 +74,7 @@ export function LifeSoundtrack({ birth, initialEntries }: { birth: string; initi
       const canvas = document.createElement("canvas");
       await ensureCardFonts();
       drawLifeCard(canvas, {
-        birth: display(birth), total: entries.length, totalWord: songsWord(entries.length), site: window.location.host || "дк данс",
+        birth: display(birth), total: entries.length, totalWord: songsWord(entries.length), site: siteAddress(),
         rows: cardRows(entries).map((e) => ({ age: e.age, year: Number(e.date.slice(0, 4)), title: e.title, artist: e.artist, milestone: e.milestone })),
       });
       const blob = await canvasToBlob(canvas);
