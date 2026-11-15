@@ -405,3 +405,10 @@ footer { background: var(--graphite); color: var(--cream); }
 .card-modal-close { position: absolute; top: 8px; right: 10px; width: 36px; height: 36px; border: 0; background: none; color: var(--cream); font: 400 30px/1 var(--body); cursor: pointer; }
 @keyframes fade-in { from { opacity: 0; } }
 button.card-modal-link { border-width: 0 0 2px; background: none; cursor: pointer; }
+/* Phones: decades in two even rows of three; eyebrow breaks cleanly without a dangling dot. */
+@media (max-width: 560px) {
+  .decades > div { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .decades .decade { width: 100%; }
+  .eyebrow-sep { display: none; }
+  .eyebrow .nowrap { display: block; }
+}

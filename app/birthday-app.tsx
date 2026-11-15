@@ -191,7 +191,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
       </header>
 
       <section className="hero" id="top">
-        <p className="eyebrow">Саундтрек твоего дня рождения · <span className="nowrap">1970 — {today.slice(0, 4)}</span></p>
+        <p className="eyebrow"><span className="nowrap">Саундтрек твоего дня рождения</span><span className="eyebrow-sep"> · </span><span className="nowrap">1970 — {today.slice(0, 4)}</span></p>
         <img className="hero-logo" src="brand/logo-cream.webp" alt="" aria-hidden="true" />
         <h1>Под какую <mark>песню</mark> ты&nbsp;родился?</h1>
         <p className="lede">Выбери дату и мы найдём песню, которая была на пике популярности и чартов в твой день рождения.</p>
