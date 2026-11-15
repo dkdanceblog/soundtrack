@@ -2,7 +2,7 @@ type Props = { title: string; artist: string; year: number; date: string };
 
 // The house record: a paper sleeve printed with the birth date, the record pulled out.
 // Decorative; the song text next to it carries the meaning.
-export function RecordObject({ title, artist, year, date }: Props) {
+export function RecordObject({ year, date }: Props) {
   const [day, month] = date.split(".");
   return (
     <div className="carrier" aria-hidden="true">
@@ -11,8 +11,6 @@ export function RecordObject({ title, artist, year, date }: Props) {
         <p className="lp-top"><span>ДК ДАНС</span><span>саундтрек дня рождения</span></p>
         <p className="lp-date"><b>{day}.{month}</b><b>{year}</b></p>
         <div className="lp-ring" />
-        <p className="lp-title">{title}</p>
-        <p className="lp-artist">{artist}</p>
       </div>
     </div>
   );

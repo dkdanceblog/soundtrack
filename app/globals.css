@@ -235,7 +235,7 @@ footer a { text-decoration: none; }
 /* Entrance: sleeve slides in, the record flies in spinning and settles half into the sleeve. */
 .is-entering .lp-sleeve { animation: sleeve-in .55s cubic-bezier(.2, .8, .2, 1) both; }
 .is-entering .lp-disc { animation: disc-in 1.1s cubic-bezier(.22, 1.2, .36, 1) .25s both, spin 9s linear 1.35s infinite; }
-.is-entering .result-meta { animation: rise .45s ease-out both; }
+.is-entering .result-lead { animation: rise .45s ease-out both; }
 .is-entering .song-copy > * { animation: rise .5s cubic-bezier(.2, .8, .2, 1) both; }
 .is-entering .song-copy > *:nth-child(1) { animation-delay: .55s; }
 .is-entering .song-copy > *:nth-child(2) { animation-delay: .65s; }
@@ -263,7 +263,7 @@ footer a { text-decoration: none; }
   .result-wrap { min-height: auto; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .is-entering .lp-sleeve, .is-entering .lp-disc, .is-entering .result-meta, .is-entering .song-copy > * { animation: none; }
+  .is-entering .lp-sleeve, .is-entering .lp-disc, .is-entering .result-lead, .is-entering .song-copy > * { animation: none; }
   .btn-service, .decade, .input-row button, .service-links a, .btn-quiet { transition: none; }
 }
 
@@ -350,3 +350,9 @@ footer { background: var(--graphite); color: var(--cream); }
 .tg-link { margin-left: 20px; padding: 6px 12px; border: 2px solid var(--cream); color: var(--cream); font: 700 14px/1 var(--body); text-decoration: none; white-space: nowrap; }
 .tg-link:hover { background: var(--rose); border-color: var(--rose); }
 @media (max-width: 520px) { .tg-link { margin-left: auto; font-size: 13px; padding: 5px 10px; } }
+
+/* Result card, BETA97: one lead sentence, the record, the song, one quiet source line. */
+.result-lead { grid-column: 1 / -1; margin: 0 0 6px; font: 700 clamp(1.5rem, 3.4vw, 2.6rem)/1.05 var(--display); text-transform: uppercase; letter-spacing: .01em; color: var(--cream); }
+.quiet-source { margin: -12px 0 24px; font: 500 14px/1.4 var(--body); color: color-mix(in srgb, var(--cream) 60%, transparent); }
+.why-body .hit-badge { margin: 4px 0 16px; }
+.dk-says { display: none; }

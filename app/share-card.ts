@@ -9,6 +9,7 @@ export type ShareCardData = {
   month?: number;
   badge: string;
   site: string;
+  verb?: string; // "самой популярной песней была" | "звучала песня"
 };
 
 const W = 1080;
@@ -150,12 +151,12 @@ export function drawShareCard(canvas: HTMLCanvasElement, d: ShareCardData) {
   header(ctx, era, "");
 
   ctx.fillStyle = era.ink;
-  let leadSize = 96;
-  do { ctx.font = `800 ${leadSize}px ${DISPLAY}`; leadSize -= 2; } while (ctx.measureText("моего дня рождения —").width > W - 192 && leadSize > 36);
-  ctx.fillText("Главный хит", 92, 330);
-  ctx.fillText("моего дня рождения —", 92, 330 + leadSize * 1.05);
-  ctx.fillStyle = era.muted; ctx.font = `700 30px ${MONO}`;
-  ctx.fillText(longDate(d.date).toLocaleUpperCase("ru-RU"), 96, 500);
+  // «В мой день рождения — 12 июня 1985 — самой популярной песней была»: the date sits
+  // inside the sentence so "день рождения" reads as the day of birth, not a yearly party.
+  const lead = fit(ctx, `В мой день рождения — ${longDate(d.date)} — ${d.verb ?? "самой популярной песней была"}`, DISPLAY, 800, 84, 44, W - 184, 4);
+  ctx.font = `800 ${lead.size}px ${DISPLAY}`;
+  let ly = 330;
+  for (const line of lead.lines) { ctx.fillText(line, 92, ly); ly += lead.size * 1.08; }
 
   drawRecord(ctx, W / 2, 860, 300, era.accent);
 

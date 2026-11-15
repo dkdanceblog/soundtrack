@@ -35,6 +35,12 @@ function titleParts(title: string) {
   return <>«{words.length ? `${words.join(" ")} ` : ""}<span className="nowrap">{last}»</span></>;
 }
 
+// Chart-based results may say "the most popular"; a release, broadcast or concert only "played".
+const CHART_MODES = new Set(["недельный чарт", "мультичарт", "стриминговый чарт", "месячный чарт", "исторический чарт"]);
+export function leadVerb(hit: BirthdayHit) {
+  return CHART_MODES.has(hit.mode) ? "самой популярной песней была" : "звучала песня";
+}
+
 function detailLabel(hit: BirthdayHit) {
   if (hit.precision === "Год") return "Месяц не подтверждён";
   if (hit.mode === "месячный релиз") return "Месяц публикации";
@@ -140,7 +146,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
       await ensureCardFonts();
       drawShareCard(canvas, {
         date: formatDate(submittedDate), title: hit.title, artist: hit.artist, year: hit.year, month: hit.month,
-        badge: badgeFor(hit).short, site: window.location.host || "дк данс",
+        badge: badgeFor(hit).short, site: window.location.host || "дк данс", verb: leadVerb(hit),
       });
       const blob = await canvasToBlob(canvas);
       if (!blob) return;
@@ -206,15 +212,14 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
       <section className="result-wrap" id="result" aria-live="polite" aria-busy={loading}>
         {hit ? (
           <article className="result-card is-entering" key={submittedDate}>
-            <div className="result-meta"><p>Саундтрек твоего дня рождения</p><span>{formatDate(submittedDate)}</span></div>
+            <h2 className="result-lead">В твой день рождения {leadVerb(hit)}</h2>
             <div className="carrier-stage">
               <RecordObject title={hit.title} artist={hit.artist} year={hit.year} date={formatDate(submittedDate)} />
             </div>
             <div className="song-copy">
-              <div className={`hit-badge hit-badge-${hit.precision.toLowerCase()}`}><b>{badgeFor(hit).text}</b><span>{hit.period}</span></div>
               <h2>{titleParts(hit.title)}</h2>
               <h3>{hit.artist}</h3>
-              <div className="dk-says"><img src="brand/sticker-rose.webp" alt="" aria-hidden="true" /><p>{badgeFor(hit).text}. Источник: {hit.period}.</p></div>
+              <p className="quiet-source">{badgeFor(hit).text.toLocaleLowerCase("ru-RU")} · {hit.period}</p>
 
               <div className="actions" aria-label="Слушать и поделиться">
                 <p className="listen-caption"><span aria-hidden="true">▶</span> Слушать</p>
@@ -270,6 +275,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
               <details className="why-note">
                 <summary>Почему эта песня и насколько это точно</summary>
                 <div className="why-body">
+                  <div className={`hit-badge hit-badge-${hit.precision.toLowerCase()}`}><b>{badgeFor(hit).text}</b><span>{hit.period}</span></div>
                   <div className="result-details">
                     <div className="chart-note"><span>{hit.chartRank ? `#${hit.chartRank}` : "✓"}</span><p>{hit.chartMetric}<br /><b>{hit.period}</b></p></div>
                     <div className={`precision precision-${hit.precision.toLowerCase()}`}><span>{detailLabel(hit)}</span><p>{hit.proximity}</p></div>
