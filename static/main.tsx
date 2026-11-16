@@ -2,7 +2,7 @@ import { createRoot } from "react-dom/client";
 import "../app/fonts.css";
 import "../app/globals.css";
 import BirthdayApp from "../app/birthday-app";
-import { fetchHit, loadMeta } from "../app/data-source";
+import { loadMeta } from "../app/data-source";
 import { isSupportedDate } from "../app/date-policy";
 
 // Static entry for GitHub Pages: everything is read from data/*.json next to the page.
@@ -15,7 +15,6 @@ async function start() {
     <BirthdayApp initialHit={null} initialDate={date} pendingDate={date || undefined} initialToday={meta.snapshot} maxDate={meta.snapshot}
       weekCount={meta.weekCount} monthlyCount={meta.monthlyCount} songCount={meta.songCount} initialLife={[]} />,
   );
-  if (date) fetchHit(date).then((hit) => { document.title = `«${hit.title}» — ${hit.artist} · ${date.split("-").reverse().join(".")}`; }).catch(() => undefined);
 }
 
 start().catch(() => {
