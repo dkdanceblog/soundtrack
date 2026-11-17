@@ -135,7 +135,7 @@ export function CompareSection({ myDate, today }: { myDate: string; today: strin
       <h2 id="compare-title">Сравни с другом</h2>
       <p className="compare-lead">{fromFriend
         ? <>Тебя позвали сравнить песни. Друг родился {display(dateB)} — введи свою дату.</>
-        : "Введи свою дату и дату друга, подруги, мамы или любимого — и посмотри, под какие песни вы родились."}</p>
+        : "Введи свою дату и дату друга, подруги, мамы или партнёра — и посмотри, под какие песни вы родились."}</p>
 
       <form className="compare-form" onSubmit={compare}>
         <label>
