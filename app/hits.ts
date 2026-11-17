@@ -24,7 +24,7 @@ import { HISTORICAL_BROADCASTS_1970_2003 } from "./historical-broadcasts-1986-19
 import { HISTORICAL_MONTHLY_CHARTS_1985_1991, HISTORICAL_MONTHLY_CHART_COUNT } from "./historical-monthly-charts-1985-1991";
 import { DIGITAL_SALES_ISSUES_2010_2012, DIGITAL_SALES_ISSUE_COUNT, type DigitalSalesIssue } from "./digital-sales-2010-2012";
 import { ITUNES_RU_2014, ITUNES_RU_LENTA } from "./itunes-russia-2014";
-import { ITUNES_RU_2016 } from "./itunes-russia-2016";
+import { ITUNES_RU_2016, ITUNES_RU_2017 } from "./itunes-russia-kworb";
 import { calibrateModernCharts, CULTURAL_AUDIT_YEAR_COUNT, CULTURAL_SOURCE_SERIES_COUNT } from "./cultural-sources-2018-2020";
 import { HISTORICAL_ANNUAL_POOLS } from "./historical-annual-pools";
 import { krugozorAnchors } from "./krugozor-issues";
@@ -208,11 +208,12 @@ function enrichWithDigitalSales(dataset: readonly PilotWeek[], issues: readonly 
     }
 
     candidates.sort((left, right) => right.score - left.score);
-    return { chartDate: week.chartDate, candidates: candidates.slice(0, 6) };
+    return { chartDate: week.chartDate, candidates: candidates.slice(0, 8) };
   });
 }
 
 export const ENRICHED_LEGACY_MULTICHART = enrichWithDigitalSales(LEGACY_MULTICHART, [...DIGITAL_SALES_ISSUES_2010_2012, ...ITUNES_RU_LENTA, ...ITUNES_RU_2014, ...ITUNES_RU_2016]);
+export const ENRICHED_PILOT_2017 = enrichWithDigitalSales(PILOT_2017, ITUNES_RU_2017);
 export const CULTURALLY_CALIBRATED_MODERN_MULTICHART = calibrateModernCharts(MODERN_MULTICHART);
 
 function displayDate(value: string) {
@@ -307,6 +308,16 @@ function leadingCandidateIndex(candidates: readonly PilotCandidate[], year: numb
   return 0;
 }
 
+// 2016–2017: listeners decide. Weekly iTunes Russia sales (top 40 → up to 40 points) and
+// weekly Shazam Russia (top 100, scaled to the same 40) are added up over every song of the
+// week; radio airplay and annual summaries only break ties through the combined score.
+const LISTENER_POINTS_YEARS = new Set([2016, 2017]);
+function listenerPoints(candidate: PilotCandidate) {
+  const sales = weeklyRank(candidate, ["цифровые продажи"]);
+  const shazam = weeklyRank(candidate, ["Shazam"]);
+  return (Number.isFinite(sales) ? Math.max(0, 41 - sales) : 0) + (Number.isFinite(shazam) ? Math.max(0, 101 - shazam) / 2.5 : 0);
+}
+
 function multichartHit(date: string, birthdayValue: number, dataset: readonly PilotWeek[], annualFallback = false, candidateLimit = 3): BirthdayHit | null {
   const requestedYear = date.slice(0, 4);
   const eligibleWeeks = dataset.filter((week) => week.chartDate.startsWith(`${requestedYear}-`));
@@ -329,10 +340,11 @@ function multichartHit(date: string, birthdayValue: number, dataset: readonly Pi
   const eligibleCandidates = closest.candidates
     .filter((candidate) => isEligibleRussianLanguageTrack(candidate.title, candidate.artist))
     .map((candidate) => normalizeMultichartIdentity(candidate, Number(requestedYear)))
+    .sort((left, right) => LISTENER_POINTS_YEARS.has(Number(requestedYear)) ? listenerPoints(right) - listenerPoints(left) || right.score - left.score : 0)
     .slice(0, candidateLimit);
   if ((!annualFallback && distanceDays > WEEK_DISTANCE_DAYS) || eligibleCandidates.length === 0) return null;
 
-  const selectedIndex = leadingCandidateIndex(eligibleCandidates, Number(requestedYear));
+  const selectedIndex = LISTENER_POINTS_YEARS.has(Number(requestedYear)) ? 0 : leadingCandidateIndex(eligibleCandidates, Number(requestedYear));
   const selected = eligibleCandidates[selectedIndex];
   const primary = selected.sources.find((source) => source.kind === "цифровые продажи")
     ?? selected.sources.find((source) => source.kind === "Shazam")
@@ -366,7 +378,7 @@ function multichartHit(date: string, birthdayValue: number, dataset: readonly Pi
       ? primary.url
       : primary.url.replace(/archive\/[^/]+$/, `archive/${closest.chartDate.slice(0, 4)}.htm`),
     archiveLabel: primary.kind === "цифровые продажи"
-      ? primary.url.includes("web.archive.org") ? "Открыть снимок чарта iTunes Россия" : primary.label.startsWith("iTunes") ? "Открыть выпуск чарта iTunes на Lenta.ru" : "Открыть полный цифровой чарт 2М / Lenta.ru"
+      ? primary.url.includes("web.archive.org") || primary.url.includes("kworb.net") ? "Открыть снимок чарта iTunes Россия" : primary.label.startsWith("iTunes") ? "Открыть выпуск чарта iTunes на Lenta.ru" : "Открыть полный цифровой чарт 2М / Lenta.ru"
       : `Все обновления чарта за ${closest.chartDate.slice(0, 4)} год`,
     mode: annualFallback ? "архив года" : "мультичарт",
     chartRank: primary.rank ?? selected.shazamRank ?? null,
@@ -810,7 +822,7 @@ function resolveBirthdayHit(date: string, today = todayUtc()): BirthdayHit | nul
     if (result) return result;
   }
   if (requestedYear === 2017) {
-    const result = multichartHit(date, birthdayValue, PILOT_2017);
+    const result = multichartHit(date, birthdayValue, ENRICHED_PILOT_2017);
     if (result) return result;
   }
   if (requestedYear >= 2018 && requestedYear <= 2025) {
@@ -845,7 +857,7 @@ function resolveBirthdayHit(date: string, today = todayUtc()): BirthdayHit | nul
     if (result) return result;
   }
   if (requestedYear === 2017) {
-    const result = multichartHit(date, birthdayValue, PILOT_2017, true);
+    const result = multichartHit(date, birthdayValue, ENRICHED_PILOT_2017, true);
     if (result) return result;
   }
   if (requestedYear >= 2018 && requestedYear <= 2025) {
