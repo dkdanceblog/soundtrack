@@ -67,6 +67,12 @@ export function DateFields({ id, name, value, min, max, onChange, label }: Props
   const monthRef = useRef<HTMLSelectElement>(null);
   const yearRef = useRef<HTMLInputElement>(null);
   const pickerRef = useRef<HTMLInputElement>(null);
+  // iPhone/iPad: the system date wheels are already quick, keep them.
+  const [wheels, setWheels] = useState(false);
+  useEffect(() => {
+    const ua = navigator.userAgent;
+    setWheels(/iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1));
+  }, []);
 
   // A date set from outside (example buttons, a shared link) refills the fields.
   useEffect(() => {
@@ -92,6 +98,19 @@ export function DateFields({ id, name, value, min, max, onChange, label }: Props
     const picker = pickerRef.current;
     if (!picker) return;
     try { picker.showPicker(); } catch { picker.focus(); picker.click(); }
+  }
+
+  if (wheels) {
+    return (
+      <div className="date-fields date-fields-native">
+        {name && <input type="hidden" name={name} value={iso} />}
+        <input
+          id={id} type="date" aria-label={label ?? "Дата"} min={min} max={max} value={iso}
+          onChange={(event) => update(split(event.target.value))}
+        />
+        {hint && <p className="df-hint" role="alert">{hint}</p>}
+      </div>
+    );
   }
 
   return (

@@ -512,3 +512,8 @@ button.card-modal-link { border-width: 0 0 2px; background: none; cursor: pointe
 .compare-form .df-calendar { min-height: 60px; padding: 0; border: 2px solid var(--graphite); background: var(--cream); color: var(--graphite); box-shadow: none; font: inherit; }
 .compare-form .df-calendar:hover { background: color-mix(in srgb, var(--cream) 80%, var(--graphite)); }
 .compare-date .df-hint { background: var(--cream); }
+/* iPhone: one native date field with the system wheels */
+.date-fields-native { grid-template-columns: 1fr; }
+.date-fields-native input[type="date"] { width: 100%; min-height: 64px; margin: 0; padding: 0 18px; border: 2px solid var(--graphite); border-radius: 0; background: var(--cream); color: var(--graphite); font: 700 22px var(--body); -webkit-appearance: none; appearance: none; text-align: left; display: flex; align-items: center; }
+.date-fields-native input[type="date"]::-webkit-date-and-time-value { text-align: left; }
+.compare-date .date-fields-native input[type="date"] { min-height: 60px; font-size: 19px; }
