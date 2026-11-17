@@ -24,6 +24,7 @@ import { HISTORICAL_BROADCASTS_1970_2003 } from "./historical-broadcasts-1986-19
 import { HISTORICAL_MONTHLY_CHARTS_1985_1991, HISTORICAL_MONTHLY_CHART_COUNT } from "./historical-monthly-charts-1985-1991";
 import { DIGITAL_SALES_ISSUES_2010_2012, DIGITAL_SALES_ISSUE_COUNT, type DigitalSalesIssue } from "./digital-sales-2010-2012";
 import { ITUNES_RU_2014, ITUNES_RU_LENTA } from "./itunes-russia-2014";
+import { ITUNES_RU_2016 } from "./itunes-russia-2016";
 import { calibrateModernCharts, CULTURAL_AUDIT_YEAR_COUNT, CULTURAL_SOURCE_SERIES_COUNT } from "./cultural-sources-2018-2020";
 import { HISTORICAL_ANNUAL_POOLS } from "./historical-annual-pools";
 import { krugozorAnchors } from "./krugozor-issues";
@@ -211,7 +212,7 @@ function enrichWithDigitalSales(dataset: readonly PilotWeek[], issues: readonly 
   });
 }
 
-export const ENRICHED_LEGACY_MULTICHART = enrichWithDigitalSales(LEGACY_MULTICHART, [...DIGITAL_SALES_ISSUES_2010_2012, ...ITUNES_RU_LENTA, ...ITUNES_RU_2014]);
+export const ENRICHED_LEGACY_MULTICHART = enrichWithDigitalSales(LEGACY_MULTICHART, [...DIGITAL_SALES_ISSUES_2010_2012, ...ITUNES_RU_LENTA, ...ITUNES_RU_2014, ...ITUNES_RU_2016]);
 export const CULTURALLY_CALIBRATED_MODERN_MULTICHART = calibrateModernCharts(MODERN_MULTICHART);
 
 function displayDate(value: string) {
