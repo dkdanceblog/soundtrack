@@ -2,6 +2,7 @@
 
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { CardModal } from "./card-modal";
+import { DateFields } from "./date-fields";
 import { siteAddress } from "./eras";
 import { canvasToBlob, drawCompareCard, ensureCardFonts } from "./share-card";
 import type { BirthdayHit } from "./hits";
@@ -138,15 +139,15 @@ export function CompareSection({ myDate, today }: { myDate: string; today: strin
         : "Введи свою дату и дату друга, подруги, мамы или партнёра — и посмотри, под какие песни вы родились."}</p>
 
       <form className="compare-form" onSubmit={compare}>
-        <label>
+        <div className="compare-date">
           <span>Твоя дата</span>
-          <input type="date" value={dateA} min={FIRST_SUPPORTED_DATE} max={today} onChange={(event) => setDateA(event.target.value)} required />
-        </label>
+          <DateFields id="compare-a" value={dateA} min={FIRST_SUPPORTED_DATE} max={today} onChange={setDateA} label="Твоя дата" />
+        </div>
         <span className="compare-vs" aria-hidden="true">VS</span>
-        <label>
+        <div className="compare-date">
           <span>Дата друга</span>
-          <input type="date" value={dateB} min={FIRST_SUPPORTED_DATE} max={today} onChange={(event) => setDateB(event.target.value)} required />
-        </label>
+          <DateFields id="compare-b" value={dateB} min={FIRST_SUPPORTED_DATE} max={today} onChange={setDateB} label="Дата друга" />
+        </div>
         <button type="submit" disabled={busy}>{busy ? "Ищем…" : "Сравнить"}</button>
       </form>
       {error && <p className="compare-error" role="alert">{error}</p>}

@@ -2,6 +2,7 @@
 
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { CardModal } from "./card-modal";
+import { DateFields } from "./date-fields";
 import { CompareSection } from "./compare-section";
 import { SCENARIOS, dateForYear, scenarioById, suggestedYear, type ScenarioId } from "./scenarios";
 import { confidentText } from "./confident-text";
@@ -92,7 +93,9 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
       return;
     }
     setByYear(false);
-    void loadDate(String(new FormData(event.currentTarget).get("birthdate") ?? date));
+    const typed = String(new FormData(event.currentTarget).get("birthdate") ?? date);
+    if (!isSupportedDate(typed, today)) { setError("Введи дату целиком: день, месяц и год."); return; }
+    void loadDate(typed);
   }
 
   function chooseScenario(id: ScenarioId) {
@@ -246,7 +249,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
                   <option value="" disabled>Выбери год</option>
                   {years.map((y) => <option key={y} value={y}>{scenario.yearLabel} {y}</option>)}
                 </select>
-              : <input id="birthdate" name="birthdate" type="date" min={FIRST_SUPPORTED_DATE} max={today} value={date} onChange={(event) => setDate(event.target.value)} required />}
+              : <DateFields id="birthdate" name="birthdate" value={date} min={FIRST_SUPPORTED_DATE} max={today} onChange={setDate} label={scenario.label} />}
             <button type="submit" disabled={loading}>{loading ? "Ищем песню…" : "Узнать песню"}</button>
           </div>
           {scenarioId === "prom" && <button type="button" className="form-switch" onClick={() => setExactDate(!exactDate)}>{exactDate ? "Выбрать только год" : "Помню точную дату"}</button>}
