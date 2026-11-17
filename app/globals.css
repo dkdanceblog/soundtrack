@@ -475,3 +475,10 @@ button.card-modal-link { border-width: 0 0 2px; background: none; cursor: pointe
 .compare-link { padding: 6px 0; border: 0; border-bottom: 2px solid color-mix(in srgb, var(--cream) 40%, transparent); background: none; color: var(--cream); font: 600 15px/1.3 var(--body); cursor: pointer; }
 .compare-link:hover { border-color: var(--rose); }
 .compare-builder input { width: 100%; min-width: 0; }
+
+/* Occasions: one quiet line under the form, year picker for 1 September / prom */
+.occasions { margin: 12px 0 0; font-size: 15px; line-height: 1.5; color: color-mix(in srgb, var(--cream) 85%, transparent); }
+.occasions button, .form-switch { padding: 0; border: 0; border-bottom: 2px solid color-mix(in srgb, var(--cream) 55%, transparent); background: none; color: var(--cream); font: 700 15px/1.3 var(--body); cursor: pointer; }
+.occasions button:hover, .form-switch:hover { border-color: var(--graphite); }
+.form-switch { margin-top: 10px; font-weight: 600; font-size: 14px; }
+.input-row select { width: 100%; min-height: 64px; padding: 0 18px; border: 2px solid var(--graphite); border-radius: 0; background: var(--cream); color: var(--graphite); font: 700 22px var(--body); appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--graphite) 50%), linear-gradient(135deg, var(--graphite) 50%, transparent 50%); background-position: calc(100% - 26px) 50%, calc(100% - 18px) 50%; background-size: 8px 8px; background-repeat: no-repeat; }

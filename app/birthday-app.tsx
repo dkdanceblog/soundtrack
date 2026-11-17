@@ -3,7 +3,7 @@
 import { FormEvent, useCallback, useEffect, useRef, useState } from "react";
 import { CardModal } from "./card-modal";
 import { CompareSection } from "./compare-section";
-import { scenarioById, type ScenarioId } from "./scenarios";
+import { SCENARIOS, dateForYear, scenarioById, suggestedYear, type ScenarioId } from "./scenarios";
 import { confidentText } from "./confident-text";
 import type { BirthdayHit } from "./hits";
 import { FIRST_SUPPORTED_DATE, isSupportedDate, todayUtc } from "./date-policy";
@@ -49,6 +49,11 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
   const [date, setDate] = useState(initialDate);
   const [scenarioId, setScenarioId] = useState<ScenarioId>("birthday");
   const scenario = scenarioById(scenarioId);
+  const [year, setYear] = useState("");
+  const [exactDate, setExactDate] = useState(false);
+  const [byYear, setByYear] = useState(false);
+  const birthRef = useRef("");
+  const yearMode = scenario.input === "year" && !exactDate;
   useEffect(() => { setScenarioId(scenarioById(new URLSearchParams(window.location.search).get("s")).id); }, []);
   const [submittedDate, setSubmittedDate] = useState(initialDate);
   const [hit, setHit] = useState(initialHit);
@@ -80,8 +85,34 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (yearMode) {
+      if (!year) return;
+      setByYear(true);
+      void loadDate(dateForYear(scenarioId, Number(year)));
+      return;
+    }
+    setByYear(false);
     void loadDate(String(new FormData(event.currentTarget).get("birthdate") ?? date));
   }
+
+  function chooseScenario(id: ScenarioId) {
+    if (scenarioId === "birthday" && submittedDate) birthRef.current = submittedDate;
+    setScenarioId(id);
+    scenarioRef.current = id;
+    setExactDate(false);
+    setCardUrl(""); cardBlob.current = null;
+    if (id === "wedding") setDate("");
+    if (id === "birthday" && birthRef.current) setDate(birthRef.current);
+    const suggested = suggestedYear(id, birthRef.current);
+    if (suggested && dateForYear(id, suggested) <= today) setYear(String(suggested));
+    try { window.history.replaceState({}, "", `?${submittedDate ? `date=${submittedDate}&` : ""}s=${id}`.replace("&s=birthday", "").replace("?s=birthday", "")); } catch { /* sandboxed preview */ }
+  }
+
+  const years = (() => {
+    const list: number[] = [];
+    for (let y = Number(today.slice(0, 4)); y >= 1970; y -= 1) if (dateForYear(scenarioId, y) <= today && dateForYear(scenarioId, y) >= FIRST_SUPPORTED_DATE) list.push(y);
+    return list;
+  })();
 
   function showEra(sample: string) {
     setDate(sample);
@@ -151,7 +182,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
       const canvas = document.createElement("canvas");
       await ensureCardFonts();
       drawShareCard(canvas, {
-        date: formatDate(submittedDate), title: hit.title, artist: hit.artist, year: hit.year, month: hit.month,
+        date: formatDate(submittedDate), dateText: scenarioId === "prom" && byYear ? `ИЮНЬ ${submittedDate.slice(0, 4)}` : undefined, title: hit.title, artist: hit.artist, year: hit.year, month: hit.month,
         badge: badgeFor(hit).short, site: siteAddress(), verb: leadVerb(hit), lead: scenario.cardLines, question: scenario.cardQuestion,
       });
       const blob = await canvasToBlob(canvas);
@@ -210,22 +241,33 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
         <form className="date-form" onSubmit={handleSubmit}>
           <label htmlFor="birthdate">{scenario.label}</label>
           <div className="input-row">
-            <input id="birthdate" name="birthdate" type="date" min={FIRST_SUPPORTED_DATE} max={today} value={date} onChange={(event) => setDate(event.target.value)} required />
+            {yearMode
+              ? <select id="birthdate" name="year" value={year} onChange={(event) => setYear(event.target.value)} required>
+                  <option value="" disabled>Выбери год</option>
+                  {years.map((y) => <option key={y} value={y}>{scenario.yearLabel} {y}</option>)}
+                </select>
+              : <input id="birthdate" name="birthdate" type="date" min={FIRST_SUPPORTED_DATE} max={today} value={date} onChange={(event) => setDate(event.target.value)} required />}
             <button type="submit" disabled={loading}>{loading ? "Ищем песню…" : "Узнать песню"}</button>
           </div>
-          {scenarioId === "birthday" && <p className="form-hint">Можно ввести не только день рождения: выпускной, свадьбу, первое свидание.</p>}
+          {scenarioId === "prom" && <button type="button" className="form-switch" onClick={() => setExactDate(!exactDate)}>{exactDate ? "Выбрать только год" : "Помню точную дату"}</button>}
+          <p className="occasions">
+            {scenarioId === "birthday" ? "Или узнай песню: " : "Ещё: "}
+            {SCENARIOS.filter((item) => item.id !== scenarioId).map((item, index, list) => (
+              <span key={item.id}><button type="button" onClick={() => chooseScenario(item.id)}>{item.link}</button>{index < list.length - 1 ? " · " : ""}</span>
+            ))}
+          </p>
           {loading && <div className="dk-says dk-loading" role="status"><img src="brand/sticker-dark.webp" alt="" aria-hidden="true" /><p>Копаюсь в архивах хит-парадов…</p></div>}
           {error && <p className="form-error" role="alert">{error}</p>}
         </form>
 
-        <div className="decades">
+        {scenarioId === "birthday" && <div className="decades">
           <p>Или посмотри пример:</p>
           <div>
             {DECADES.map((decade) => (
               <button key={decade.label} type="button" className={`decade${submittedDate.slice(0, 3) === decade.sample.slice(0, 3) ? " is-active" : ""}`} aria-pressed={submittedDate.slice(0, 3) === decade.sample.slice(0, 3)} onClick={() => showEra(randomDateBetween(decade.from, decade.to, today))}>{decade.label}</button>
             ))}
           </div>
-        </div>
+        </div>}
       </section>
 
       <section className="result-wrap" id="result" aria-live="polite" aria-busy={loading}>
@@ -233,7 +275,7 @@ export default function BirthdayApp({ initialHit, initialDate, initialToday, wee
           <article className="result-card is-entering" key={submittedDate} ref={playWhenVisible}>
             <h2 className="result-lead">{scenario.resultLead} {leadVerb(hit)}</h2>
             <div className="carrier-stage">
-              <RecordObject title={hit.title} artist={hit.artist} year={hit.year} date={formatDate(submittedDate)} sleeve={scenario.sleeve} />
+              <RecordObject title={hit.title} artist={hit.artist} year={hit.year} date={formatDate(submittedDate)} sleeve={scenario.sleeve} dayLabel={scenarioId === "prom" && byYear ? "ИЮНЬ" : undefined} />
             </div>
             <div className="song-copy">
               <h2>{titleParts(hit.title)}</h2>

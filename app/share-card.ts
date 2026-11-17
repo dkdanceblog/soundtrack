@@ -12,6 +12,7 @@ export type ShareCardData = {
   verb?: string; // "самой популярной песней была" | "звучала песня"
   lead?: [string, string];
   question?: string;
+  dateText?: string;
 };
 
 const W = 1080;
@@ -159,7 +160,7 @@ export function drawShareCard(canvas: HTMLCanvasElement, d: ShareCardData) {
   ctx.fillText(lead[0], 92, 330);
   ctx.fillText(lead[1], 92, 330 + leadSize * 1.05);
   ctx.fillStyle = era.muted; ctx.font = `700 30px ${MONO}`;
-  ctx.fillText(longDate(d.date).toLocaleUpperCase("ru-RU"), 96, 330 + leadSize * 1.05 + 62);
+  ctx.fillText(d.dateText ?? longDate(d.date).toLocaleUpperCase("ru-RU"), 96, 330 + leadSize * 1.05 + 62);
   ctx.fillStyle = era.ink; ctx.font = `600 40px ${BODY}`;
   ctx.fillText(d.verb ?? "самой популярной песней была", 96, 330 + leadSize * 1.05 + 122);
 
